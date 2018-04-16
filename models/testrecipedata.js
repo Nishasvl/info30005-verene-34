@@ -1,14 +1,11 @@
 var recipes = [];
 
-var recipetitles=["Chicken Pasta", "Potato Salad", "Pulled-Pork Tacos",
-    "Beef Brisket Noodle Soup"];
-
 recipes[0] = {
     recipe_id : 1,
     title : "Chicken Pasta",
     link: "http://www.bestrecipes.com.au/recipe/creamy-chicken-pasta-L3276.html",
-    image : "https://images.unsplash.com/photo-1458644267420-66bc8a5f21e4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=de4ff3558258d5972b83cec5c963208b&auto=format&fit=crop&w=893&q=80"
-    ingredients : ["2 Chicken Breasts", '200g Dried Pasta', '2 TBSP Cooking Oil', '2 cups Spinach', '2 cloves of Garlic"]
+    image : "https://images.unsplash.com/photo-1458644267420-66bc8a5f21e4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=de4ff3558258d5972b83cec5c963208b&auto=format&fit=crop&w=893&q=80",
+    ingredients : ["2 Chicken Breasts", '200g Dried Pasta', '2 TBSP Cooking Oil', '2 cups Spinach', '2 cloves of Garlic"],
 };
 
 recipes[1] = {
