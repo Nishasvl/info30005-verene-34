@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/coming_soon_controller.js');
+const controller = require('../controllers/controller.js');
 
 router.get('/', controller.displayPage);
 
