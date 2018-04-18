@@ -1,0 +1,65 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
+nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
+nav.navbar-findcond a { color: #617133; font-family: 'Fredericka the Great', cursive; }
+nav.navbar-findcond ul.navbar-nav a {border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
+nav.navbar-findcond ul.navbar-nav a:hover,
+nav.navbar-findcond ul.navbar-nav a:visited,
+nav.navbar-findcond ul.navbar-nav a:focus,
+nav.navbar-findcond ul.navbar-nav a:active { background: #fff; }
+nav.navbar-findcond ul.navbar-nav a:hover { border-color: #f14444; }
+nav.navbar-findcond li.divider { background: #ccc; }
+
+
+
+body {
+    background: url('../images/fridgebackground.png');
+    background-position: top;
+    background-size:cover;
+}
+
+.add{
+    width: 100px;
+    height: 100px;
+    margin-left: 90%;
+    margin-top: 5%;
+
+    border-radius: 25px;
+
+}
+
+
+.center {
+    margin-top:50px;
+    margin-left: 87%;
+    margin-top: 1%;
+
+    border-radius: 25px;
+}
+
+
+#squarespaceModal{
+    margin-top:5%;
+}
+.modal-header {
+    padding-bottom: 5px;
+}
+
+.modal-footer {
+    padding: 0;
+}
+
+.modal-footer .btn-group button {
+    height:40px;
+    border-top-left-radius : 0;
+    border-top-right-radius : 0;
+    border: none;
+    border-right: 1px solid #ddd;
+}
+
+.modal-footer .btn-group:last-child > button {
+    border-right: 0;
+}
