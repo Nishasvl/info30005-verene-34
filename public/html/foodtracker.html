@@ -5,13 +5,88 @@
     <title>Log In</title>
     <link rel="stylesheet" type="text/css" href="../css/foodtracker.css">
 
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head/>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            padding: 10px;
+        }
+        .grid-item {
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+            border-radius: 50px;
+        }
+    </style>
+
+<script>
+
+
+
+
+
+    $(document).ready(function($) {
+    $('form').submit(function() {
+    if ($('#inputfood').val() !== '') {
+    var newTask = $('#inputfood').val();
+
+    var expiryDate = $('#inputdate').val();
+    var difference = Date.parse(expiryDate) - Date.parse(new Date());
+    var daysleft = Math.floor(difference/(1000*60*60*24));
+
+    var colour = '';
+    if (daysleft < 0) {
+        colour = '<span class="w3-badge w3-red" padding-top = "1px">'+ daysleft + '</span>';
+    }
+    else if (daysleft <= 2) {
+        colour = '<span class="w3-badge w3-yellow">'+ daysleft + '</span>';
+    }
+    else {
+        colour = '<span class="w3-badge w3-green">'+ daysleft + '</span>';
+    }
+
+
+
+    var newLi = $('<div class="grid-item">'+'<img src="" width = "200" height="200" id="' + newTask +'"' + 'alt="' + newTask +'">' + colour + '</div>');
+
+
+
+
+        function previewFile(){
+            var preview = document.querySelector('#' + newTask ); //selects the query named img
+            var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+            var reader  = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file); //reads the data as a URL
+            } else {
+                preview.src = "";
+            }
+        }
+
+
+    newLi.on('click', function() {
+    // $(this).remove(); // Attach the event handler *before* adding the element
+    });
+    $('.grid-container').append(newLi); // To put the new task at the top of the list
+    previewFile();
+    $('#input').val('');
+    return false; // So the change persists
+    }
+    });
+    // $('ul').sortable(); // Because what good is a to-do list that you can't sort? :)
+    });
+</script>
 
 </head>
 <body>
@@ -56,22 +131,23 @@
             </div>
             <div class="modal-body">
 
-                <!-- content goes here -->
+
                 <form>
                     <div class="form-group">
                         <label for="exampleInputFile">Food Image</label>
                         <input type="file" id="exampleInputFile">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Food</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter food item">
+                        <label for="inputfood">Must Enter Food Name</label>
+                        <input type="text" class="form-control" id="inputfood" placeholder="Enter food item">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Used by Date</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter used by date">
+                        <label for="inputdate">Must enter used by Date</label>
+                        <input type="date" class="form-control" id="inputdate" placeholder="Enter used by date">
                     </div>
+                    <input type="submit" value="Add" class="btn btn-primary center-block">
 
-                    <button type="submit" class="btn btn-default">Submit</button>
+
                 </form>
 
             </div>
@@ -80,6 +156,9 @@
 </div>
 
 
+<div class="grid-container">
+
+</div>
 
 
 </body>
