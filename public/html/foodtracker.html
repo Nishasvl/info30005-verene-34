@@ -14,14 +14,36 @@
     <style>
         .grid-container {
             display: grid;
-            grid-template-columns: auto auto auto;
+            grid-template-columns: auto auto auto auto auto;
             padding: 10px;
         }
         .grid-item {
-            padding: 20px;
-            font-size: 30px;
+            padding: 25px;
+            font-size: 19px;
             text-align: center;
+        }
+        .container1 {
+            position: relative;
+            text-align: center;
+            color: black;
             border-radius: 50px;
+            width: 200px;
+            height: 200px;
+        }
+
+
+
+        .top-right {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+        }
+
+        .centered {
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translate(-50%);
         }
     </style>
 
@@ -42,19 +64,18 @@
 
     var colour = '';
     if (daysleft < 0) {
-        colour = '<span class="w3-badge w3-red" padding-top = "1px">'+ daysleft + '</span>';
+        colour = '<div class="top-right"><span class="w3-badge w3-xlarge w3-red">' + daysleft + '</span></div>';
     }
     else if (daysleft <= 2) {
-        colour = '<span class="w3-badge w3-yellow">'+ daysleft + '</span>';
+        colour = '<div class="top-right"><span class="w3-badge w3-xlarge w3-yellow">' + daysleft + '</span></div>';
     }
     else {
-        colour = '<span class="w3-badge w3-green">'+ daysleft + '</span>';
+        colour = '<div class="top-right"><span class="w3-badge w3-xlarge w3-green">' + daysleft + '</span></div>';
     }
 
 
 
-    var newLi = $('<div class="grid-item">'+'<img src="" width = "200" height="200" id="' + newTask +'"' + 'alt="' + newTask +'">' + colour + '</div>');
-
+    var newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="" width = "200" height="200" id="' + newTask +'"' + 'alt="' + newTask +'">'  + colour + '<button class="centered">Delete</button>'+'</div>'+'</div>');
 
 
 
@@ -74,14 +95,20 @@
             }
         }
 
-
     newLi.on('click', function() {
-    // $(this).remove(); // Attach the event handler *before* adding the element
+    $(this).remove(); // Attach the event handler *before* adding the element
     });
+
     $('.grid-container').append(newLi); // To put the new task at the top of the list
     previewFile();
+
+        // $('.centered').click(function(){
+        //     $(newLi).remove();
+        // });
+
     $('#input').val('');
     return false; // So the change persists
+
     }
     });
     // $('ul').sortable(); // Because what good is a to-do list that you can't sort? :)
@@ -105,7 +132,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="/html/home.html">Home<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/html/welcomepage.html">Welcome<span class="sr-only">(current)</span></a></li>
                 <li class="active"><a href="#">Recipe Search<span class="sr-only">(current)</span></a></li>
                 <li class="active"><a href="/html/foodtracker.html">Food Tracker<span class="sr-only">(current)</span></a></li>
                 <li class="active"><a href="/html/login.html">Account<span class="sr-only">(current)</span></a></li>
@@ -115,7 +142,7 @@
 </nav>
 
 
-<img src="../images/addicon.jpeg" alt="add" class="add">
+<img src="../images/addicon.jpeg" alt="add" class="add" style="border-radius: 25px;">
 
 
 <div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block">Add food</button></div>
@@ -134,15 +161,15 @@
 
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputFile">Food Image</label>
+                        <label for="exampleInputFile">Food Image*</label>
                         <input type="file" id="exampleInputFile">
                     </div>
                     <div class="form-group">
-                        <label for="inputfood">Must Enter Food Name</label>
+                        <label for="inputfood">Enter New Food Name*</label>
                         <input type="text" class="form-control" id="inputfood" placeholder="Enter food item">
                     </div>
                     <div class="form-group">
-                        <label for="inputdate">Must enter used by Date</label>
+                        <label for="inputdate">Enter Used by Date*</label>
                         <input type="date" class="form-control" id="inputdate" placeholder="Enter used by date">
                     </div>
                     <input type="submit" value="Add" class="btn btn-primary center-block">
