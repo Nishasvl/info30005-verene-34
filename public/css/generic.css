@@ -6,6 +6,7 @@
 
 }
 
+/* ------------------Drop Down Bars ----------------------------------------------*/
 
 .long-dropdown input{
     width: 30px;
@@ -89,6 +90,7 @@ button:focus {
     outline:0;
 }
 
+/** bottom pop up **********************************************************************/
 .bottom-popup{
     background: #dddbda;
     z-index: 30;
@@ -240,7 +242,7 @@ ul.ingredient-list li:last-child:after {
 }
 
 
-/* ------------------Drop Down Bars ----------------------------------------------*/
+
 /*------results header--------*/
 
 #results-search-header {
