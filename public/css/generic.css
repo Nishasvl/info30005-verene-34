@@ -150,6 +150,7 @@ button:focus {
     display: inline-block;
     border: 1px solid gray;
     padding: 9px 20px;
+    margin-top: 5px;
     margin-right: 5px;
     margin-left: 5px;
     text-align: center;
@@ -209,7 +210,7 @@ button:focus {
 .modal-content {
     background-color: #fefefe;
     margin: 10% auto; /* 15% from the top and centered */
-    padding: 5px 10px 35px 10px;
+    padding: 5px 10px 20px 10px;
     border: 1px solid #888;
     width: 70%; /* Could be more or less, depending on screen size */
     text-align: center;
