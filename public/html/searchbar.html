@@ -1,0 +1,28 @@
+<script src="../scripts/search.js"></script>
+
+<!--Search Banner-->
+<h1>find a recipe</h1>
+<p>fill in at least one of the boxes</p>
+<div id = searchform-container>
+    <form id = searchform action = 'reciperesults.html'>
+        <div>
+            <label>Ingredients I have</label>
+            <input  id = ingredient-input type="text" placeholder="apples, flour, butter">
+        </div>
+        <div>
+            <label>I want to make</label>
+            <input  id = meal-input type="text"  placeholder="apple pie">
+        </div>
+        <div>
+            <label>I want to cook for less than </label>
+            <input id = time-input type="text" placeholder="60">
+            <span> minutes</span>
+        </div>
+    </form>
+</div>
+
+<!--button do das-->
+<div class = btn-menu>
+    <li><div class="dropdown filter-dropdown"></div></li>
+    <li><button id = "mainsearchbtn" class = "searchbtn" value = "submit" form = "searchform"> Search </button></li>
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verene - Search</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="../scripts/search.js"></script>
+    <link href="../css/generic.css" rel="stylesheet">
+    <link href="../css/searchpage.css" rel="stylesheet">
+
+
+</head>
+<body background="../images/brooke-lark-385507-unsplash.jpg">
+
+<div id = search-placeholder class = "full-searchbar">
+</div>
+
+<div id = search-abt-text>
+    <p> Do you have leftover ingredients in the fridge?</p>
+
+    <p> Cook delicious meals with what you already have using our recipe search.</p>
+</div>
+<script>
+    $(function(){
+        $("#search-placeholder").load("searchbar.html");
+    });
+</script>
+
+
+</body>
+</html>
