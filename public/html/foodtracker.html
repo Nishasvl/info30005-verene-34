@@ -9,6 +9,9 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 <head/>
 
     <style>
@@ -119,27 +122,18 @@
 <body>
 
 
-<nav class="navbar navbar-findcond navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/html/welcomepage.html">Verene</a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="/html/welcomepage.html">Welcome<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="#">Recipe Search<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="/html/foodtracker.html">Food Tracker<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="/html/login.html">Account<span class="sr-only">(current)</span></a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+</script>
+<!--end of Navigation bar-->
+
 
 
 <img src="../images/addicon.jpeg" alt="add" class="add" style="border-radius: 25px;">

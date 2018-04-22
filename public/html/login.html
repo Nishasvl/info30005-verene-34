@@ -9,6 +9,8 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 <script>
 
     $(function() {
@@ -38,27 +40,17 @@
 <body>
 
 
-<nav class="navbar navbar-findcond navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/html/welcomepage.html">Verene</a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="/html/welcomepage.html">Welcome<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="#">Recipe Search<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="/html/foodtracker.html">Food Tracker<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="/html/login.html">Account<span class="sr-only">(current)</span></a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+</script>
+<!--end of Navigation bar-->
 
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -112,6 +104,7 @@
                                     </div>
                                 </div>
                             </form>
+                            <a href="#register">
                             <form id="register-form" action="https://phpoll.com/register/process" method="post" role="form" style="display: none;">
                                 <div class="form-group">
                                     <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
@@ -133,6 +126,7 @@
                                     </div>
                                 </div>
                             </form>
+                            </a>
                         </div>
                     </div>
                 </div>
