@@ -89,7 +89,7 @@
 
 
 
-    var newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="" width = "200" height="200" id="' + newTask +'"' + 'alt="' + newTask +'">'  + colour + '<button class="delete-btn centered">Delete</button>'+'</div>'+'</div>');
+    var newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="" width = "200" height="200" id="' + newTask +'"' + 'alt="' + newTask +'">'  + colour + '<button class="delete-btn centered" >Delete</button>'+'</div>'+'</div>');
 
 
 
@@ -151,34 +151,34 @@
 <img src="../images/addicon.jpeg" alt="add" class="add" style="border-radius: 25px;">
 
 
-<div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block">Add food</button></div>
+<div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="font-family: 'Josefin Slab'">Add food</button></div>
 
 
 <!-- line modal -->
-<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" style="font-family: 'Josefin Slab'">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                <h3 class="modal-title" id="lineModalLabel">Add new item</h3>
+                <h3 class="modal-title" id="lineModalLabel"><b>Add new item</b></h3>
             </div>
             <div class="modal-body">
 
 
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputFile">Food Image*</label>
+                        <label for="exampleInputFile"><b>Food Image*</b></label>
                         <input type="file" id="exampleInputFile">
                     </div>
                     <div class="form-group">
-                        <label for="inputfood">Enter New Food Name*</label>
+                        <label for="inputfood"><b>Enter New Food Name*</b></label>
                         <input type="text" class="form-control" id="inputfood" placeholder="Enter food item">
                     </div>
                     <div class="form-group">
-                        <label for="inputdate">Enter Used by Date*</label>
+                        <label for="inputdate"><b>Enter Used by Date*</b></label>
                         <input type="date" class="form-control" id="inputdate" placeholder="Enter used by date">
                     </div>
-                    <input type="submit" value="Add" class="btn btn-primary center-block">
+                    <input type="submit" value="Add" class="btn btn-primary center-block" style="font-family: 'Josefin Slab'">
 
 
                 </form>

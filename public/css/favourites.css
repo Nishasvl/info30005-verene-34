@@ -1,4 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
 h1{
     padding-top: 60px;
     padding-left: 20px;
+}
+
+body{
+    background: url('../images/rawpixel-com-580221-unsplash.jpg');
+}
+
+h1{
+    font-family: 'Fredericka the Great', cursive;
 }
