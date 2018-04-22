@@ -71,12 +71,7 @@ function reloadResults(recipeArray) {
 
 $(document).ready(function() {
     var header = $('#results-search-header').outerHeight();
-    $('#reciperesults').css('margin-top', header + 10);
-});
-
-$(window).resize(function(){
-    var header = $('#results-search-header').outerHeight();
-    $('#reciperesults').css('margin-top', header + 10);
+    $('#reciperesults').css('margin-top', header + 10 + 55);
 });
 
 
@@ -147,7 +142,7 @@ $(document).ready(function(){
 
 /*--------------------------------Top Search Menu------------------------------------------------------*/
     /* Dropdown bar */
-    $(".dropdown").on("click", ".dropbtn", function(){
+    $(".long-dropdown").on("click", ".dropbtn", function(){
         if($(this).next().hasClass("open-dropdown")){
             $(".open-dropdown").slideToggle({ direction: "down" }, 300);
             $(".dropdown-content").removeClass("open-dropdown");

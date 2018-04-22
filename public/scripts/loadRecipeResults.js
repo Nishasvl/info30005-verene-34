@@ -54,12 +54,17 @@ function createButton(labelname){
 function createRecipeTitleBar(recipe){
     var titleBar = document.createElement("div");
     titleBar.setAttribute("class", "recipe-titlebar");
+
+    //add the title
     var rtitle = document.createElement("p");
     rtitle.innerText = recipe.title;
+    rtitle.setAttribute("class", "recipe-block-title")
     titleBar.appendChild(rtitle);
 
+    // add the ingredients
     titleBar.appendChild(createIngredientList(recipe))
 
+    // add the buttons
     var buttons = document.createElement("div");
     buttons.setAttribute("class", "recipe-block-btns")
     buttons.appendChild(createButton("info"));
