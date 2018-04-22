@@ -9,6 +9,7 @@ body {
     background: url('../images/fridgebackground.png');
     background-position: top;
     background-size:cover;
+    font-family: "Josefin Slab";
 }
 
 .add{
