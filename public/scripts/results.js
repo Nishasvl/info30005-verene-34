@@ -1,4 +1,5 @@
 var recipes = [];
+var favourites = [];
 
 var defaultGeneral = "All Recipes";
 var defaultIngredients = "No Ingredients Entered";
@@ -49,14 +50,6 @@ recipes[4] = {
 };
 
 
-
-function createExtraIngredientsBar(ingredients){
-    for(let i=0; i<ingredients.length; i++){
-
-    }
-
-
-}
 /*reload search results*/
 /*
 function reloadResults(recipeArray) {
@@ -90,16 +83,25 @@ $(document).ready(function(){
     /*Saved recipe confirmation*/
     $("body").on("click", ".save", function(){
         var btn =  $(this);
+        var recipeId = btn.closest('.recipe').attr('id');
+
         if(btn.hasClass("saved")){
             btn.removeClass("saved");
             btn.text("save");
-            return;
+
+            /*/!*remove item from favourites*!/
+            var index = favourites.indexOf(recipes[recipeId]);
+            favourites = favourites.splice(index, 1);
+            return;*/
         }
         $('.bottom-popup').slideToggle({ direction: "up" }, 300)
         $('.bottom-popup').delay(600).fadeOut(1300);
 
         btn.addClass("saved");
         btn.text("saved");
+
+        /*favourites.push(recipes[recipeId]);
+        console.log(favourites);*/
     });
 
 /* ------------------------------------------------------ Modal--------------------------------------------------*/
