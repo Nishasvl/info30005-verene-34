@@ -55,9 +55,15 @@
 
 
 
-
     $(document).ready(function($) {
-    $('form').submit(function() {
+
+        //Delete button removes the tracked item
+        $('.grid-container').on("click", ".delete-btn", function(){
+            $(this).closest(".grid-item").remove();
+        });
+
+
+        $('form').submit(function() {
     if ($('#inputfood').val() !== '') {
     var newTask = $('#inputfood').val();
 
@@ -83,7 +89,7 @@
 
 
 
-    var newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="" width = "200" height="200" id="' + newTask +'"' + 'alt="' + newTask +'">'  + colour + '<button class="centered">Delete</button>'+'</div>'+'</div>');
+    var newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="" width = "200" height="200" id="' + newTask +'"' + 'alt="' + newTask +'">'  + colour + '<button class="delete-btn centered">Delete</button>'+'</div>'+'</div>');
 
 
 
@@ -103,9 +109,10 @@
             }
         }
 
-    newLi.on('click', function() {
+    /*newLi.on('click', function() {
     $(this).remove(); // Attach the event handler *before* adding the element
-    });
+    });*/
+
 
     $('.grid-container').append(newLi); // To put the new task at the top of the list
     previewFile();
