@@ -228,7 +228,7 @@ ul.ingredient-list li:last-child:after {
     text-align: center;
     position: fixed;
     background-color: #ffffff;
-    margin: 0px;
+    margin: auto;
     padding-top: 5px;
     top : 0;
     left: 0;
