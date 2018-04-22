@@ -33,6 +33,8 @@ function createRecipeTitleBar(title){
     titleBar.setAttribute("class", "recipe-titlebar");
     var rtitle = document.createElement("p");
     rtitle.innerText = title;
+    rtitle.setAttribute("class", "recipe-block-title")
+    titleBar.appendChild(rtitle);
     titleBar.appendChild(rtitle);
 
     var buttons = document.createElement("div");
