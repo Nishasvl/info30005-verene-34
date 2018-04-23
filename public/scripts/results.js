@@ -76,7 +76,6 @@ $(document).ready(function(){
 
     $("body").on("click", ".external-link", function(){
         //var recipeId = $(this).closest('.recipe').attr('id');
-        window.open("http://www.bestrecipes.com.au/recipe/creamy-chicken-pasta-L3276.html");
     })
 
 
@@ -91,8 +90,8 @@ $(document).ready(function(){
 
             /*/!*remove item from favourites*!/
             var index = favourites.indexOf(recipes[recipeId]);
-            favourites = favourites.splice(index, 1);
-            return;*/
+            favourites = favourites.splice(index, 1);*/
+            return;
         }
         $('.bottom-popup').slideToggle({ direction: "up" }, 300)
         $('.bottom-popup').delay(600).fadeOut(1300);
@@ -125,6 +124,8 @@ $(document).ready(function(){
             $('#info-modal .save').text("saved");
         };
 
+        /* Reset and set the recipe link*/
+        $('#info-modal a').attr("href", recipes[recipeId].link);
 
         document.getElementById("info-modal").style.display = "block";
     });
