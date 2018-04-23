@@ -1,20 +1,22 @@
 // I'm going to try to merge this and the load results file
-function loadRecipes(recipeArray){
+function loadRecipes(recipeIDArray){
 
-    for(let i=0; i<recipeArray.length; i++){
+    for(let i=0; i<recipeIDArray.length; i++){
+        var favedRecipe = recipes.find(function (obj) { return obj.recipe_id === recipeIDArray[i]; });
+
         /*Create a recipe block*/
         var recipe = document.createElement("div");
         recipe.setAttribute("class", "recipe");
-        recipe.setAttribute("id", recipeArray[i].recipe_id.toString());
+        recipe.setAttribute("id", recipeIDArray[i].toString());
 
 
         /*Create the Image*/
         var image = document.createElement("img");
-        image.src = recipeArray[i].image;
+        image.src = favedRecipe.image;
         recipe.appendChild(image);
 
         /*Add the title & buttons*/
-        recipe.appendChild(createRecipeTitleBar(recipeArray[i].title));
+        recipe.appendChild(createRecipeTitleBar(favedRecipe.title));
 
 
         document.querySelector(".recipe-grid").appendChild(recipe);

@@ -1,5 +1,5 @@
 var recipes = [];
-var favourites = [];
+var modalRecipeId;
 
 var defaultGeneral = "All Recipes";
 var defaultIngredients = "No Ingredients Entered";
@@ -49,6 +49,8 @@ recipes[4] = {
     time: 30
 };
 
+var favourites = [recipes[4].recipe_id];
+
 
 /*reload search results*/
 /*
@@ -88,10 +90,12 @@ $(document).ready(function(){
             btn.removeClass("saved");
             btn.text("save");
 
-            /*/!*remove item from favourites*!/
-            var index = favourites.indexOf(recipes[recipeId]);
-            favourites = favourites.splice(index, 1);*/
             return;
+
+            /*/!*remove item from favourites*!/
+            var index = favourites.indexOf(recipeId);
+            favourites = favourites.splice(index, 1);
+            return;*/
         }
         $('.bottom-popup').slideToggle({ direction: "up" }, 300)
         $('.bottom-popup').delay(600).fadeOut(1300);
@@ -99,13 +103,14 @@ $(document).ready(function(){
         btn.addClass("saved");
         btn.text("saved");
 
-        /*favourites.push(recipes[recipeId]);
+        /*favourites.push(recipeId);
         console.log(favourites);*/
     });
 
 /* ------------------------------------------------------ Modal--------------------------------------------------*/
     $(".recipe-grid").on("click", ".info", function(){
         var recipeId = $(this).closest('.recipe').attr('id');
+        modalRecipeId = recipeId;
 
         $('#info-modal h2').text(recipes[recipeId].title);
         $('#info-modal p span').text(recipes[recipeId].time);
