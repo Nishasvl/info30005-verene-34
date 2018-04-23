@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Verene - Favourites</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="../scripts/loadRecipeFave.js"></script>
     <script src="../scripts/results.js"></script>
+    <script src="../scripts/loadRecipeFave.js"></script>
     <script src="../scripts/favourites.js"></script>
 
 
@@ -22,9 +22,11 @@
     $(function(){
         $("#nav-placeholder").load("nav.html");
     });
+
+    console.log(favourites);
 </script>
 
-<body onload= "loadRecipes([recipes[0], recipes[1], recipes[4]])">
+<body onload= "loadRecipes(favourites)" style='font-family: "Josefin Slab"'>
 
 <h1 style="font-family: 'Fredericka the Great', cursive;">
     My Saved Recipes
