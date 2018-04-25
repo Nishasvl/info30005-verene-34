@@ -1,19 +1,33 @@
 <link rel="stylesheet" type="text/css" href="../css/login.css">
-
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
-
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+
+
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+</script>
+<!--end of Navigation bar-->
+
+
+
+
+
+<!------ Account Page Script ---------->
 
 <script>
 
@@ -38,18 +52,8 @@
 </script>
 
 
-<!--Navigation bar-->
-<div id="nav-placeholder">
 
-</div>
-
-<script>
-    $(function(){
-        $("#nav-placeholder").load("nav.html");
-    });
-</script>
-<!--end of Navigation bar-->
-
+<!------ Account Page html ---------->
 
 <div class="container" style=" background-color: #fff; border-color: #fff; border-radius: 25px; font-family: Josefin Slab; padding: 25px;">
 
@@ -98,8 +102,9 @@
                     <!--4 days Ago-->
                 <!--</div>-->
             <!--</div>-->
-
         </div>
+
+
         <div class="col-md-9  admin-content" id="settings">
             <div class="panel panel-info" style="margin: 1em;">
                 <div class="panel-heading">
@@ -112,20 +117,16 @@
             <div class="panel panel-info" style="margin: 1em;">
                 <div class="panel-heading">
                     <h3 class="panel-title">Admin</h3>
-
                 </div>
                 <div class="panel-body">
                     <div class="label label-success">yes</div>
                 </div>
             </div>
-
         </div>
 
         <div class="col-md-9  admin-content" id="change-password">
             <form >
             <!--<form action="/password" method="post">-->
-
-
                 <div class="panel panel-info" style="margin: 1em;">
                     <div class="panel-heading">
                         <h3 class="panel-title"><label for="new_password" class="control-label panel-title">New Password</label></h3>
@@ -136,7 +137,6 @@
                                 <input type="password" class="form-control" name="password" id="new_password" >
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -187,8 +187,6 @@
                 <!--<form id="logout-form" action="#" method="POST" style="display: none;">-->
                 <form id="logout-form" action="/html/welcomepage.html" style="display: none;">
                 </form>
-
-
 
             </div>
         </div>

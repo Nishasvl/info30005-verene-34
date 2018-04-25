@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
-
-
-
+/*nav bar css*/
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
 nav.navbar-findcond a { color: #617133; font-family: 'Fredericka the Great', cursive; }
 nav.navbar-findcond ul.navbar-nav a {border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
@@ -19,12 +17,19 @@ nav.navbar-findcond li.divider { background: #ccc; }
 html {
     height: 100%;
 }
+
 body {
     background: url('../images/welcomepagebackground.jpg');
     background-position: center;
     background-size:cover;
 
     padding-left: 40%;
-    font-family: 'Fredericka the Great';
+    font-family: "Josefin Slab";
 
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Playfair Display";
+    letter-spacing: 5px;
 }

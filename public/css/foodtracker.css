@@ -12,6 +12,10 @@ body {
     font-family: "Josefin Slab";
 }
 
+
+
+
+/*add button on body*/
 .add{
     width: 100px;
     height: 100px;
@@ -21,8 +25,6 @@ body {
     border-radius: 25px;
 
 }
-
-
 .center {
     margin-top:50px;
     margin-left: 87%;
@@ -32,6 +34,8 @@ body {
 }
 
 
+
+/*modal css*/
 #squarespaceModal{
     margin-top:5%;
 }
@@ -55,4 +59,44 @@ body {
     border-right: 0;
 }
 
+
+
+
+/*food item csse*/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+}
+.grid-item {
+    padding: 25px;
+    font-size: 19px;
+    text-align: center;
+}
+.container1 {
+    position: relative;
+    text-align: center;
+    color: black;
+    border-radius: 50px;
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
+/*delete button and badge notification*/
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.centered {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%);
+}
 

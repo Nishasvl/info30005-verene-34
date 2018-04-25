@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
+
+/*nav bar css*/
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
 nav.navbar-findcond a { color: #617133; font-family: 'Fredericka the Great', cursive; }
 nav.navbar-findcond ul.navbar-nav a {border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
@@ -38,6 +40,8 @@ html,body{
 /*}*/
 
 
+
+/*log in css*/
 .panel-login {
     border-color: #ccc;
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
