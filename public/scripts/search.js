@@ -17,8 +17,24 @@
 $(document).ready(function(){
 
 
-    $(function(){
-        $(".filter-dropdown").load("filtermenu.html");
+    $("body").on("click", ".long-dropdown>.dropbtn", function(){
+        var minHeight = $(".dropdown-content").css('min-height');
+
+        if($(this).next().hasClass("open-dropdown")){
+            $(".open-dropdown").slideToggle({ direction: "down" }, 300);
+            $(".dropdown-content").removeClass("open-dropdown");
+            return;
+        }
+
+        // CLose the other open dropdown menus
+        $(".open-dropdown").slideToggle({ direction: "down" }, 300);
+        $(".dropdown-content").removeClass("open-dropdown");
+
+        // Open this dropdown menu
+        $(this).next().addClass("open-dropdown")
+        $(".open-dropdown").css('min-height',0).slideToggle({ direction: "down" }, 300, function() {
+            $(this).css('min-height', minHeight);
+        });
     });
 
 
@@ -33,9 +49,7 @@ $(document).ready(function(){
     });
 
     //
-    $(".filter-dropdown").on("click", ".dropbtn", function(){
-        $('.dropdown-content').slideToggle({ direction: "down" }, 300)
-    });
+
 
 });
 

@@ -1,4 +1,3 @@
-<script src="../scripts/search.js"></script>
 
 <!--Search Banner-->
 <h1 style="font-family: 'Fredericka the Great'">Find a recipe</h1>
@@ -23,6 +22,13 @@
 
 <!--button do das-->
 <div class = btn-menu>
-    <li><div class="long-dropdown filter-dropdown"></div></li>
-    <li><button id = "mainsearchbtn" class = "searchbtn" value = "submit" form = "searchform"> Search </button></li>
+    
+    <ul><li><div class="long-dropdown filter-dropdown"></div></li>
+    <li><button id = "mainsearchbtn" class = "searchbtn" value = "submit" form = "searchform"> Search </button></li></ul>
 </div>
+
+<script>
+    $(function(){
+        $(".filter-dropdown").load("filtermenu.html");
+    });
+</script>
