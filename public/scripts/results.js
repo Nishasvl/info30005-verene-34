@@ -78,25 +78,27 @@ $(document).ready(function(){
 
     $("body").on("click", ".external-link", function(){
         //var recipeId = $(this).closest('.recipe').attr('id');
-    })
+    });
 
-
-    /*Saved recipe confirmation*/
-    $("body").on("click", ".save", function(){
+    $("body").on("click", ".saved", function(){
         var btn =  $(this);
-        var recipeId = btn.closest('.recipe').attr('id');
+        btn.removeClass("saved");
+        btn.text("save");
 
-        if(btn.hasClass("saved")){
-            btn.removeClass("saved");
-            btn.text("save");
-
-            return;
-
-            /*/!*remove item from favourites*!/
+        /*/!*remove item from favourites*!/
             var index = favourites.indexOf(recipeId);
             favourites = favourites.splice(index, 1);
             return;*/
-        }
+
+    });
+
+
+
+    /*Clicking on a "save" button*/
+    $("body").on("click", ".save:not(.saved)", function(){
+        var btn =  $(this);
+        var recipeId = btn.closest('.recipe').attr('id');
+
         $('.bottom-popup').slideToggle({ direction: "up" }, 300)
         $('.bottom-popup').delay(600).fadeOut(1300);
 
@@ -151,20 +153,29 @@ $(document).ready(function(){
 /*--------------------------------Top Search Menu------------------------------------------------------*/
     /* Dropdown bar */
     $(".long-dropdown").on("click", ".dropbtn", function(){
+
+        var minHeight = $(".dropdown-content").css('min-height');
+
         if($(this).next().hasClass("open-dropdown")){
             $(".open-dropdown").slideToggle({ direction: "down" }, 300);
             $(".dropdown-content").removeClass("open-dropdown");
             return;
         }
 
+        // CLose the other open dropdown menus
         $(".open-dropdown").slideToggle({ direction: "down" }, 300);
         $(".dropdown-content").removeClass("open-dropdown");
 
+        // Open this dropdown menu
         $(this).next().addClass("open-dropdown")
-        $(".open-dropdown").slideToggle({ direction: "down" }, 300);
+        /*$(".open-dropdown").slideToggle({ direction: "down" }, 300);*/
+        $(".open-dropdown").css('min-height',0).slideToggle({ direction: "down" }, 300, function() {
+            $(this).css('min-height', minHeight);
+        });
     });
 
 
+    /*Changes the style of a clicked on filter*/
     $(".filter-dropdown").on("click", "li", function(){
         if(this.className === "filter-clicked"){
             $(this).removeClass("filter-clicked");
