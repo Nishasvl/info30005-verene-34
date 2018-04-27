@@ -70,34 +70,35 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function(){
+$(document).ready(function() {
     /*loads the filter menu*/
-    $(function(){
+    $(function () {
         $(".filter-dropdown").load("filtermenu.html");
     });
 
-    $("body").on("click", ".external-link", function(){
+    $("body").on("click", ".external-link", function () {
         //var recipeId = $(this).closest('.recipe').attr('id');
-    })
+    });
 
+    $("body").on("click", ".saved", function () {
+        var btn = $(this);
+        btn.removeClass("saved");
+        btn.text("save");
 
-    /*Saved recipe confirmation*/
-    $("body").on("click", ".save", function(){
-        var btn =  $(this);
-        var recipeId = btn.closest('.recipe').attr('id');
-
-        if(btn.hasClass("saved")){
-            btn.removeClass("saved");
-            btn.text("save");
-
-            return;
-
-            /*/!*remove item from favourites*!/
+        /*/!*remove item from favourites*!/
             var index = favourites.indexOf(recipeId);
             favourites = favourites.splice(index, 1);
             return;*/
-        }
-        $('.bottom-popup').slideToggle({ direction: "up" }, 300)
+
+    });
+
+
+    /*Clicking on a "save" button*/
+    $("body").on("click", ".save:not(.saved)", function () {
+        var btn = $(this);
+        var recipeId = btn.closest('.recipe').attr('id');
+
+        $('.bottom-popup').slideToggle({direction: "up"}, 300)
         $('.bottom-popup').delay(600).fadeOut(1300);
 
         btn.addClass("saved");
@@ -107,8 +108,8 @@ $(document).ready(function(){
         console.log(favourites);*/
     });
 
-/* ------------------------------------------------------ Modal--------------------------------------------------*/
-    $(".recipe-grid").on("click", ".info", function(){
+    /* ------------------------------------------------------ Modal--------------------------------------------------*/
+    $(".recipe-grid").on("click", ".info", function () {
         var recipeId = $(this).closest('.recipe').attr('id');
         modalRecipeId = recipeId;
 
@@ -119,15 +120,16 @@ $(document).ready(function(){
         $('#info-modal .save').removeClass("saved");
         $('#full-ingredient-list').append($("<lh>").text("Ingredients: "));
 
-        for(let i=0; i<recipes[recipeId].ingredients.length; i++){
+        for (let i = 0; i < recipes[recipeId].ingredients.length; i++) {
             var ingredient = $("<li>").text(recipes[recipeId].ingredients[i]);
             $('#info-modal ul').append(ingredient);
         }
 
-        if($(this).next().hasClass("remove") || $(this).next().hasClass("saved")){
+        if ($(this).next().hasClass("remove") || $(this).next().hasClass("saved")) {
             $('#info-modal .save').addClass("saved");
             $('#info-modal .save').text("saved");
-        };
+        }
+        ;
 
         /* Reset and set the recipe link*/
         $('#info-modal a').attr("href", recipes[recipeId].link);
@@ -136,7 +138,7 @@ $(document).ready(function(){
     });
 
     /*Close Modal with x*/
-    $("#info-modal-container").on("click", ".close", function(){
+    $("#info-modal-container").on("click", ".close", function () {
         $(".modal").css('display', 'none');
     });
 
@@ -147,30 +149,6 @@ $(document).ready(function(){
             $(".modal").css('display', 'none');
         }
     });*/
-
-/*--------------------------------Top Search Menu------------------------------------------------------*/
-    /* Dropdown bar */
-    $(".long-dropdown").on("click", ".dropbtn", function(){
-        if($(this).next().hasClass("open-dropdown")){
-            $(".open-dropdown").slideToggle({ direction: "down" }, 300);
-            $(".dropdown-content").removeClass("open-dropdown");
-            return;
-        }
-
-        $(".open-dropdown").slideToggle({ direction: "down" }, 300);
-        $(".dropdown-content").removeClass("open-dropdown");
-
-        $(this).next().addClass("open-dropdown")
-        $(".open-dropdown").slideToggle({ direction: "down" }, 300);
-    });
-
-
-    $(".filter-dropdown").on("click", "li", function(){
-        if(this.className === "filter-clicked"){
-            $(this).removeClass("filter-clicked");
-            return;
-        }
-        $(this).addClass("filter-clicked");
-    });
-
 });
+
+

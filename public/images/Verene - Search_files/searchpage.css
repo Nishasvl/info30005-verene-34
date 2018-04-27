@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
+*{
+    box-sizing: border-box;
+}
+
+
+.full-searchbar{
+    padding: 5px 0 15px 0;
+    margin: 8% 0 0 0;
+    background-color: rgba(233, 233, 233, 0.95);
+    text-align: center;
+    position: relative;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+}
+
+body{
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    font-family: "Josefin Slab";
+}
+
+.full-searchbar form{
+    margin: 0 auto 20px auto;
+    display: table;
+    text-align: justify;
+    padding-left: 30px;
+
+}
+
+.full-searchbar p{
+    margin-bottom: 0;
+    font-style: italic;
+    font-size: 15px;
+}
+
+
+#searchform-container{
+    width: 100%;
+}
+
+#search-abt-text{
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+
+
+#searchform label {
+    text-align: left;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+#searchform input{
+    text-align: left;
+}
+
+#searchform span {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#searchform input[type=text] {
+    padding: 10px 0 10px 10px;
+    border: none;
+    border-bottom: 1px solid black ;
+    margin: 8px 2px 0 4px;
+    font-size: 17px;
+    background-color: rgba(204, 214, 196, 0.84);
+}
+
+#time-input{
+    width: 20%;
+}
+
+#ingredient-input{
+    width: 49%;
+}
+#meal-input{
+    width: 53%;
+}
