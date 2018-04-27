@@ -1,7 +1,5 @@
-
+//Delete button removes the tracked item
 $(document).ready(function($) {
-
-    //Delete button removes the tracked item
     $('.grid-container').on("click", ".delete-btn", function(){
         $(this).closest(".grid-item").remove();
     });
