@@ -7,4 +7,4 @@ var foodSchema = mongoose.Schema({
         "date": String
     }
 );
-mongoose.model('food'.foodSchema);
+mongoose.model('food', foodSchema);

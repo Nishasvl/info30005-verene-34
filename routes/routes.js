@@ -5,7 +5,34 @@ const controller = require('../controllers/controller.js');
 router.get('/', controller.displayPage);
 
 
-//create new user from lecture
-// router.post('/api', controller.createUser);
+// // create new user from lecture
+router.post('/api', controller.registerUser);
+
+router.get('/api', controller.findAllUsers);
+
+
 
 module.exports = router;
+
+
+
+// var path = require('path');
+// var bodyParser = require('body-parser');
+// var mongodb = require('mongodb');
+//
+// var dbConn = mongodb.MongoClient.connect('mongodb://jennifer:Jennifer1234@ds261429.mlab.com:61429/verene');
+//
+// var app = express();
+//
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(express.static(path.resolve(__dirname, 'public')));
+//
+//
+// app.post('/post-feedback', function (req, res) {
+//     dbConn.then(function(db) {
+//         delete req.body._id; // for safety reasons
+//         db.collection('feedbacks').insertOne(req.body);
+//     });
+//     res.send('Data received:\n' + JSON.stringify(req.body));
+// });
+

@@ -1,3 +1,20 @@
+
+// Create database based on lecture notes
+var mongoose = require('mongoose');
+// mongoose.connect('mongodb://jennifer:Jennifer1234@ds261429.mlab.com:61429/verene');
+mongoose.connect('mongodb://jennifer:Jennifer1234@ds261429.mlab.com:61429/verene', function(err){
+    if(!err){
+        console.log('Connected to mongo');
+    }else{
+        console.log('Failed to connect to mongo');
+    }
+});
+
+require('./user.js');
+// require('./food.js');
+// require('./favourites.js');
+
+
 // Retrieve works but cant use it based on lecture structure
 // var MongoClient = require('mongodb').MongoClient;
 //
@@ -18,17 +35,4 @@
 
 
 
-// Create database based on lecture notes cannot connect to website
-// var mongoose = require('mongoose');
-// mongoose.connect('mongodb://verene:Verene1234@ds261429.mlab.com:61429/verene', function(err){
-//     if(!err){
-//         console.log('Connected to mongo');
-//     }else{
-//         console.log('Failed to connect to mongo');
-//     }
-// });
-
-// require('./users.js');
-// require('./food.js');
-// require('./favourites.js');
 

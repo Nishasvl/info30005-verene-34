@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 
-// Database set up
+// // Database set up
 require('./models/db.js');
 
 

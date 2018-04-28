@@ -4,4 +4,4 @@ var favouritesSchema = mongoose.Schema({
         "recipeid": String
     }
 );
-mongoose.model('favourites'.favouritesSchema);
+mongoose.model('favourites', favouritesSchema);
