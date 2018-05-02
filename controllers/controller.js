@@ -86,8 +86,20 @@ var findAllUsers = function(req,res){
         }
     });
 };
+
+var findOneUser = function(req,res){
+    var userInx = req.params.id;
+    User.findById(userInx, function(err, user){
+        if(!err){
+            res.send(user);
+        }else{
+            res.sendStatus(404);
+        }
+    });
+};
 //
 module.exports.registerUser = registerUser;
 module.exports.findAllUsers = findAllUsers;
+module.exports.findOneUser = findOneUser;
 
 

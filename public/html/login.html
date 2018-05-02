@@ -67,6 +67,28 @@
             e.preventDefault();
         });
 
+        $('#register-submit').submit(false);
+        $('#register-submit').click(function(e) {
+            $.ajax({
+                type: "POST",
+                url: "/api",
+                data: JSON.stringify({
+                    username: "jesdb",
+                    name: "jesbsd",
+                    email: "jedsbs",
+                    password: "jesds"
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(data){
+                    alert(data);
+                },
+                failure: function(errMsg) {
+                    alert(errMsg);
+                }
+            });
+        })
+
     });
 </script>
 
@@ -139,7 +161,7 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
-                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                            <input type="button" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
                                         </div>
                                     </div>
                                 </div>

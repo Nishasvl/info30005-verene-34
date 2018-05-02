@@ -10,7 +10,7 @@ router.post('/api', controller.registerUser);
 
 router.get('/api', controller.findAllUsers);
 
-
+router.get('/api', controller.findOneUser);
 
 module.exports = router;
 
