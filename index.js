@@ -1,5 +1,15 @@
 const express = require('express');
 const app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
+
+// // Database set up
+require('./models/db.js');
+
 
 const router = require('./routes/routes.js');
 app.use(router);
