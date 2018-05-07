@@ -3,32 +3,32 @@
 <h1 style="font-family: 'Fredericka the Great'">Find a recipe</h1>
 <p>Fill in at least one of the boxes</p>
 <div id = searchform-container>
-    <form id = searchform action = 'reciperesults.html'>
+    <form id = searchform action = '/results' method = "get">
         <div>
             <label>Ingredients I have</label>
-            <input  id = ingredient-input type="text" placeholder="apples, flour, butter">
+            <input  id = ingredient-input type="text" name = "q1" placeholder="apples, flour, butter">
         </div>
         <div>
             <label>I want to make</label>
-            <input  id = meal-input type="text"  placeholder="apple pie">
+            <input  id = meal-input type="text" name = "q2" placeholder="apple pie">
         </div>
-        <div>
+        <!--<div>
             <label>I want to cook for less than </label>
-            <input id = time-input type="text" placeholder="60">
+            <input id = time-input type="text" name = "time" placeholder="60">
             <span> minutes</span>
+        </div>-->
+        <div class = btn-menu>
+            <ul><li><div id="btn-menu-placeholder"></div></li>
+                <li><button id = "mainsearchbtn" class = "searchbtn" value = "submit" form = "searchform"> Search </button></li></ul>
         </div>
     </form>
 </div>
 
 <!--button do das-->
-<div class = btn-menu>
-    
-    <ul><li><div class="long-dropdown filter-dropdown"></div></li>
-    <li><button id = "mainsearchbtn" class = "searchbtn" value = "submit" form = "searchform"> Search </button></li></ul>
-</div>
+
 
 <script>
-    $(function(){
-        $(".filter-dropdown").load("filtermenu.html");
+    $(function () {
+        $("#btn-menu-placeholder").load("/html/filterbuttonmenu.html");
     });
 </script>

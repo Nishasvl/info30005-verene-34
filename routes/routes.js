@@ -3,14 +3,11 @@ const html_dir = '/../public/html';
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/controller.js');
+const request = require('request');
 
 
-//main pages
-
-
-/*
 router.get('/', controller.displayPage);
-*/
+
 
 
 
@@ -23,30 +20,14 @@ router.get('/api', controller.findAllUsers);
 
 router.get('/api', controller.findOneUser);*/
 
-router.post('/foodtracker', controller.registerFood);
+/*router.post('/foodtracker', controller.registerFood);
+
+router.get('/results', controller.displayRecipes);
+
+router.get('/favourites', controller.displayRecipes);*/
+
+
+
 
 
 module.exports = router;
-
-
-
-// var path = require('path');
-// var bodyParser = require('body-parser');
-// var mongodb = require('mongodb');
-//
-// var dbConn = mongodb.MongoClient.connect('mongodb://jennifer:Jennifer1234@ds261429.mlab.com:61429/verene');
-//
-// var app = express();
-//
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(express.static(path.resolve(__dirname, 'public')));
-//
-//
-// app.post('/post-feedback', function (req, res) {
-//     dbConn.then(function(db) {
-//         delete req.body._id; // for safety reasons
-//         db.collection('feedbacks').insertOne(req.body);
-//     });
-//     res.send('Data received:\n' + JSON.stringify(req.body));
-// });
-

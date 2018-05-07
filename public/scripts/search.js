@@ -39,16 +39,33 @@ $(document).ready(function(){
 
 
 
-    // Select a filter / deselect filter
-    $(".filter-dropdown").on("click", "li", function(){
-        if(this.className === "filter-clicked"){
-            $(this).removeClass("filter-clicked");
-            return;
-        }
-        $(this).addClass("filter-clicked");
-    });
+    /*$('#myForm').submit(function() {
+        // Get all the forms elements and their values in one step
+        var values = $(this).serialize();
 
-    //
+    });*/
+
+    //Form submission
+    /*$('#search-placeholder').on("click", "#mainsearchbtn", function () {
+
+        //#search-placeholder #timeform, #search-placeholder #ingrform
+        var dataString = $("#search-placeholder #searchform, #search-placeholder #timeform, #search-placeholder #ingrform").serialize();
+        console.log(dataString);
+
+        $.ajax({
+            type: 'GET',
+            url: '/results',
+            data: dataString,
+            success: function(result) {
+
+
+            },
+            error: function(error) {
+                alert(error);
+            }
+        });
+
+    });*/
 
 
 });

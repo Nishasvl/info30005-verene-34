@@ -1,17 +1,76 @@
 const html_dir = '/../public/html';
-
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 var User = require('../models/user.js');
 var Food = require('../models/food.js');
+const request = require('request');
+
+const resultsPerPage = 24;
 
 module.exports = {
     displayPage : function(req, res){
         res.sendFile('welcomepage.html', {root: __dirname + html_dir});
+    },
+
+    //Can reuse this for the saved recipes part
+    displayRecipes: function (req, res) {
+        var page = 1;
+        if(req.query.page) {
+            page = parseInt(req.query.page);
+        }
+
+        var params = {
+            q: "",
+            app_id: 'dbcdbcc5',
+            app_key: 'e27dcbc8560a954e9f5c692ee4fa6b3c',
+            from: ((page-1) * resultsPerPage).toString(),
+            to: ((page-1) * resultsPerPage + resultsPerPage).toString()
+        }
+
+        if(req.query.health) {
+            params.health = req.query.health;
+        }
+        if(req.query.q1){
+            params.q = req.query.q1;
+        }
+        if(req.query.q2){
+            params.q += "," + req.query.q2;
+        }
+        if(req.query.t){
+            params.time = req.query.t;
+        }
+        if(req.query['m']) {
+            params.ingr = (parseInt(req.query['m']) + req.query.q1.split(',').length).toString();
+        }
+
+        request.get({
+                uri: "https://api.edamam.com/search",
+                qs: params,
+                method: 'GET',
+            },
+            function (error, response, body) {
+                if (!error && response.statusCode == 200) {
+                    var locals = JSON.parse(body);
+                    res.render('results_template', {
+                        locals:locals,
+                        searchParams:params,
+                        q1:req.query.q1,
+                        q2:req.query.q2,
+                        m: req.query.m,
+                        page: page,
+                    });
+                }
+                /* //this isn't printing for some reason
+                 console.log(response.statusCode, body);
+                 res.render("results", {data: JSON.parse(body)});
+             } else {
+                 console.log(error);
+                 return;
+             }*/
+            })
     }
 };
-
 
 // module.exports = {
 //     registerUser: function (req, res) {

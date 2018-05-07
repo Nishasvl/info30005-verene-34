@@ -4,6 +4,20 @@ var modalRecipeId;
 var defaultGeneral = "All Recipes";
 var defaultIngredients = "No Ingredients Entered";
 
+console.log(recipeData);
+
+
+recipe = {
+    uri : "id",
+    label : "title",
+    image : "image url",
+    url : "link",
+    source: "source website name",
+    healthLabels: "allergerns",
+    ingredientLines: "ingredients with quantities",
+    yield : "serving no"
+}
+
 recipes[0] = {
     recipe_id : 0,
     title : "Chicken Pasta",
@@ -71,10 +85,7 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-    /*loads the filter menu*/
-    $(function () {
-        $(".filter-dropdown").load("filtermenu.html");
-    });
+    /*loads the filter menu GET RID OF THIS*/
 
     $("body").on("click", ".external-link", function () {
         //var recipeId = $(this).closest('.recipe').attr('id');
@@ -112,16 +123,25 @@ $(document).ready(function() {
     $(".recipe-grid").on("click", ".info", function () {
         var recipeId = $(this).closest('.recipe').attr('id');
         modalRecipeId = recipeId;
+        var recipe;
 
-        $('#info-modal h2').text(recipes[recipeId].title);
-        $('#info-modal p span').text(recipes[recipeId].time);
+        for(let i=0; i<recipeData.length; i++){
+            console.log(recipeData[i].recipe);
+            if(recipeData[i]["recipe"]["uri"] == recipeId){
+                recipe = recipeData[i].recipe;
+                break;
+            }
+        }
+
+        $('#info-modal h2').text(recipe.label);
+        $('#info-modal p span').text(recipe.totalTime);
 
         $('#full-ingredient-list').empty();
         $('#info-modal .save').removeClass("saved");
         $('#full-ingredient-list').append($("<lh>").text("Ingredients: "));
 
-        for (let i = 0; i < recipes[recipeId].ingredients.length; i++) {
-            var ingredient = $("<li>").text(recipes[recipeId].ingredients[i]);
+        for (let i = 0; i < recipe.ingredientLines.length; i++) {
+            var ingredient = $("<li>").text(recipe.ingredientLines[i]);
             $('#info-modal ul').append(ingredient);
         }
 
@@ -132,7 +152,7 @@ $(document).ready(function() {
         ;
 
         /* Reset and set the recipe link*/
-        $('#info-modal a').attr("href", recipes[recipeId].link);
+        $('#info-modal a').attr("href", recipe.url);
 
         document.getElementById("info-modal").style.display = "block";
     });
@@ -149,6 +169,10 @@ $(document).ready(function() {
             $(".modal").css('display', 'none');
         }
     });*/
+
+
+
+
 });
 
 
