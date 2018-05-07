@@ -10,6 +10,7 @@ module.exports = {
     displayHome: function(req, res){
         //res.render('home', { user: req.user });
         res.sendFile('home.html', {root: __dirname + html_dir});
+        console.log(req.user);
     },
 
     displayWelcomeorHome: function(req,res){
@@ -24,11 +25,4 @@ module.exports = {
         req.logout();
         res.redirect('/');
     }
-
-
-
-
-
-
-
 }
