@@ -1,16 +1,30 @@
+const html_dir = '/../public/html';
+
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/controller.js');
 
+
+//main pages
+
+
+/*
 router.get('/', controller.displayPage);
+*/
+
 
 
 // // create new user from lecture
-router.post('/api', controller.registerUser);
+/*router.post('/login', controller.login);
+
+router.post('/register', controller.registerUser);
 
 router.get('/api', controller.findAllUsers);
 
-router.get('/api', controller.findOneUser);
+router.get('/api', controller.findOneUser);*/
+
+router.post('/foodtracker', controller.registerFood);
+
 
 module.exports = router;
 

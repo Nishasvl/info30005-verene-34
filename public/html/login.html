@@ -66,25 +66,46 @@
             $(this).addClass('active');
             e.preventDefault();
         });
+        //
+        // $('#login-submit').click(function(e) {
+        //     $.ajax({
+        //         type: "post",
+        //         url: "/login",
+        //         data: JSON.stringify({
+        //             username: $('#loginusername').val(),
+        //             password: $('#loginpassword').val()
+        //         }),
+        //         contentType: "application/json; charset=utf-8",
+        //         dataType: "json",
+        //         success: function(data){
+        //             console.log("yay");
+        //             console.log(data);
+        //         },
+        //         failure: function(errMsg) {
+        //             console.log(":(");
+        //             console.log(errMsg);
+        //         }
+        //     })
+        // });
 
         $('#register-submit').submit(false);
         $('#register-submit').click(function(e) {
             $.ajax({
                 type: "POST",
-                url: "/api",
+                url: "/signup",
                 data: JSON.stringify({
-                    username: "jesdb",
-                    name: "jesbsd",
-                    email: "jedsbs",
-                    password: "jesds"
+                    username: $('#username').val(),
+                    name: $('#name').val(),
+                    email: $('#email').val(),
+                    password: $('#password').val()
                 }),
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function(data){
-                    alert(data);
+                    console.log(data);
                 },
                 failure: function(errMsg) {
-                    alert(errMsg);
+                    console.log(errMsg);
                 }
             });
         })
@@ -113,7 +134,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <!--<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">-->
-                            <form id="login-form" action="home.html" role="form" style="display: block;">
+                            <form id="login-form" role="form" style="display: block;" action = "/login" method = "post">
                                 <div class="form-group">
                                     <input type="text" name="username" id="loginusername" tabindex="1" class="form-control" placeholder="Username" value="">
                                 </div>
@@ -142,7 +163,7 @@
                                 </div>
                             </form>
                             <a href="#register">
-                            <form id="register-form" action="http://localhost:3020/api" method="post" role="form" style="display: none;">
+                            <form id="register-form" method="post" role="form" style="display: none;">
                                 <div class="form-group">
                                     <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
                                 </div>

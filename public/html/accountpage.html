@@ -20,7 +20,7 @@
 
 <script>
     $(function(){
-        $("#nav-placeholder").load("nav.html");
+        $("#nav-placeholder").load("/html/nav.html"); // for the router
     });
 </script>
 <!--end of Navigation bar-->
@@ -66,7 +66,7 @@
                 <li class="active"><a href="" data-target-id="profile"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
                 <li><a href="" data-target-id="change-password"><i class="glyphicon glyphicon-lock"></i> Change Password</a></li>
                 <li><a href="" data-target-id="settings"><i class="glyphicon glyphicon-cog"></i> Settings</a></li>
-                <li><a href="" data-target-id="logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                <li><a href="/signout" data-target-id="logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
             </ul>
         </div>
 
@@ -187,7 +187,7 @@
                     <a href="/account" class="label label-success"> <span >  No   </span></a>
                 </div>
                 <!--<form id="logout-form" action="#" method="POST" style="display: none;">-->
-                <form id="logout-form" action="/html/welcomepage.html" style="display: none;">
+                <form id="logout-form" action="/logout" style="display: none;">
                 </form>
 
             </div>

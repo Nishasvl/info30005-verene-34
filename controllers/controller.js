@@ -1,9 +1,10 @@
 const html_dir = '/../public/html';
 
 var mongoose = require('mongoose');
-var User = mongoose.model('users');
-
-
+var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
+var User = require('../models/user.js');
+var Food = require('../models/food.js');
 
 module.exports = {
     displayPage : function(req, res){
@@ -61,17 +62,41 @@ module.exports = {
 
 //
 var registerUser = function(req, res){
+    const hashedPassword = bcrypt.hashSync(req.body.password, 8);
     var user = new User({
         "username": req.body.username,
         "name": req.body.name,
         "email": req.body.email,
-        "password": req.body.password
+        "password": hashedPassword
     });
     user.save(function(err,newUser){
         if(!err){
             res.send(newUser);
         } else{
             res.sendStatus(400);
+        }
+    })
+};
+
+var login = function(req, res){
+    console.log(req.body);
+    const username = req.body.username;
+    User.findOne({username: username}, username, (err, user) => {
+        if (!err) {
+            console.log(user);
+            if (bcrypt.compareSync(req.body.password, user.password)) {
+                const token = jwt.sign({ id: user.username }, process.env.SECRET, {
+                    expiresIn: 86400 // expires in 24 hours
+                });
+                res.status(200).send({auth: true, token: token});
+                console.log("worked")
+            } else {
+                res.sendStatus(401);
+                console.log("didn't work");
+            }
+        } else {
+            res.sendStatus(404);
+            console.log("couldn't find user")
         }
     });
 };
@@ -97,9 +122,28 @@ var findOneUser = function(req,res){
         }
     });
 };
+
+
+var registerFood = function(req, res){
+    console.log(req.body);
+    var food = new Food({
+        "username": req.username,
+        "name": req.body.name,
+        "image": req.body.image,
+        "date": req.body.date,
+
+    });
+    food.save(function(err, newFood){
+        if(!err){
+            res.send(newFood);
+        } else{
+            res.sendStatus(400);
+        }
+    })
+};
 //
 module.exports.registerUser = registerUser;
 module.exports.findAllUsers = findAllUsers;
 module.exports.findOneUser = findOneUser;
-
-
+module.exports.login = login;
+module.exports.registerFood = registerFood;
