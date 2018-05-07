@@ -1,10 +1,10 @@
 var mongoose =  require('mongoose');
 var foodSchema = mongoose.Schema({
-        "userid": String,
-        "foodid": String,
+        "username": String,
         "name": String,
         "image": String,
         "date": String
     }
 );
-mongoose.model('food', foodSchema);
+var Food = mongoose.model('food', foodSchema);
+module.exports = Food;

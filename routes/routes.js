@@ -23,6 +23,7 @@ router.get('/api', controller.findAllUsers);
 
 router.get('/api', controller.findOneUser);*/
 
+router.post('/foodtracker', controller.registerFood);
 
 
 module.exports = router;
