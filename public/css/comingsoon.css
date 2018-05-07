@@ -1,0 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+
+
+html {
+    height: 100%;
+}
+body {
+    background: url('https://source.unsplash.com/pYWrdKO5ksI');
+    background-position: center;
+    background-size:cover;
+
+    color: white;
+    font-family: 'Fredericka the Great', cursive;
+
+    padding-right: 7%;
+    text-align: right;
+}
+h1{
+    font-weight: 400;
+    font-size:8em;
+}
+
+
+

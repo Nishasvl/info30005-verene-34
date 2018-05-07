@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verene - Search Results</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="../scripts/loadRecipeResults.js"></script>
+    <script src="../scripts/results.js"></script>
+    <script src="../scripts/search.js"></script>
+
+    <link href="../css/generic.css" rel="stylesheet">
+
+
+</head>
+<body onload= "loadRecipes(recipes);" background="../images/dust_scratches.png" style='font-family: "Josefin Slab"'>
+
+
+
+<div id = nav-placeholder></div>
+
+
+<!--Search Header----------------------------------------------------------------------------------------------------->
+<div id = results-search-header>
+    <form id = resultsform>
+        <label>Ingredients: <input type="text" value="garlic"></label>
+        <label >Searching For: <input id = "general-rs-form" type="text" value="All Recipes"></label>
+        <span><button id = "recipesearchbtn" class = "searchbtn" value = "submit" form = "resultsform")> Search </button></span>
+    </form>
+
+    <!--menu-->
+    <div class="btn-menu">
+        <ul>
+            <li><div class="long-dropdown filter-dropdown"></div></li>
+
+            <li><div class = long-dropdown>
+                <button class = dropbtn>Cooking Time
+                    <i class ="arrow-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <label>Max. Cooking Time <input type="text" value="30"> mins.</label>
+                </div>
+            </div></li>
+
+            <li><div class = long-dropdown>
+                <button class = dropbtn >Number of Extra Ingredients
+                    <i class ="arrow-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <label>Less than <input type="text" value="6"> additional ingredients.</label>
+                </div>
+            </div></li>
+
+        </ul>
+    </div>
+
+
+</div>
+
+
+
+<!--Results Section--------------------------------------------------------------------------------------------------->
+<div id = "reciperesults" class = "recipe-grid">
+</div>
+
+<!--Saved Confirmation Popup------------------------------------------------------------------------------------------>
+<div class = "bottom-popup" >
+    <p>Recipe was saved!</p>
+</div>
+
+<!--Info Modal-------------------------------------------------------------------------------------------------------->
+<div id="info-modal-container">
+
+</div>
+
+<script>
+    $(function(){
+        $("#info-modal-container").load("infomodal.html");
+    });
+
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+</script>
+
+</body>
+</html>

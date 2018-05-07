@@ -14,6 +14,12 @@ var isAuthenticated = function (req, res, next) {
 }
 
 module.exports = function(passport){
+
+    router.get('/account', function(req, res){
+        res.sendFile('accountpage.html', {root: __dirname + html_dir});
+    });
+
+
     /*/!* GET login page. *!/
     router.get('/html/login.html', function(req, res) {
         // Display the Login page with any flash message, if any
@@ -52,6 +58,7 @@ module.exports = function(passport){
 
     /* Handle Logout */
     router.get('/logout', controller.logoutUser);
+
 
     return router;
 }

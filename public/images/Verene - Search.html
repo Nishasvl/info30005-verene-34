@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://localhost:3020/html/searchpage.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Verene - Search</title>
+    <script src="./Verene - Search_files/jquery-3.3.1.js.download"></script>
+    <script src="./Verene - Search_files/search.js.download"></script>
+    <link href="./Verene - Search_files/generic.css" rel="stylesheet">
+    <link href="./Verene - Search_files/searchpage.css" rel="stylesheet">
+
+
+</head>
+<body background="./Verene - Search_files/brooke-lark-385507-unsplash.jpg" style="font-family: &quot;Josefin Slab&quot;" ;="">
+<div id="nav-placeholder"><link rel="stylesheet" type="text/css" href="./Verene - Search_files/nav.css">
+<link href="./Verene - Search_files/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<script src="./Verene - Search_files/jquery-1.11.1.min.js.download"></script>
+<script src="./Verene - Search_files/bootstrap.min.js.download"></script>
+
+
+<nav class="navbar navbar-findcond navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://localhost:3020/html/welcomepage.html">Verene</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="http://localhost:3020/html/home.html">Home<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="http://localhost:3020/html/searchpage.html">Recipe Search<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="http://localhost:3020/html/foodtracker.html">Food Tracker<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="http://localhost:3020/html/favourites.html">Saved Recipes<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="http://localhost:3020/html/accountpage.html">Account<span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+</div>
+
+<script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+</script>
+
+<div id="search-placeholder" class="full-searchbar"><script src="./Verene - Search_files/search.js.download"></script>
+
+<!--Search Banner-->
+<h1 style="font-family: &#39;Fredericka the Great&#39;">Find a recipe</h1>
+<p>Fill in at least one of the boxes</p>
+<div id="searchform-container">
+    <form id="searchform" action="http://localhost:3020/html/reciperesults.html">
+        <div>
+            <label>Ingredients I have</label>
+            <input id="ingredient-input" type="text" placeholder="apples, flour, butter">
+        </div>
+        <div>
+            <label>I want to make</label>
+            <input id="meal-input" type="text" placeholder="apple pie">
+        </div>
+        <div>
+            <label>I want to cook for less than </label>
+            <input id="time-input" type="text" placeholder="60">
+            <span> minutes</span>
+        </div>
+    </form>
+</div>
+
+<!--button do das-->
+<div class="btn-menu">
+    
+    <ul><li><div class="long-dropdown filter-dropdown">
+<!--Drop-Down Buttons-->
+
+<!--
+<button class="dropbtn" onclick="myFunction()">Filters
+-->
+<button class="dropbtn">Filters
+    <i class="arrow-down"></i>
+</button>
+    <div class="dropdown-content" id="allergen-filters">
+        <ul>
+            <li><a href="http://localhost:3020/html/searchpage.html#">Vegetarian</a></li>
+            <li><a href="http://localhost:3020/html/searchpage.html#">Vegan</a></li>
+            <li><a href="http://localhost:3020/html/searchpage.html#">Dairy free</a></li>
+            <li><a href="http://localhost:3020/html/searchpage.html#">Nut free</a></li>
+            <li><a href="http://localhost:3020/html/searchpage.html#">Gluten free</a></li>
+            <li><a href="http://localhost:3020/html/searchpage.html#">Alcohol free</a></li>
+            <li><a href="http://localhost:3020/html/searchpage.html#">Pork free</a></li>
+        </ul>
+    </div>
+</div></li>
+    <li><button id="mainsearchbtn" class="searchbtn" value="submit" form="searchform"> Search </button></li></ul>
+</div></div>
+
+<div id="search-abt-text">
+    <p> Do you have leftover ingredients in the fridge?</p>
+
+    <p> Cook delicious meals with what you already have using our recipe search.</p>
+</div>
+<script>
+    $(function(){
+        $("#search-placeholder").load("searchbar.html");
+    });
+</script>
+
+
+
+</body></html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Food Tracker</title>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="../scripts/foodtracker.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/foodtracker.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<head/>
+
+
+
+<!--<script>-->
+
+    <!--//Delete button removes the tracked item-->
+    <!--$(document).ready(function($) {-->
+        <!--$('.grid-container').on("click", ".delete-btn", function(){-->
+            <!--$(this).closest(".grid-item").remove();-->
+        <!--});-->
+
+    <!--// add new item-->
+    <!--$('form').submit(function() {-->
+
+    <!--if ($('#inputfood').val() !== '') {-->
+    <!--var newTask = $('#inputfood').val();-->
+
+    <!--// tracks expiry date-->
+    <!--var expiryDate = $('#inputdate').val();-->
+    <!--var today = (new Date()).setHours(0,0,0,0);-->
+    <!--var daysleft = Math.floor(((Date.parse(expiryDate)) - today) / (1000 * 60 * 60 * 24));-->
+
+    <!--// notification badge colour-->
+    <!--var colour = '';-->
+    <!--if (daysleft < 0) {-->
+        <!--colour = '<div class="top-right"><span class="w3-badge w3-xlarge w3-red">' + daysleft + '</span></div>';-->
+    <!--}-->
+    <!--else if (daysleft <= 2) {-->
+        <!--colour = '<div class="top-right"><span class="w3-badge w3-xlarge w3-yellow">' + daysleft + '</span></div>';-->
+    <!--}-->
+    <!--else {-->
+        <!--colour = '<div class="top-right"><span class="w3-badge w3-xlarge w3-green">' + daysleft + '</span></div>';-->
+    <!--}-->
+
+    <!--// adds new item to webpage-->
+    <!--var newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="" width = "200" height="200" id="' + newTask +'"' + 'alt="' + newTask +'">'  + colour + '<button class="delete-btn centered" >Delete</button>'+'</div>'+'</div>');-->
+
+
+    <!--// add item image to web page-->
+        <!--function previewFile(){-->
+            <!--var preview = document.querySelector('#' + newTask ); //selects the query named img-->
+            <!--var file    = document.querySelector('input[type=file]').files[0]; //sames as here-->
+            <!--var reader  = new FileReader();-->
+
+            <!--reader.onloadend = function () {-->
+                <!--preview.src = reader.result;-->
+            <!--}-->
+
+            <!--if (file) {-->
+                <!--reader.readAsDataURL(file); //reads the data as a URL-->
+            <!--} else {-->
+                <!--preview.src = "";-->
+            <!--}-->
+        <!--}-->
+
+    <!--// old delete item function-->
+    <!--/*newLi.on('click', function() {-->
+    <!--$(this).remove(); // Attach the event handler *before* adding the element-->
+    <!--});*/-->
+
+
+    <!--// add whole input of item to website-->
+    <!--$('.grid-container').append(newLi);-->
+    <!--previewFile();-->
+
+    <!--// old delete item function-->
+        <!--// $('.centered').click(function(){-->
+        <!--//     $(newLi).remove();-->
+        <!--// });-->
+
+    <!--$('#input').val('');-->
+    <!--return false; // So the change persists-->
+    <!--}-->
+    <!--});-->
+    <!--// $('ul').sortable(); // Because what good is a to-do list that you can't sort? :)-->
+    <!--});-->
+<!--</script>-->
+
+<body>
+
+
+<!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+</script>
+<!--end of Navigation bar-->
+
+
+
+<!--add button-->
+<img src="../images/addicon.jpeg" alt="add" class="add" style="border-radius: 25px;">
+<div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="font-family: 'Josefin Slab'">Add food</button></div>
+
+
+<!-- line modal -->
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" style="font-family: 'Josefin Slab'">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h3 class="modal-title" id="lineModalLabel"><b>Add new item</b></h3>
+            </div>
+            <div class="modal-body">
+
+
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputFile"><b>Food Image*</b></label>
+                        <input type="file" id="exampleInputFile">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputfood"><b>Enter New Food Name*</b></label>
+                        <input type="text" class="form-control" id="inputfood" placeholder="Enter food item">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputdate"><b>Enter Used by Date*</b></label>
+                        <input type="date" class="form-control" id="inputdate" placeholder="Enter used by date">
+                    </div>
+                    <input type="submit" value="Add" class="btn btn-primary center-block" style="font-family: 'Josefin Slab'">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="grid-container">
+
+</div>
+
+
+</body>
+</html>

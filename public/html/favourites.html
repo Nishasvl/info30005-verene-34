@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verene - Favourites</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="../scripts/results.js"></script>
+    <script src="../scripts/loadRecipeFave.js"></script>
+    <script src="../scripts/favourites.js"></script>
+
+
+    <link href="../css/generic.css" rel="stylesheet">
+    <link href="../css/favourites.css" rel="stylesheet">
+
+
+</head>
+
+<div id = nav-placeholder>
+</div>
+
+<script>
+    $(function(){
+        $("#nav-placeholder").load("nav.html");
+    });
+
+    console.log(favourites);
+</script>
+
+<body onload= "loadRecipes(favourites)" style='font-family: "Josefin Slab"'>
+
+<h1 style="font-family: 'Fredericka the Great', cursive;">
+    My Saved Recipes
+</h1>
+
+<div id = recipe-favourites class = recipe-grid></div>
+
+<div id="info-modal-container"></div>
+
+<script>
+    $(function(){
+        $("#info-modal-container").load("infomodal.html");
+    });
+</script>
+
+</body>
+</html>

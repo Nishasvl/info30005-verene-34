@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" >
+
+
+
+
+</head>
+
+
+
+<body>
+
+
+<!--log in and welcome page nav bar-->
+<nav class="navbar navbar-findcond navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/html/welcomepage.html">Verene</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/html/welcomepage.html">Welcome<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/html/login.html">Log In<span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<!--log in script-->
+<script>
+    $(function() {
+
+        $('#login-form-link').click(function(e) {
+            $("#login-form").delay(100).fadeIn(100);
+            $("#register-form").fadeOut(100);
+            $('#register-form-link').removeClass('active');
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+        $('#register-form-link').click(function(e) {
+            $("#register-form").delay(100).fadeIn(100);
+            $("#login-form").fadeOut(100);
+            $('#login-form-link').removeClass('active');
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+        //
+        // $('#login-submit').click(function(e) {
+        //     $.ajax({
+        //         type: "post",
+        //         url: "/login",
+        //         data: JSON.stringify({
+        //             username: $('#loginusername').val(),
+        //             password: $('#loginpassword').val()
+        //         }),
+        //         contentType: "application/json; charset=utf-8",
+        //         dataType: "json",
+        //         success: function(data){
+        //             console.log("yay");
+        //             console.log(data);
+        //         },
+        //         failure: function(errMsg) {
+        //             console.log(":(");
+        //             console.log(errMsg);
+        //         }
+        //     })
+        // });
+
+        $('#register-submit').submit(false);
+        $('#register-submit').click(function(e) {
+            $.ajax({
+                type: "POST",
+                url: "/signup",
+                data: JSON.stringify({
+                    username: $('#username').val(),
+                    name: $('#name').val(),
+                    email: $('#email').val(),
+                    password: $('#password').val()
+                }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function(data){
+                    console.log(data);
+                },
+                failure: function(errMsg) {
+                    console.log(errMsg);
+                }
+            });
+        })
+
+    });
+</script>
+
+
+<!--log in html-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a href="#" class="active" id="login-form-link">Login</a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href="#" id="register-form-link">Register</a>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!--<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">-->
+                            <form id="login-form" role="form" style="display: block;" action = "/login" method = "post">
+                                <div class="form-group">
+                                    <input type="text" name="username" id="loginusername" tabindex="1" class="form-control" placeholder="Username" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="loginpassword" tabindex="2" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="form-group text-center">
+                                    <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                    <label for="remember"> Remember Me</label>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="text-center">
+                                                <a href="https://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <a href="#register">
+                            <form id="register-form" method="post" role="form" style="display: none;">
+                                <div class="form-group">
+                                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Name" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                </div>
+                                <!--<div class="form-group">-->
+                                    <!--<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">-->
+                                <!--</div>-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="button" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
