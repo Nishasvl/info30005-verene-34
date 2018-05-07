@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 var User = require('../models/user.js');
+var Food = require('../models/food.js');
 
 module.exports = {
     displayPage : function(req, res){
@@ -121,8 +122,28 @@ var findOneUser = function(req,res){
         }
     });
 };
+
+
+var registerFood = function(req, res){
+    console.log(req.body);
+    var food = new Food({
+        "username": req.username,
+        "name": req.body.name,
+        "image": req.body.image,
+        "date": req.body.date,
+
+    });
+    food.save(function(err, newFood){
+        if(!err){
+            res.send(newFood);
+        } else{
+            res.sendStatus(400);
+        }
+    })
+};
 //
 module.exports.registerUser = registerUser;
 module.exports.findAllUsers = findAllUsers;
 module.exports.findOneUser = findOneUser;
 module.exports.login = login;
+module.exports.registerFood = registerFood;

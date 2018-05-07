@@ -1,7 +1,11 @@
 const html_dir = '/../public/html';
-const controller = require('../controllers/passportcontroller.js');
+const passportController = require('../controllers/passportcontroller.js');
+const controller = require('../controllers/controller.js');
 const express = require('express');
 const router = express.Router();
+
+
+
 
 var isAuthenticated = function (req, res, next) {
     // if user is authenticated in the session, call the next() to call the next request handler
@@ -33,7 +37,7 @@ module.exports = function(passport){
 
 
     /* Login Page Display */
-    router.get('/login', controller.displayLogin);
+    router.get('/login', passportController.displayLogin);
 
     /* Handle Login POST */
     router.post('/login', passport.authenticate('login', {
@@ -51,16 +55,21 @@ module.exports = function(passport){
     }));
 
     /* GET Home Page */
-    router.get('/home', isAuthenticated, controller.displayHome);
+    router.get('/home', isAuthenticated, passportController.displayHome);
 
     /* GET Welcome or Home Page Depending if User is Logged in */
-    router.get('/', controller.displayWelcomeorHome);
+    router.get('/', passportController.displayWelcomeorHome);
 
     /* Handle Logout */
-    router.get('/logout', controller.logoutUser);
+    router.get('/logout', passportController.logoutUser);
 
+    router.post('/foodtracker', controller.registerFood);
 
     return router;
+
+
 }
+
+
 
 

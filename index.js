@@ -1,4 +1,5 @@
 const express = require('express');
+const flash=require('connect-flash');
 require('dotenv').config();
 
 const app = express();
@@ -26,6 +27,7 @@ app.use(expressSession({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 
 // Initialize Passport
