@@ -56,7 +56,6 @@
             url: "/user",
             success: function(data) {
                 user = data[0];
-                console.log(user);
                 $("#username").text(user.username);
                 $("#name").text(user.name);
                 $("#email").text(user.email);
