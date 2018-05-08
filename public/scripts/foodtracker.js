@@ -50,25 +50,25 @@ $(document).ready(function($) {
         }
 
         // adds new item to webpage
-        const newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">'  + colour + '<button class="delete-btn centered" >Delete</button>'+'</div>'+'</div>');
+        const newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">'  + colour + '<button class="delete-btn centered" >Delete</button>'+'</div>'+'</div>');
 
 
         // add item image to web page
-        function previewFile(){
-            let preview = document.querySelector('#' + foodname ); //selects the query named img
-            const file    = document.querySelector(food.image); //sames as here
-            let reader  = new FileReader();
-
-            reader.onloadend = function () {
-                preview.src = reader.result;
-            };
-
-            if (file) {
-                reader.readAsDataURL(file); //reads the data as a URL
-            } else {
-                preview.src = "";
-            }
-        }
+        // function previewFile(){
+        //     let preview = document.querySelector('#' + foodname ); //selects the query named img
+        //     const file = food.image; //sames as here
+        //     let reader  = new FileReader();
+        //
+        //     reader.onloadend = function () {
+        //         preview.src = reader.result;
+        //     };
+        //
+        //     if (file) {
+        //         reader.readAsDataURL(file); //reads the data as a URL
+        //     } else {
+        //         preview.src = "";
+        //     }
+        // }
 
         // old delete item function
         /*newLi.on('click', function() {
@@ -78,7 +78,7 @@ $(document).ready(function($) {
 
         // add whole input of item to website
         $('.grid-container').append(newLi);
-        previewFile();
+        // previewFile();
 
         // old delete item function
         // $('.centered').click(function(){
