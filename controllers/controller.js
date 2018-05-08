@@ -213,6 +213,18 @@ var registerFood = function(req, res){
         }
     })
 };
+
+var deleteFood = function(req, res) {
+    console.log(req.body);
+    Food.findByIdAndRemove(req.body._id, function(err, newFood){
+        if(!err){
+            res.send(newFood);
+        } else{
+            res.sendStatus(400);
+        }
+    })
+
+};
 //
 module.exports.registerUser = registerUser;
 module.exports.findAllUsers = findAllUsers;
@@ -220,3 +232,4 @@ module.exports.findOneUser = findOneUser;
 module.exports.login = login;
 module.exports.findUserFood = findUserFood;
 module.exports.registerFood = registerFood;
+module.exports.deleteFood = deleteFood;

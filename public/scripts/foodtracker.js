@@ -16,9 +16,14 @@ $(document).ready(function($) {
 
     $('.grid-container').on("click", ".delete-btn", function(){
         console.log("hi");
+        foodid = $(this).attr('data-mongo-id');
+
         $.ajax({
             type: "DELETE",
             url: "/foodtracker",
+            data: {
+                _id : foodid
+            },
             success: function(data){
                 console.log(data);
             },
@@ -26,7 +31,7 @@ $(document).ready(function($) {
                 console.log(errMsg);
             }
         })
-        // $(this).closest(".grid-item").remove();
+        $(this).closest(".grid-item").remove();
 
     });
 

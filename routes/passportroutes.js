@@ -73,6 +73,8 @@ module.exports = function(passport){
 
     router.get('/favourites', controller.displayRecipes);
 
+    router.delete('/foodtracker', controller.deleteFood);
+
     return router;
 
 
