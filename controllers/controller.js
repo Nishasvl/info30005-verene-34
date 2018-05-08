@@ -182,11 +182,24 @@ var findOneUser = function(req,res){
     });
 };
 
+var findUserFood = function(req, res) {
+    const username = req.user.username;
+    console.log(req);
+    Food.find({username: username}, (err, foods) => {
+        if (!err) {
+            console.log(foods);
+            res.send(foods);
+        } else {
+            res.sendStatus(404);
+        }
+    })
+};
+
 
 var registerFood = function(req, res){
     console.log(req.body);
     var food = new Food({
-        "username": req.username,
+        "username": req.user.username,
         "name": req.body.name,
         "image": req.body.image,
         "date": req.body.date,
@@ -205,4 +218,5 @@ module.exports.registerUser = registerUser;
 module.exports.findAllUsers = findAllUsers;
 module.exports.findOneUser = findOneUser;
 module.exports.login = login;
+module.exports.findUserFood = findUserFood;
 module.exports.registerFood = registerFood;

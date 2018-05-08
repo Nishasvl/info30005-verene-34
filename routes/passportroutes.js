@@ -67,6 +67,8 @@ module.exports = function(passport){
 
     router.post('/foodtracker', controller.registerFood);
 
+    router.get('/foodtracker', controller.findUserFood);
+
     router.get('/results', controller.displayRecipes);
 
     router.get('/favourites', controller.displayRecipes);

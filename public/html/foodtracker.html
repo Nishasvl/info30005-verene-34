@@ -115,16 +115,16 @@
     $(function() {
 
 
+
         $('#register-food').submit(false);
         $('#register-food').click(function(e) {
-            console.log("hi");
             $.ajax({
                 type: "POST",
                 url: "/foodtracker",
                 data: JSON.stringify({
                     username: $('#exampleInputFile').val(),
-                    name: $('#exampleInputFile').val(),
-                    image: $('#inputfood').val(),
+                    name: $('#inputfood').val(),
+                    image: $('#exampleInputFile').val(),
                     date: $('#inputdate').val()
                 }),
                 contentType: "application/json; charset=utf-8",
@@ -182,7 +182,6 @@
 
 
 <div class="grid-container">
-
 </div>
 
 
