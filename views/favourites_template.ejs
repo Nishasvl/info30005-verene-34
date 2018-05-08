@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verene - Favourites</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+    <link href="../css/generic.css" rel="stylesheet">
+    <link href="../css/favourites.css" rel="stylesheet">
+
+
+</head>
+
+<div id = nav-placeholder>
+</div>
+
+<script>
+    $(function(){
+        $("#nav-placeholder").load("/html/nav.html");
+    });
+</script>
+
+<body style='font-family: "Josefin Slab"'>
+
+<h1 style="font-family: 'Fredericka the Great', cursive;">
+    My Saved Recipes
+</h1>
+
+<div id = "recipe-results" class = "recipe-grid">
+    <% for(let i =0; i<recipes.length; i++){ %>
+    <%  var recipe = recipes[i] %>
+
+    <div class = "recipe" id = <%= recipe.uri %>>
+
+        <img src = <%= recipe.image %>>
+
+        <div class = recipe-titlebar>
+            <p class = recipe-block-title> <%= recipe.label %> </p>
+            <p> <a class = "external-link" target="_blank" href=<%= recipe.url%>> <%= recipe.source%></a></p>
+            <div class = "recipe-block-btns">
+                <button class = "info">info</button>
+                <button class = "remove">remove</button>
+            </div>
+        </div>
+    </div>
+    <%} %>
+</div>
+<div id="info-modal-container"></div>
+
+<!--<div class = "bottom-popup" >
+    <p>Undo Remove Recipe</p>
+</div>-->
+
+<script>
+    var savedRecipes = <%-JSON.stringify(recipes)%>;
+
+    $(function(){
+        $("#info-modal-container").load("/html/infomodal.html");
+    });
+
+</script>
+<script src="../scripts/favourites.js"></script>
+
+</body>
+</html>

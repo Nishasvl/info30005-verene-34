@@ -39,7 +39,6 @@
 
 <div id = "reciperesults" class = "recipe-grid">
 
-
     <% for(let i =0; i<locals.hits.length; i++){ %>
         <% var recipe = locals.hits[i].recipe %>
         <% var extraIngr = recipe.ingredientLines.length;%>
@@ -53,10 +52,11 @@
             <div class = recipe-titlebar>
                 <p class = recipe-block-title> <%= recipe.label %> </p>
                 <p> <%= extraIngr%> extra ingredients</p>
-                <p> <%= recipe.source%> </p>
+                <p class = "recipe-source"> <a class = external-link target="_blank" href=<%= recipe.url%> > <%= recipe.source%></a> </p>
                 <div class = "recipe-block-btns">
                     <button class = "info">info</button>
                     <button class = "save">save</button>
+
                 </div>
             </div>
         </div>
@@ -156,21 +156,10 @@
         });
 
         $("#pagin").on("click", ".page-num", function () {
-            /*var href = this.getAttribute("href");
-            window.location.href = window.location.href + href;*/
-            /*var data = $("#resultsform").serialize();
-            $.ajax({
-                url: "/results",
-                data: {
-                    data: data
-                },
-                type: "GET",
-                success: function(response) {
-                },
-                error: function(xhr) {
 
-                }});*/
             console.log($(this).text().toString())
+
+            //this is so it submits with the form
             var pageinput = document.createElement("input");
             pageinput.setAttribute("name", "page");
             pageinput.setAttribute("value", $(this).text().toString());

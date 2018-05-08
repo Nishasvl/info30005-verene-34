@@ -1,8 +1,11 @@
 const html_dir = '/../public/html';
-const passportController = require('../controllers/passportcontroller.js');
-const controller = require('../controllers/controller.js');
 const express = require('express');
 const router = express.Router();
+
+const recipeController = require('../controllers/recipeControllers');
+const passportController = require('../controllers/passportcontroller.js');
+const controller = require('../controllers/controller.js');
+
 
 
 
@@ -21,7 +24,7 @@ var isAuthenticated = function (req, res, next) {
 
 module.exports = function(passport){
 
-    router.get('/account', function(req, res){
+    router.get('/account', isAuthenticated, function(req, res){
         res.sendFile('accountpage.html', {root: __dirname + html_dir});
     });
 
@@ -71,10 +74,11 @@ module.exports = function(passport){
 
     router.get('/results', controller.displayRecipes);
 
-    router.get('/favourites', controller.displayRecipes);
+    router.post('/results', recipeController.saveRecipe);
 
-    router.post('/results', controller.saveRecipe);
+    router.get('/favourites', isAuthenticated, recipeController.displayFavourites);
 
+    router.delete('/favourites', recipeController.deleteRecipe);
 
     return router;
 

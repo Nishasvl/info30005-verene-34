@@ -5,7 +5,6 @@ var jwt = require('jsonwebtoken');
 
 var User = require('../models/user.js');
 var Food = require('../models/food.js');
-var SavedRecipe = require('../models/saved_recipes.js');
 
 
 const request = require('request');
@@ -75,67 +74,6 @@ module.exports = {
             })
     },
 
-    saveRecipe: function(req, res){
-        SavedRecipe.update({username: req.user.username}, {
-            $push : {
-                recipes: req.body.recipeid,
-                $position: 0
-            }
-
-        }, {upsert: true}, function ( err ) {
-            if(err){
-                console.log(err);
-            }else{
-                console.log("Successfully added");
-            }
-        })
-    }
-       /* SavedRecipe.findOne({ 'username' :  req.user.username }, function(err, found) {
-            // In case of any error, return using the done method
-            if (err){
-                console.log('Error: '+err);
-                return done(err);
-            }
-            // already exists
-            if (found) {
-                SavedRecipe.update({username: req.user.username}, {
-                    $push : {
-                        $each:[{
-                            recipes: req.param.recipeid
-                        }],
-                        $position: 0
-                    }
-
-                    }, {upsert: true}, function ( err ) {
-                    if(err){
-                        console.log(err);
-                    }else{
-                        console.log("Successfully added");
-                    }
-                })
-                //return done(null, false, req.flash('message','User Already Exists'));
-            } else {
-                // if there is no user with that email
-                // create the user
-                var newUserSaves = new SavedRecipe();
-
-                // set the user's local credentials
-                newUserSaves.username = req.user.username;
-                newUserSaves.recipes = [req.param.recipeid];
-
-                // save the user
-                newUserSaves.save(function(err) {
-                    if (err){
-                        console.log('Error in Saving user saves: '+err);
-                        throw err;
-                    }
-                    console.log('Create saves successful succesful');
-                    return done(null, newUserSaves);
-                });
-            }
-
-
-        })*/
 };
 
 // module.exports = {
