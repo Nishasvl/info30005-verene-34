@@ -96,11 +96,6 @@ $(document).ready(function() {
         btn.removeClass("saved");
         btn.text("save");
 
-        /*/!*remove item from favourites*!/
-            var index = favourites.indexOf(recipeId);
-            favourites = favourites.splice(index, 1);
-            return;*/
-
     });
 
 
@@ -112,11 +107,28 @@ $(document).ready(function() {
         $('.bottom-popup').slideToggle({direction: "up"}, 300)
         $('.bottom-popup').delay(600).fadeOut(1300);
 
+        $.ajax({
+            type: "POST",
+            url: "/results",
+            data: JSON.stringify({
+                recipeid: recipeId
+            }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function(data){
+                console.log(data);
+            },
+            failure: function(errMsg) {
+                console.log(errMsg);
+            }
+        });
+
         btn.addClass("saved");
         btn.text("saved");
 
-        /*favourites.push(recipeId);
-        console.log(favourites);*/
+
+
+
     });
 
     /* ------------------------------------------------------ Modal--------------------------------------------------*/
