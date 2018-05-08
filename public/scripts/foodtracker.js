@@ -1,10 +1,6 @@
 //Delete button removes the tracked item
 $(document).ready(function($) {
-    $('.grid-container').on("click", ".delete-btn", function(){
-        $(this).closest(".grid-item").remove();
-    });
-
-    $(function() {
+    const getFood = () => {
         $.ajax({
             type: "GET",
             url: "/foodtracker",
@@ -16,22 +12,39 @@ $(document).ready(function($) {
                 console.log(errMsg);
             }
         })
+    };
+
+    $('.grid-container').on("click", ".delete-btn", function(){
+        console.log("hi");
+        $.ajax({
+            type: "DELETE",
+            url: "/foodtracker",
+            success: function(data){
+                console.log(data);
+            },
+            failure: function(errMsg) {
+                console.log(errMsg);
+            }
+        })
+        // $(this).closest(".grid-item").remove();
+
+    });
+
+    $(function() {
+        getFood();
     });
 
     // add new item
     $('form').submit(function() {
 
         if ($('#inputfood').val() !== '') {
-            displayFood({
-                name: $('#inputfood').val(),
-                image: document.querySelector('input[type=file]').files[0],
-                date: $('#inputdate').val()
-            });
+            getFood();
         }
     });
     // $('ul').sortable(); // Because what good is a to-do list that you can't sort? :)
 
     const displayFood = food => {
+        const foodId = food._id;
         const foodname = food.name;
         const expiryDate = food.date;
         const today = (new Date()).setHours(0,0,0,0);
@@ -50,8 +63,7 @@ $(document).ready(function($) {
         }
 
         // adds new item to webpage
-        const newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">'  + colour + '<button class="delete-btn centered" >Delete</button>'+'</div>'+'</div>');
-
+        const newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">'  + colour + '<button data-mongo-id="' + foodId +'" class="delete-btn centered" >Delete</button>'+'</div>'+'</div>');
 
         // add item image to web page
         // function previewFile(){
