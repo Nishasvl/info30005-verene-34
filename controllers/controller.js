@@ -172,8 +172,8 @@ var findAllUsers = function(req,res){
 };
 
 var findOneUser = function(req,res){
-    var userInx = req.params.id;
-    User.findById(userInx, function(err, user){
+    var username = req.user.username;
+    User.find({username: username}, function(err, user){
         if(!err){
             res.send(user);
         }else{
@@ -184,7 +184,6 @@ var findOneUser = function(req,res){
 
 var findUserFood = function(req, res) {
     const username = req.user.username;
-    console.log(req);
     Food.find({username: username}, (err, foods) => {
         if (!err) {
             console.log(foods);

@@ -75,11 +75,7 @@ module.exports = function(passport){
 
     router.delete('/foodtracker', controller.deleteFood);
 
+    router.get('/user', controller.findOneUser);
+
     return router;
-
-
-}
-
-
-
-
+};
