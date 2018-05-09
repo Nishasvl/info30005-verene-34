@@ -72,6 +72,10 @@ module.exports = function(passport){
 
     router.get('/foodtracker', controller.findUserFood);
 
+    //Display food tracker page
+
+    router.get('/tracker', isAuthenticated, controller.displayFoodPage);
+
     router.get('/results', isAuthenticated, controller.displayRecipes);
 
     router.post('/results', recipeController.saveRecipe);
