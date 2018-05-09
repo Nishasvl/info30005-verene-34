@@ -10,7 +10,7 @@
 
 
 </head>
-<body background="../images/brooke-lark-385507-unsplash.jpg" style='font-family: "Josefin Slab"';>
+<body background="../images/searchbackground.jpg" style='font-family: "Josefin Slab"';>
 <div id = nav-placeholder></div>
 
 <script>
@@ -19,12 +19,95 @@
     });
 </script>
 
+<h1 style=" font-family: 'Fredericka the Great', cursive; font-weight: 400; font-size:8em; text-align: center; padding-top: 30px">Home</h1>
+
+<div class="grid-container">
 <div id = search-placeholder class = "full-searchbar">
 </div>
+
+<div id = search-placeholder class = "full-searchbar">
+    <h1 style="font-family: 'Fredericka the Great' ">Expiring Soon</h1>
+    <br>
+    <!--<a href="/html/foodtracker.html"> <img src="../images/apple.jpg" alt="apple" height=200" width="200" style="border-radius: 25px "></a>-->
+    <!--<a href="/html/foodtracker.html"><img src="../images/banannas.jpeg" alt="apple" height=200" width="200" style="border-radius: 25px "></a>-->
+    <div class="soon-grid-container"></div>
+</div>
+</div>
+
 
 <script>
     $(function(){
         $("#search-placeholder").load("searchbar.html");
+    });
+
+    $(document).ready(function($) {
+        const getFood = () => {
+            $.ajax({
+                type: "GET",
+                url: "/foodtracker",
+                success: function(data){
+                    console.log(data);
+                    displayAllFood(data)
+                },
+                failure: function(errMsg) {
+                    console.log(errMsg);
+                }
+            })
+        };
+
+
+        $(function() {
+            getFood();
+        });
+
+        // add new item
+        $('form').submit(function() {
+
+            if ($('#inputfood').val() !== '') {
+                getFood();
+            }
+        });
+        // $('ul').sortable(); // Because what good is a to-do list that you can't sort? :)
+
+        const displayAllFood = foods => {
+            const today = (new Date()).setHours(0,0,0,0);
+            let counter = 0;
+            foods.forEach(food => {
+                const expiryDate = food.date;
+                const daysLeft = Math.floor(((Date.parse(expiryDate)) - today) / (1000 * 60 * 60 * 24));
+                if (daysLeft >=0 && daysLeft <= 2 && counter < 2) {
+                    counter++;
+                    const foodId = food._id;
+                    const foodname = food.name;
+                    const newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">' +'</div>'+'</div>');
+                    // add whole input of item to website
+                    $('.soon-grid-container').append(newLi);
+                }
+            });
+
+            if (counter === 0) {
+                const line = $('<p>No food overdue anytime soon!</p>');
+                $('.soon-grid-container').append(line)
+            }
+
+            return false;
+        };
+
+        // const displayFood = food => {
+        //     const foodId = food._id;
+        //     const foodname = food.name;
+        //     const expiryDate = food.date;
+        //     const today = (new Date()).setHours(0,0,0,0);
+        //     const daysleft = Math.floor(((Date.parse(expiryDate)) - today) / (1000 * 60 * 60 * 24));
+        //
+        //     // notification badge colour
+        //     // adds new item to webpage
+        //     const newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">' +'</div>'+'</div>');
+        //     // add whole input of item to website
+        //     $('.grid-container').append(newLi);
+        //
+        //     return false; // So the change persists
+        // }
     });
 
 

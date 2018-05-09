@@ -6,16 +6,27 @@
 
 
 .full-searchbar{
-    padding: 5px 0 15px 0;
-    margin: 8% 0 0 0;
     background-color: rgba(233, 233, 233, 0.95);
+    padding: 5px 0 15px 0;
+    margin: 4% 0% 0 12%;
     text-align: center;
     position: relative;
     left: 0;
     right: 0;
-    border-bottom: 1px solid gray;
-    border-top: 1px solid gray;
+    border-radius: 25px;
+    width: 550px;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.soon-grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
 
 body{
     background-size: cover;
