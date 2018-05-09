@@ -1,6 +1,8 @@
 const html_dir = '/../public/html';
 const passportController = require('../controllers/passportcontroller.js');
 const controller = require('../controllers/controller.js');
+const recipeController = require('../controllers/recipeControllers.js');
+
 const express = require('express');
 const router = express.Router();
 
