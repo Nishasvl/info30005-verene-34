@@ -7,9 +7,9 @@ var savedRecipesSchema = mongoose.Schema({
             image: String,
             url: String,
             source: String,
-            ingredients: [String],
-            health: [String],
-            time: String,
+            ingredientLines: [String],
+            healthLabels: [String],
+            totalTime: String,
         }],
     }
 );

@@ -19,19 +19,6 @@ console.log(recipeData);
 }*/
 
 
-
-/*reload search results*/
-/*
-function reloadResults(recipeArray) {
-    alert("hey")
-    $("#recipesearchbtn").click(function () {
-        $("#reciperesults").empty();
-    });
-
-    loadRecipes(recipeArray);
-}
-*/
-
 $(document).ready(function() {
     var header = $('#results-search-header').outerHeight();
     $('#reciperesults').css('margin-top', header + 10 + 55);
@@ -39,35 +26,47 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-    /*loads the filter menu GET RID OF THIS*/
+
 
     $("body").on("click", ".external-link", function () {
         //var recipeId = $(this).closest('.recipe').attr('id');
     });
 
-    $("body").on("click", ".saved", function () {
+    /*Unsaving a Recipe*/
+    $("reciperesults").on("click", ".saved", function () {
         var btn = $(this);
+        var recipeId = btn.attr("data-recipe-id");
+
+        deleteRecipe(recipeId);
+        btn.removeClass("saved");
+        btn.text("save");
+    });
+
+/*    $("info-modal-container").on("click", ".saved", function () {
+        var btn = $(this);
+        var recipeId = btn.attr("data-recipe-id");
+
+        deleteRecipe(recipeId);
         btn.removeClass("saved");
         btn.text("save");
 
-    });
+        //return main save btn back to normal
+        var mainsavebtn = $(".reciperesults .save[data-recipe-id=recipeId]");
+        mainsavebtn.removeClass("saved");
+        mainsavebtn.text("save");
+    });*/
 
 
     /*Clicking on a "save" button*/
     $("body").on("click", ".save:not(.saved)", function () {
         var btn = $(this);
 
-        var recipeId = btn.closest('.recipe').attr('id');
+        var recipeId = btn.attr('data-recipe-id');
         var recipe = $.grep(recipeData, function(e){ return e.recipe.uri == recipeId; })[0].recipe;
 
-        /*var recipeImage = btn.closest('.recipe').find('img').attr('src');
-        var recipeURL = btn.closest('.recipe').find('.external-link').attr('href');
-        var recipeSource = btn.closest('.recipe').find('.recipe-source').text();
-
-*/
         console.log(recipe);
         $('.bottom-popup').slideToggle({direction: "up"}, 200)
-        $('.bottom-popup').delay(300).fadeOut(500);
+        $('.bottom-popup').delay(500).fadeOut(500);
 
         $.ajax({
             type: "POST",
@@ -95,12 +94,17 @@ $(document).ready(function() {
 
         btn.addClass("saved");
         btn.text("saved");
+
+        /*var mainsavebtn = $(".save[data-recipe-id=recipeId]");
+        console.log(mainsavebtn)
+        mainsavebtn.addClass("saved");
+        mainsavebtn.text("saved");*/
     });
 
     /* ------------------------------------------------------ Modal--------------------------------------------------*/
     $(".recipe-grid").on("click", ".info", function () {
-        var recipeId = $(this).closest('.recipe').attr('id');
-        modalRecipeId = recipeId;
+        var btn = $(this);
+        var recipeId = btn.closest('.recipe').attr('id');
         var recipe;
 
         for(let i=0; i<recipeData.length; i++){
@@ -111,27 +115,7 @@ $(document).ready(function() {
             }
         }
 
-        $('#info-modal h2').text(recipe.label);
-        $('#info-modal p span').text(recipe.totalTime);
-
-        $('#full-ingredient-list').empty();
-        $('#info-modal .save').removeClass("saved");
-        $('#full-ingredient-list').append($("<lh>").text("Ingredients: "));
-
-        for (let i = 0; i < recipe.ingredientLines.length; i++) {
-            var ingredient = $("<li>").text(recipe.ingredientLines[i]);
-            $('#info-modal ul').append(ingredient);
-        }
-
-        if ($(this).next().hasClass("remove") || $(this).next().hasClass("saved")) {
-            $('#info-modal .save').addClass("saved");
-            $('#info-modal .save').text("saved");
-        };
-
-        /* Reset and set the recipe link*/
-        $('#info-modal a').attr("href", recipe.url);
-
-        document.getElementById("info-modal").style.display = "block";
+        createinfomodal(recipe, btn);
     });
 
     /*Close Modal with x*/

@@ -5,6 +5,8 @@ var jwt = require('jsonwebtoken');
 
 var User = require('../models/user.js');
 var Food = require('../models/food.js');
+var SavedRecipe = require('../models/saved_recipes.js');
+
 
 
 const request = require('request');
@@ -47,6 +49,24 @@ module.exports = {
             params.ingr = (parseInt(req.query['m']) + req.query.q1.split(',').length).toString();
         }
 
+        //import saved recipes ids to check if button should be 'saved'
+        var favouritesIDArray = [];
+        SavedRecipe.findOne({ 'username' :  req.user.username }, function(err, found) {
+            // In case of any error, return using the done method
+            if (err) {
+                console.log('Error: ' + err);
+                return done(err);
+            }
+            if (found) {
+                for (let i = 0; i < found.recipes.length; i++) {
+                    favouritesIDArray.push(found.recipes[i].uri);
+                }
+            }
+        });
+
+       // console.log(favouritesIDArray);
+
+        // Make the request to the api
         request.get({
                 uri: "https://api.edamam.com/search",
                 qs: params,
@@ -62,6 +82,7 @@ module.exports = {
                         q2:req.query.q2,
                         m: req.query.m,
                         page: page,
+                        favourites: favouritesIDArray
                     });
                 }
                 /* //this isn't printing for some reason
@@ -72,6 +93,9 @@ module.exports = {
                  return;
              }*/
             })
+
+
+
     },
 
 };

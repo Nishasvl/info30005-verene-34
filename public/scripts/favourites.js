@@ -1,22 +1,5 @@
 //recipe Ids of favourite recipes
-var deleteRecipe = function(recipeId){
-    $.ajax({
-        type: "DELETE",
-        url: "/favourites",
-        data: JSON.stringify({
-            recipeid: recipeId,
-        }),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (data) {
-            console.log(data);
-        },
-        failure: function (errMsg) {
-            console.log(errMsg);
-        }
 
-    });
-}
 
 $(document).ready(function(){
 
@@ -49,7 +32,8 @@ $(document).ready(function(){
             }
         }
 
-        $('#info-modal h2').text(recipe.label);
+        createinfomodal(recipe, $(this));
+        /*$('#info-modal h2').text(recipe.label);
         $('#info-modal p span').text(recipe.time);
 
         $('#full-ingredient-list').empty();
@@ -66,10 +50,10 @@ $(document).ready(function(){
             $('#info-modal .save').text("saved");
         };
 
-        /* Reset and set the recipe link*/
+        /!* Reset and set the recipe link*!/
         $('#info-modal a').attr("href", recipe.url);
 
-        document.getElementById("info-modal").style.display = "block";
+        document.getElementById("info-modal").style.display = "block";*/
     });
 
     /*Close Modal with x*/
@@ -79,6 +63,8 @@ $(document).ready(function(){
 
     $("body").on("click", ".saved", function () {
         $(".modal").css('display', 'none');
+        var recipeId = $(this).attr("data-recipe-id");
+        deleteRecipe()
 
 
         /*var btn = $(this);

@@ -10,9 +10,9 @@ module.exports = {
             image: req.body.recipeimage,
             url: req.body.recipeurl,
             source: req.body.recipesource,
-            ingredients: req.body.recipeingredients,
-            health: req.body.recipehealth,
-            time: req.body.recipetime,
+            ingredientLines: req.body.recipeingredients,
+            healthLabels: req.body.recipehealth,
+            totalTime: req.body.recipetime,
         };
 
         console.log(recipe);

@@ -45,6 +45,8 @@
         <% if(q1){ %>
            <% extraIngr - JSON.stringify(q1).split(',').length; %>
         <% }%>
+        <% extraIngr - JSON.stringify(q1).split(',').length; %>
+
         <div class = "recipe" id = <%= recipe.uri %>>
 
             <img src = <%= recipe.image %>>
@@ -55,7 +57,11 @@
                 <p class = "recipe-source"> <a class = external-link target="_blank" href=<%= recipe.url%> > <%= recipe.source%></a> </p>
                 <div class = "recipe-block-btns">
                     <button class = "info">info</button>
-                    <button class = "save">save</button>
+                    <% if (favourites.includes(recipe.uri)) {%>
+                        <button class = "save saved" data-recipe-id="<%= recipe.uri %>">saved</button>
+                    <%}else{%>
+                        <button class = "save" data-recipe-id="<%= recipe.uri %>">save</button>
+                    <%}%>
 
                 </div>
             </div>
@@ -84,8 +90,7 @@
     var maxIngr = <%- JSON.stringify(m)%>;
     var resultNum = <%- JSON.stringify(locals.count)%>;
     var page = <%- JSON.stringify(page)%>;
-
-    console.log(paramData);
+    var favouriteRecipes = <%-JSON.stringify(favourites)%>;
 
     $(function(){
         $("#info-modal-container").load("/html/infomodal.html");
@@ -169,5 +174,7 @@
         });
     });
 </script>
+<script src="../scripts/createinfomodal.js"></script>
 
+<script src="../scripts/deleterecipefunction.js"></script>
 <script src="/scripts/results.js"></script>
