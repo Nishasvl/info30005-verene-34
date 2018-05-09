@@ -9,7 +9,7 @@ module.exports = {
 
     displayHome: function(req, res){
         //res.render('home', { user: req.user });
-        res.sendFile('home.html', {root: __dirname + html_dir});
+        res.sendFile('searchpage.html', {root: __dirname + html_dir});
         console.log(req.user);
     },
 
