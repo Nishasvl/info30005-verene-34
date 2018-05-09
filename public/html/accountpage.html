@@ -50,6 +50,17 @@
             var target = $(this).attr('data-target-id');
             $('#' + target).show();
         });
+
+        $.ajax({
+            type: "GET",
+            url: "/user",
+            success: function(data) {
+                user = data[0];
+                $("#username").text(user.username);
+                $("#name").text(user.name);
+                $("#email").text(user.email);
+            }
+        })
     });
 </script>
 
@@ -75,24 +86,24 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">User Name</h3>
                 </div>
-                <div class="panel-body">
-                    Jen
+                <div id="username" class="panel-body">
+
                 </div>
             </div>
             <div class="panel panel-info" style="margin: 1em;">
                 <div class="panel-heading">
                     <h3 class="panel-title">Name</h3>
                 </div>
-                <div class="panel-body">
-                    Jennifer
+                <div id="name" class="panel-body">
+
                 </div>
             </div>
             <div class="panel panel-info" style="margin: 1em;">
                 <div class="panel-heading">
                     <h3 class="panel-title">Email</h3>
                 </div>
-                <div class="panel-body">
-                    jennifer@hotmail.com
+                <div id="email" class="panel-body">
+
                 </div>
             </div>
             <!--<div class="panel panel-info" style="margin: 1em;">-->

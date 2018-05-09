@@ -200,8 +200,8 @@ var findAllUsers = function(req,res){
 };
 
 var findOneUser = function(req,res){
-    var userInx = req.params.id;
-    User.findById(userInx, function(err, user){
+    var username = req.user.username;
+    User.find({username: username}, function(err, user){
         if(!err){
             res.send(user);
         }else{
@@ -210,11 +210,23 @@ var findOneUser = function(req,res){
     });
 };
 
+var findUserFood = function(req, res) {
+    const username = req.user.username;
+    Food.find({username: username}, (err, foods) => {
+        if (!err) {
+            console.log(foods);
+            res.send(foods);
+        } else {
+            res.sendStatus(404);
+        }
+    })
+};
+
 
 var registerFood = function(req, res){
     console.log(req.body);
     var food = new Food({
-        "username": req.username,
+        "username": req.user.username,
         "name": req.body.name,
         "image": req.body.image,
         "date": req.body.date,
@@ -228,9 +240,23 @@ var registerFood = function(req, res){
         }
     })
 };
+
+var deleteFood = function(req, res) {
+    console.log(req.body);
+    Food.findByIdAndRemove(req.body._id, function(err, newFood){
+        if(!err){
+            res.send(newFood);
+        } else{
+            res.sendStatus(400);
+        }
+    })
+
+};
 //
 module.exports.registerUser = registerUser;
 module.exports.findAllUsers = findAllUsers;
 module.exports.findOneUser = findOneUser;
 module.exports.login = login;
+module.exports.findUserFood = findUserFood;
 module.exports.registerFood = registerFood;
+module.exports.deleteFood = deleteFood;

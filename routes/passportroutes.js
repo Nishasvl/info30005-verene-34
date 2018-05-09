@@ -1,13 +1,8 @@
 const html_dir = '/../public/html';
-const express = require('express');
-const router = express.Router();
-
-const recipeController = require('../controllers/recipeControllers');
 const passportController = require('../controllers/passportcontroller.js');
 const controller = require('../controllers/controller.js');
-
-
-
+const express = require('express');
+const router = express.Router();
 
 
 
@@ -73,6 +68,8 @@ module.exports = function(passport){
 
     router.post('/foodtracker', controller.registerFood);
 
+    router.get('/foodtracker', controller.findUserFood);
+
     router.get('/results', isAuthenticated, controller.displayRecipes);
 
     router.post('/results', recipeController.saveRecipe);
@@ -81,11 +78,9 @@ module.exports = function(passport){
 
     router.delete('/favourites', recipeController.deleteRecipe);
 
+    router.delete('/foodtracker', controller.deleteFood);
+
+    router.get('/user', controller.findOneUser);
+
     return router;
-
-
-}
-
-
-
-
+};
