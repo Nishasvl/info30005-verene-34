@@ -27,8 +27,8 @@ module.exports = {
 
         var params = {
             q: "",
-            app_id: 'dbcdbcc5',
-            app_key: 'e27dcbc8560a954e9f5c692ee4fa6b3c',
+            app_id: process.env.API_ID,
+            app_key: process.env.API_KEY,
             from: ((page-1) * resultsPerPage).toString(),
             to: ((page-1) * resultsPerPage + resultsPerPage).toString()
         }
