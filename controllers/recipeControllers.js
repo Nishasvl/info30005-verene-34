@@ -42,9 +42,10 @@ module.exports = {
             }
             if (found) {
                 console.log(found);
-
                 res.render('favourites_template', {recipes: found.recipes});
             } else {
+                res.sendFile('nofaves.html',{root: __dirname + html_dir});
+
 
             }
 
