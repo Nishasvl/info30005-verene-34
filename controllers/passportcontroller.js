@@ -4,7 +4,11 @@ const html_dir = '/../public/html';
 
 module.exports = {
     displayLogin : function(req, res){
-        res.sendFile('login.html', {root: __dirname + html_dir});
+        if (req.isAuthenticated()){
+            res.redirect('/home')
+        }else{
+            res.sendFile('login.html', {root: __dirname + html_dir});
+        }
     },
 
     displayHome: function(req, res){
