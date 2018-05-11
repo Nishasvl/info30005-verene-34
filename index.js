@@ -1,3 +1,4 @@
+//partial code from https://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
 const express = require('express');
 const flash=require('connect-flash');
 require('dotenv').config();

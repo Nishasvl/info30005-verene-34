@@ -1,3 +1,5 @@
+//code from https://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
+
 var login = require('./login.js');
 var signup = require('./signup.js');
 var userSchema = require('../models/user.js');

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user.js');
 var bCrypt = require('bcrypt-nodejs');
+//code from https://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
 
 module.exports = function(passport){
 
