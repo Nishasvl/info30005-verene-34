@@ -65,6 +65,8 @@ module.exports = function(passport){
     router.get('/logout', passportController.logoutUser);
 
     /*General Pages */
+    router.get('/tracker', isAuthenticated, controller.displayFoodPage);
+
     router.post('/foodtracker', controller.registerFood);
 
     router.post('/foodtracker', controller.registerFood);

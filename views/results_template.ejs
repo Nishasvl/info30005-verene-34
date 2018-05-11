@@ -26,6 +26,7 @@
         </span>
 
         <div id = btn-menu-placeholder></div>
+
     </form>
 
 
@@ -77,6 +78,12 @@
 <!--Info Modal-------------------------------------------------------------------------------------------------------->
 <div id="info-modal-container"></div>
 
+<script>
+    $(function(){
+        $("#info-modal-container").load("/html/infomodal.html");
+    });
+</script>
+
 <!--Footer ------------------------------------------------------------------------------------------------>
 <div id="pagin"></div>
 <div id = attribution> </div>
@@ -85,16 +92,14 @@
 
 
 <script>
+    var favouriteRecipes = <%-JSON.stringify(favourites)%>;
     var recipeData = <%-JSON.stringify(locals.hits)%>;
     var paramData = <%-JSON.stringify(searchParams)%>;
     var maxIngr = <%- JSON.stringify(m)%>;
     var resultNum = <%- JSON.stringify(locals.count)%>;
     var page = <%- JSON.stringify(page)%>;
-    var favouriteRecipes = <%-JSON.stringify(favourites)%>;
 
-    $(function(){
-        $("#info-modal-container").load("/html/infomodal.html");
-    });
+
 
     $(function(){
         $("#nav-placeholder").load("/html/nav.html");
@@ -134,16 +139,19 @@
             }
             $("#pagin").append(pageNum);
         }
+
+
+
+
     });
-
-
 
 
     $(document).ready(function() {
         $(function() {
-        if (paramData.time) {
-            $("#btn-menu-placeholder #t").prop("value", JSON.parse(paramData.time));
-        }
+            if (paramData.time) {
+                console.log(JSON.parse(paramData.time));
+                $("#btn-menu-placeholder #t").css("background-color", "red");
+            }
         });
 
         $(function() {
@@ -172,6 +180,7 @@
             $("#resultsform").append(pageinput);
             $("#resultsform").submit();
         });
+
     });
 </script>
 <script src="../scripts/createinfomodal.js"></script>

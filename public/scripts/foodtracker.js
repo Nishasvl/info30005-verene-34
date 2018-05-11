@@ -68,7 +68,13 @@ $(document).ready(function($) {
         }
 
         // adds new item to webpage
-        const newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">'  + colour + '<button data-mongo-id="' + foodId +'" class="delete-btn centered" >Delete</button>'+'</div>'+'</div>');
+        const newLi = $('<div class="grid-item">'
+            +'<div class="container1">'
+            +'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">'
+            //+ '<p>' + foodname +'</p>'
+            + colour + '<button data-mongo-id="' + foodId +'" class="delete-btn centered" >Delete</button>'
+            +'</div>'
+            +'</div>');
 
         // add item image to web page
         // function previewFile(){
