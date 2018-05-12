@@ -47,9 +47,8 @@
         <!--Calculate number of extra ingredients-->
         <% var extraIngr = recipe.ingredientLines.length;%>
         <% if(q1){ %>
-           <% extraIngr - JSON.stringify(q1).split(',').length; %>
+           <% extraIngr -= JSON.stringify(q1).split(',').length; %>
         <% }%>
-        <% extraIngr - JSON.stringify(q1).split(',').length; %>
 
         <div class = "recipe" id = <%= recipe.uri %>>
             <img src = <%= recipe.image %>>
@@ -153,10 +152,11 @@
     $(document).ready(function() {
 
         //Fills in the previously inputed filter, time and max number of extra ingredients
-        $(function() {
+        /*$(function() {
             if (paramData.time!="1+") {
-                console.log(JSON.parse(paramData.time));
-                $("#btn-menu-placeholder #t").css("background-color", "red");
+                /!*console.log(JSON.parse(paramData.time));*!/
+                $("body #t").css("background-color", "red");
+
             }
 
             if (maxIngr) {
@@ -168,7 +168,7 @@
                 tocheck.prop("checked", true);
                 console.log(tocheck);
             }
-        });
+        });*/
 
         //Change page
         $("#pagin").on("click", ".page-num", function () {
