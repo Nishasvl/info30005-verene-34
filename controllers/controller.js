@@ -18,6 +18,10 @@ module.exports = {
         res.sendFile('welcomepage.html', {root: __dirname + html_dir});
         },
 
+    displayFoodPage : function(req, res){
+        res.sendFile('foodtracker.html', {root: __dirname + html_dir});
+    },
+
     //Can reuse this for the saved recipes part
     displayRecipes: function (req, res) {
         var page = 1;

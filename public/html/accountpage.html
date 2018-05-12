@@ -1,68 +1,28 @@
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-
-<link rel="stylesheet" type="text/css" href="../css/login.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" >
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" >
+<!--https://bootsnipp.com/snippets/Qop1j-->
+<!DOCTYPE html>
+<html lang="en">
 
 
+<head>
+    <meta charset="UTF-8">
+    <title>Account Page</title>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="../scripts/accountpage.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="../css/login.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" >
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" >
+<head/>
 
 
-
+<body>
 
 <!--Navigation bar-->
-<div id="nav-placeholder">
-
-</div>
-
-<script>
-    $(function(){
-        $("#nav-placeholder").load("/html/nav.html"); // for the router
-    });
-</script>
-<!--end of Navigation bar-->
-
-
-
-
-
-<!------ Account Page Script ---------->
-
-<script>
-
-
-    $(document).ready(function()
-    {
-        var navItems = $('.admin-menu li > a');
-        var navListItems = $('.admin-menu li');
-        var allWells = $('.admin-content');
-        var allWellsExceptFirst = $('.admin-content:not(:first)');
-        allWellsExceptFirst.hide();
-        navItems.click(function(e)
-        {
-            e.preventDefault();
-            navListItems.removeClass('active');
-            $(this).closest('li').addClass('active');
-            allWells.hide();
-            var target = $(this).attr('data-target-id');
-            $('#' + target).show();
-        });
-
-        $.ajax({
-            type: "GET",
-            url: "/user",
-            success: function(data) {
-                user = data[0];
-                $("#username").text(user.username);
-                $("#name").text(user.name);
-                $("#email").text(user.email);
-            }
-        })
-    });
-</script>
+<div id="nav-placeholder"></div>
 
 
 
@@ -72,6 +32,7 @@
 
     <div class="row">
 
+        <!--menu-->
         <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked admin-menu" >
                 <li class="active"><a href="" data-target-id="profile"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
@@ -81,13 +42,13 @@
             </ul>
         </div>
 
+        <!--profile section-->
         <div class="col-md-9  admin-content" id="profile">
             <div class="panel panel-info" style="margin: 1em;">
                 <div class="panel-heading">
                     <h3 class="panel-title">User Name</h3>
                 </div>
                 <div id="username" class="panel-body">
-
                 </div>
             </div>
             <div class="panel panel-info" style="margin: 1em;">
@@ -95,7 +56,6 @@
                     <h3 class="panel-title">Name</h3>
                 </div>
                 <div id="name" class="panel-body">
-
                 </div>
             </div>
             <div class="panel panel-info" style="margin: 1em;">
@@ -103,7 +63,6 @@
                     <h3 class="panel-title">Email</h3>
                 </div>
                 <div id="email" class="panel-body">
-
                 </div>
             </div>
             <!--<div class="panel panel-info" style="margin: 1em;">-->
@@ -117,7 +76,7 @@
             <!--</div>-->
         </div>
 
-
+        <!--settings section-->
         <div class="col-md-9  admin-content" id="settings">
             <div class="panel panel-info" style="margin: 1em;">
                 <div class="panel-heading">
@@ -137,6 +96,8 @@
             </div>
         </div>
 
+
+        <!--change passowrd section-->
         <div class="col-md-9  admin-content" id="change-password">
             <form >
             <!--<form action="/password" method="post">-->
@@ -152,8 +113,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="panel panel-info" style="margin: 1em;">
                     <div class="panel-heading">
                         <h3 class="panel-title"><label for="confirm_password" class="control-label panel-title">Confirm password</label></h3>
@@ -166,8 +125,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="panel panel-info border" style="margin: 1em;">
                     <div class="panel-body">
                         <div class="form-group">
@@ -205,3 +162,7 @@
         </div>
     </div>
 </div>
+
+
+</body>
+</html>

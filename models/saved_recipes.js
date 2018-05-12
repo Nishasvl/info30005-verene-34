@@ -1,3 +1,5 @@
+//saved recipes schema
+
 var mongoose =  require('mongoose');
 var savedRecipesSchema = mongoose.Schema({
         "username": String,

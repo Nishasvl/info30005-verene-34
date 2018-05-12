@@ -9,7 +9,14 @@ const request = require('request');
 router.get('/', controller.displayPage);
 
 
-
+// router.get('/img/:imgID', (req, res) => {
+//     // get the imgID from req.params
+//     // var imgID = req.params.imgID
+//
+//     // get the file back
+//
+//     // res.send + set headers for Content-Type etc.
+// })
 
 // // create new user from lecture
 /*router.post('/login', controller.login);

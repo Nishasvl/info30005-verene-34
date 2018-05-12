@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-// // Database set up
+// Database set up
 require('./models/db.js');
 
 
@@ -34,11 +34,12 @@ app.use(flash());
 var initPassport = require('./passport/init');
 initPassport(passport);
 
+
+
 // Routes
 const passportRouter = require('./routes/passportroutes.js')(passport);
 app.use("/", passportRouter);
-/*const router = require('./routes/routes.js');
-app.use("/", router);*/
+
 
 
 const PORT = process.env.PORT || 3020;

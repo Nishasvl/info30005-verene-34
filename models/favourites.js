@@ -1,3 +1,4 @@
+// favourite recipe schema
 var mongoose =  require('mongoose');
 var favouritesSchema = mongoose.Schema({
         "userid": String,
