@@ -4,6 +4,7 @@
     <title>Verene - Search Results</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="/scripts/search.js"></script>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script> <!--edamam attribution-->
     <link rel="stylesheet" href="/css/generic.css">
 
 </head>
@@ -39,9 +40,11 @@
 </div>
 
 <div id = "reciperesults" class = "recipe-grid">
-
+    <!--Create recipe card for each recipe returned-->
     <% for(let i =0; i<locals.hits.length; i++){ %>
         <% var recipe = locals.hits[i].recipe %>
+
+        <!--Calculate number of extra ingredients-->
         <% var extraIngr = recipe.ingredientLines.length;%>
         <% if(q1){ %>
            <% extraIngr - JSON.stringify(q1).split(',').length; %>
@@ -49,21 +52,20 @@
         <% extraIngr - JSON.stringify(q1).split(',').length; %>
 
         <div class = "recipe" id = <%= recipe.uri %>>
-
             <img src = <%= recipe.image %>>
-
             <div class = recipe-titlebar>
                 <p class = recipe-block-title> <%= recipe.label %> </p>
                 <p> <%= extraIngr%> extra ingredients</p>
                 <p class = "recipe-source"> <a class = external-link target="_blank" href=<%= recipe.url%> > <%= recipe.source%></a> </p>
                 <div class = "recipe-block-btns">
                     <button class = "info">info</button>
+
+                    <!--Check if recipe is already saved-->
                     <% if (favourites.includes(recipe.uri)) {%>
                         <button class = "save saved" data-recipe-id="<%= recipe.uri %>">saved</button>
                     <%}else{%>
                         <button class = "save" data-recipe-id="<%= recipe.uri %>">save</button>
                     <%}%>
-
                 </div>
             </div>
         </div>
@@ -75,7 +77,7 @@
     <p>Recipe was saved!</p>
 </div>
 
-<!--Info Modal-------------------------------------------------------------------------------------------------------->
+<!--Info Modal When info button is clicked---------------------------------------------------------------------------->
 <div id="info-modal-container"></div>
 
 <script>
@@ -84,9 +86,9 @@
     });
 </script>
 
-<!--Footer ------------------------------------------------------------------------------------------------>
+<!--Footer ----------------------------------------------------------------------------------------------------------->
 <div id="pagin"></div>
-<div id = attribution> </div>
+<div id="edamam-badge" data-color="white"></div>
 </body>
 </html>
 
@@ -109,29 +111,31 @@
         $("#btn-menu-placeholder").load("/html/filterbuttonmenu.html");
     });
 
-    $(function () {
-        var pageSize = 12;
-        var pageCount =  Math.ceil(parseInt(resultNum) / pageSize);
-        var currPage = parseInt(page);
-        var pageMin = 1;
-        var pageMax = 5;
 
+    /*Create pagination based on number of results returned*/
+    $(function () {
+        var pageSize = 12; //Number of results per page
+        var pageCount =  Math.ceil(parseInt(resultNum) / pageSize); //Number of pages
+        var currPage = parseInt(page);
+        var paginationSize = 5; //At most 5 pages
+        var pageMin = 1; // Start at page 1
+        var pageMax = 5; // End at page 5
+
+        //Math.floor(paginationSize/2)
         if(currPage > 3){
             pageMin = currPage - 2;
             pageMax = currPage + 2;
-
         }
+
+        /*Set maxpage same as pagecount if there are less than 5 pages left*/
         if(pageCount<pageMax){
             pageMax=pageCount;
         }
 
+        /*Create the pages*/
         for(var i = pageMin ; i<=pageMax; i++){
             var pageNum = document.createElement("li");
             pageNum.setAttribute("class","page-num");
-            /*var a = document.createElement('a');
-            a.innerText = i.toString();
-
-            pageNum.appendChild(a)*/
             pageNum.innerText = i.toString();
 
             if(i==currPage) {
@@ -139,28 +143,21 @@
             }
             $("#pagin").append(pageNum);
         }
-
-
-
-
     });
 
-
     $(document).ready(function() {
+
+        //Fills in the previously inputed filter, time and max number of extra ingredients
         $(function() {
             if (paramData.time) {
                 console.log(JSON.parse(paramData.time));
                 $("#btn-menu-placeholder #t").css("background-color", "red");
             }
-        });
 
-        $(function() {
             if (maxIngr) {
                 $("#btn-menu-placeholder #m").prop("value", JSON.parse(maxIngr));
             }
-        })
 
-        $(function() {
             if (paramData.health) {
                 var tocheck = $("#btn-menu-placeholder").find('#' + paramData.health);
                 tocheck.prop("checked", true);
@@ -168,6 +165,7 @@
             }
         });
 
+        //Change page
         $("#pagin").on("click", ".page-num", function () {
 
             console.log($(this).text().toString())
@@ -180,9 +178,9 @@
             $("#resultsform").append(pageinput);
             $("#resultsform").submit();
         });
-
     });
 </script>
+
 <script src="../scripts/createinfomodal.js"></script>
 
 <script src="../scripts/deleterecipefunction.js"></script>
