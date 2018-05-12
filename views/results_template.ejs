@@ -94,6 +94,7 @@
 
 
 <script>
+    var locals = <%-JSON.stringify(locals)%>;
     var favouriteRecipes = <%-JSON.stringify(favourites)%>;
     var recipeData = <%-JSON.stringify(locals.hits)%>;
     var paramData = <%-JSON.stringify(searchParams)%>;
@@ -114,18 +115,22 @@
 
     /*Create pagination based on number of results returned*/
     $(function () {
-        var pageSize = 12; //Number of results per page
+        var pageSize = 24; //Number of results per page
+        const edamamCapPages = Math.ceil(100/pageSize);
         var pageCount =  Math.ceil(parseInt(resultNum) / pageSize); //Number of pages
+        if(pageCount > edamamCapPages){
+            pageCount=edamamCapPages;
+        }
         var currPage = parseInt(page);
         var paginationSize = 5; //At most 5 pages
         var pageMin = 1; // Start at page 1
         var pageMax = 5; // End at page 5
 
         //Math.floor(paginationSize/2)
-        if(currPage > 3){
-            pageMin = currPage - 2;
-            pageMax = currPage + 2;
-        }
+        /*if(currPage > 3){
+            pageMin = currPage - Math.floor(paginationSize/2);
+            pageMax = currPage + Math.floor(paginationSize/2);
+        }*/
 
         /*Set maxpage same as pagecount if there are less than 5 pages left*/
         if(pageCount<pageMax){
