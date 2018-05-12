@@ -38,9 +38,6 @@ initPassport(passport);
 // Routes
 const passportRouter = require('./routes/passportroutes.js')(passport);
 app.use("/", passportRouter);
-/*const router = require('./routes/routes.js');
-app.use("/", router);*/
-
 
 const PORT = process.env.PORT || 3020;
 app.listen(PORT, function(){
