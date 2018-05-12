@@ -31,7 +31,8 @@ module.exports = {
             app_id: process.env.API_ID,
             app_key: process.env.API_KEY,
             from: ((page-1) * resultsPerPage).toString(),
-            to: ((page-1) * resultsPerPage + resultsPerPage).toString()
+            to: ((page-1) * resultsPerPage + resultsPerPage).toString(),
+            time:"1+"
         }
 
         if(req.query.health) {
@@ -44,7 +45,7 @@ module.exports = {
             params.q += "," + req.query.q2;
         }
         if(req.query.t){
-            params.time = req.query.t;
+            params.time = "1-" + req.query.t;
         }
         if(req.query['m']) {
             params.ingr = (parseInt(req.query['m']) + req.query.q1.split(',').length).toString();
@@ -75,8 +76,14 @@ module.exports = {
                 if (!error && response.statusCode == 200) {
                     var locals = JSON.parse(body);
                     res.render('results_template', {
-                        locals:locals,
-                        searchParams:params,
+                        locals: {
+                            hits: locals.hits,
+                            count: locals.count
+                        },
+                        searchParams:{
+                            time: params.time,
+                            health: params.health
+                        },
                         q1:req.query.q1,
                         q2:req.query.q2,
                         m: req.query.m,

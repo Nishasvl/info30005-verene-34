@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 
     /*Unsaving a Recipe*/
-    $("reciperesults").on("click", ".saved", function () {
+    $("body").on("click", ".saved", function () {
         var btn = $(this);
         var recipeId = btn.attr("data-recipe-id");
 
