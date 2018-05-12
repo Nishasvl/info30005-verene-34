@@ -154,7 +154,7 @@
 
         //Fills in the previously inputed filter, time and max number of extra ingredients
         $(function() {
-            if (paramData.time) {
+            if (paramData.time!="1+") {
                 console.log(JSON.parse(paramData.time));
                 $("#btn-menu-placeholder #t").css("background-color", "red");
             }

@@ -76,8 +76,14 @@ module.exports = {
                 if (!error && response.statusCode == 200) {
                     var locals = JSON.parse(body);
                     res.render('results_template', {
-                        locals:locals,
-                        searchParams:params,
+                        locals: {
+                            hits: locals.hits,
+                            count: locals.count
+                        },
+                        searchParams:{
+                            time: params.time,
+                            health: params.health
+                        },
                         q1:req.query.q1,
                         q2:req.query.q2,
                         m: req.query.m,
