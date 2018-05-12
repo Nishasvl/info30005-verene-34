@@ -1,3 +1,4 @@
+<!--https://bootsnipp.com/snippets/featured/squarespace-like-modal-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,132 +15,15 @@
     <link rel="stylesheet" type="text/css" href="../css/foodtracker.css">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 <head/>
 
-
-
-<!--<script>-->
-
-    <!--//Delete button removes the tracked item-->
-    <!--$(document).ready(function($) {-->
-        <!--$('.grid-container').on("click", ".delete-btn", function(){-->
-            <!--$(this).closest(".grid-item").remove();-->
-        <!--});-->
-
-    <!--// add new item-->
-    <!--$('form').submit(function() {-->
-
-    <!--if ($('#inputfood').val() !== '') {-->
-    <!--var newTask = $('#inputfood').val();-->
-
-    <!--// tracks expiry date-->
-    <!--var expiryDate = $('#inputdate').val();-->
-    <!--var today = (new Date()).setHours(0,0,0,0);-->
-    <!--var daysleft = Math.floor(((Date.parse(expiryDate)) - today) / (1000 * 60 * 60 * 24));-->
-
-    <!--// notification badge colour-->
-    <!--var colour = '';-->
-    <!--if (daysleft < 0) {-->
-        <!--colour = '<div class="top-right"><span class="w3-badge w3-xlarge w3-red">' + daysleft + '</span></div>';-->
-    <!--}-->
-    <!--else if (daysleft <= 2) {-->
-        <!--colour = '<div class="top-right"><span class="w3-badge w3-xlarge w3-yellow">' + daysleft + '</span></div>';-->
-    <!--}-->
-    <!--else {-->
-        <!--colour = '<div class="top-right"><span class="w3-badge w3-xlarge w3-green">' + daysleft + '</span></div>';-->
-    <!--}-->
-
-    <!--// adds new item to webpage-->
-    <!--var newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="" width = "200" height="200" id="' + newTask +'"' + 'alt="' + newTask +'">'  + colour + '<button class="delete-btn centered" >Delete</button>'+'</div>'+'</div>');-->
-
-
-    <!--// add item image to web page-->
-        <!--function previewFile(){-->
-            <!--var preview = document.querySelector('#' + newTask ); //selects the query named img-->
-            <!--var file    = document.querySelector('input[type=file]').files[0]; //sames as here-->
-            <!--var reader  = new FileReader();-->
-
-            <!--reader.onloadend = function () {-->
-                <!--preview.src = reader.result;-->
-            <!--}-->
-
-            <!--if (file) {-->
-                <!--reader.readAsDataURL(file); //reads the data as a URL-->
-            <!--} else {-->
-                <!--preview.src = "";-->
-            <!--}-->
-        <!--}-->
-
-    <!--// old delete item function-->
-    <!--/*newLi.on('click', function() {-->
-    <!--$(this).remove(); // Attach the event handler *before* adding the element-->
-    <!--});*/-->
-
-
-    <!--// add whole input of item to website-->
-    <!--$('.grid-container').append(newLi);-->
-    <!--previewFile();-->
-
-    <!--// old delete item function-->
-        <!--// $('.centered').click(function(){-->
-        <!--//     $(newLi).remove();-->
-        <!--// });-->
-
-    <!--$('#input').val('');-->
-    <!--return false; // So the change persists-->
-    <!--}-->
-    <!--});-->
-    <!--// $('ul').sortable(); // Because what good is a to-do list that you can't sort? :)-->
-    <!--});-->
-<!--</script>-->
 
 <body>
 
 
 <!--Navigation bar-->
-<div id="nav-placeholder">
+<div id="nav-placeholder"></div>
 
-</div>
-
-<script>
-    $(function(){
-        $("#nav-placeholder").load("/html/nav.html");
-    });
-</script>
-<!--end of Navigation bar-->
-
-
-
-<script>
-    $(function() {
-
-
-
-        $('#register-food').submit(false);
-        $('#register-food').click(function(e) {
-            $.ajax({
-                type: "POST",
-                url: "/foodtracker",
-                data: JSON.stringify({
-                    username: $('#exampleInputFile').val(),
-                    name: $('#inputfood').val(),
-                    image: $('#exampleInputFile').val(),
-                    date: $('#inputdate').val()
-                }),
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function(data){
-                    console.log(data);
-                },
-                failure: function(errMsg) {
-                    console.log(errMsg);
-                }
-            });
-        })
-
-    });
-</script>
 
 
 <!--add button-->
@@ -147,7 +31,7 @@
 <div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block" style="font-family: 'Josefin Slab'">Add food</button></div>
 
 
-<!-- line modal -->
+<!-- line modal for adding food item -->
 <div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" style="font-family: 'Josefin Slab'">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -180,7 +64,7 @@
 
 
 
-
+<!--food item display container-->
 <div class="grid-container">
 </div>
 

@@ -1,3 +1,4 @@
+<!--https://bootsnipp.com/snippets/featured/login-and-register-tabbed-form-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +9,12 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="../scripts/login.js"></script>
 
 
     <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" >
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" >
-
-
-
 
 </head>
 
@@ -46,77 +45,14 @@
 </nav>
 
 
-<!--log in script-->
-<script>
-    $(function() {
-
-        $('#login-form-link').click(function(e) {
-            $("#login-form").delay(100).fadeIn(100);
-            $("#register-form").fadeOut(100);
-            $('#register-form-link').removeClass('active');
-            $(this).addClass('active');
-            e.preventDefault();
-        });
-        $('#register-form-link').click(function(e) {
-            $("#register-form").delay(100).fadeIn(100);
-            $("#login-form").fadeOut(100);
-            $('#login-form-link').removeClass('active');
-            $(this).addClass('active');
-            e.preventDefault();
-        });
-        //
-        // $('#login-submit').click(function(e) {
-        //     $.ajax({
-        //         type: "post",
-        //         url: "/login",
-        //         data: JSON.stringify({
-        //             username: $('#loginusername').val(),
-        //             password: $('#loginpassword').val()
-        //         }),
-        //         contentType: "application/json; charset=utf-8",
-        //         dataType: "json",
-        //         success: function(data){
-        //             console.log("yay");
-        //             console.log(data);
-        //         },
-        //         failure: function(errMsg) {
-        //             console.log(":(");
-        //             console.log(errMsg);
-        //         }
-        //     })
-        // });
-
-        // $('#register-submit').submit(false);
-        // $('#register-submit').click(function(e) {
-        //     $.ajax({
-        //         type: "POST",
-        //         url: "/signup",
-        //         data: JSON.stringify({
-        //             username: $('#username').val(),
-        //             name: $('#name').val(),
-        //             email: $('#email').val(),
-        //             password: $('#password').val()
-        //         }),
-        //         contentType: "application/json; charset=utf-8",
-        //         dataType: "json",
-        //         success: function(data){
-        //             console.log(data);
-        //         },
-        //         failure: function(errMsg) {
-        //             console.log(errMsg);
-        //         }
-        //     });
-        // })
-
-    });
-</script>
-
 
 <!--log in html-->
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-login">
+
+                <!--headings at top-->
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-6">
@@ -129,8 +65,12 @@
                     <hr>
                 </div>
                 <div class="panel-body">
+
+
                     <div class="row">
                         <div class="col-lg-12">
+
+                            <!--log in form-->
                             <!--<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">-->
                             <form id="login-form" role="form" style="display: block;" action = "/login" method = "post">
                                 <div class="form-group">
@@ -160,6 +100,8 @@
                                     </div>
                                 </div>
                             </form>
+
+                            <!--register form-->
                             <a href="#register">
                             <form id="register-form" action="/signup" method="post" role="form" style="display: none;">
                                 <div class="form-group">
@@ -186,6 +128,8 @@
                                 </div>
                             </form>
                             </a>
+
+
                         </div>
                     </div>
                 </div>

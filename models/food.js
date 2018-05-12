@@ -1,3 +1,4 @@
+// food item schema
 var mongoose =  require('mongoose');
 var foodSchema = mongoose.Schema({
         "username": String,

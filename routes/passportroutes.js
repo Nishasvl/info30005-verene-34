@@ -21,21 +21,12 @@ var isAuthenticated = function (req, res, next) {
 
 module.exports = function(passport){
 
+    // passport
+
+    // authenticate user
     router.get('/account', isAuthenticated, function(req, res){
         res.sendFile('accountpage.html', {root: __dirname + html_dir});
     });
-
-
-    /*/!* GET login page. *!/
-    router.get('/html/login.html', function(req, res) {
-        // Display the Login page with any flash message, if any
-        res.render('index', { message: req.flash('message') });
-    });*/
-
-    /* GET Registration Page */
-    /*router.get('/signup', function(req, res){
-        res.render('register',{message: req.flash('message')});
-    });*/
 
 
     /* Login Page Display */
@@ -64,26 +55,25 @@ module.exports = function(passport){
     /* Handle Logout */
     router.get('/logout', passportController.logoutUser);
 
-    /*General Pages */
+
+
+
+    /* Other General Pages */
+
+    router.get('/user', controller.findOneUser);
+
     router.get('/tracker', isAuthenticated, controller.displayFoodPage);
-
     router.post('/foodtracker', controller.registerFood);
-
-    router.post('/foodtracker', controller.registerFood);
-
     router.get('/foodtracker', controller.findUserFood);
+    router.delete('/foodtracker', controller.deleteFood);
 
     router.get('/results', isAuthenticated, controller.displayRecipes);
-
     router.post('/results', recipeController.saveRecipe);
 
     router.get('/favourites', isAuthenticated, recipeController.displayFavourites);
-
     router.delete('/favourites', recipeController.deleteRecipe);
 
-    router.delete('/foodtracker', controller.deleteFood);
 
-    router.get('/user', controller.findOneUser);
 
     return router;
 };

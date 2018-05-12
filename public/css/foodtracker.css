@@ -1,5 +1,3 @@
-
-
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
@@ -86,13 +84,14 @@ body {
 
 
 
-/*delete button and badge notification*/
+/*badge notification*/
 .top-right {
     position: absolute;
     top: 8px;
     right: 8px;
 }
 
+/*delete button*/
 .centered {
     position: absolute;
     bottom: 0px;

@@ -5,6 +5,17 @@
 }
 
 
+body{
+    background: url('../images/searchbackground.jpg');
+    background-size: cover;
+    width: 100%;
+    margin: 0;
+    font-family: "Josefin Slab";
+}
+
+
+
+/*search bar css*/
 .full-searchbar{
     background-color: rgba(233, 233, 233, 0.95);
     padding: 5px 0 15px 0;
@@ -28,12 +39,7 @@
 }
 
 
-body{
-    background-size: cover;
-    width: 100%;
-    margin: 0;
-    font-family: "Josefin Slab";
-}
+
 
 .full-searchbar form{
     margin: 0 auto 20px auto;
