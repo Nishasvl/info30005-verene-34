@@ -1,3 +1,4 @@
+//partial code from https://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
 const express = require('express');
 const flash=require('connect-flash');
 require('dotenv').config();
@@ -33,8 +34,6 @@ app.use(flash());
 // Initialize Passport
 var initPassport = require('./passport/init');
 initPassport(passport);
-
-
 
 // Routes
 const passportRouter = require('./routes/passportroutes.js')(passport);

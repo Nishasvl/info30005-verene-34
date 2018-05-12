@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>Verene - Favourites</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
-
     <link href="../css/generic.css" rel="stylesheet">
     <link href="../css/favourites.css" rel="stylesheet">
 
@@ -16,6 +14,7 @@
 </div>
 
 <script>
+    /*Load the navbar*/
     $(function(){
         $("#nav-placeholder").load("/html/nav.html");
     });
@@ -27,14 +26,14 @@
     My Saved Recipes
 </h1>
 
+<!--Recipe results Grid--------------------------------------------------------------------------------------------->
 <div id = "recipe-results" class = "recipe-grid">
     <% for(let i =0; i<recipes.length; i++){ %>
     <%  var recipe = recipes[i] %>
 
+    <!--Create a recipe card-->
     <div class = "recipe" id = <%= recipe.uri %>>
-
         <img src = <%= recipe.image %>>
-
         <div class = recipe-titlebar>
             <p class = recipe-block-title> <%= recipe.label %> </p>
             <p> <a class = "external-link" target="_blank" href=<%= recipe.url%>> <%= recipe.source%></a></p>
@@ -46,10 +45,13 @@
     </div>
     <%} %>
 </div>
+
+<!--Modal which pops up when you click the info button------------------------------------------------------------->
 <div id="info-modal-container"></div>
 
 <!--<div class = "bottom-popup" >
-    <p>Undo Remove Recipe</p>
+    <p>Recipe Removed</p>
+    <p>Undo</p>
 </div>-->
 
 <script>
@@ -57,13 +59,11 @@
 
     $(function(){
         $("#info-modal-container").load("/html/infomodal.html");
-        $("#info-modal-container .save").remove();
     });
-
 </script>
+
 <script src="../scripts/deleterecipefunction.js"></script>
 <script src="../scripts/createinfomodal.js"></script>
-
 <script src="../scripts/favourites.js"></script>
 
 </body>
