@@ -1,6 +1,7 @@
+//partial code from https://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
+
+
 const html_dir = '/../public/html';
-
-
 
 module.exports = {
     displayLogin : function(req, res){

@@ -1,12 +1,3 @@
-var recipes = [];
-var modalRecipeId;
-
-var defaultGeneral = "All Recipes";
-var defaultIngredients = "No Ingredients Entered";
-
-console.log(recipeData);
-
-
 /*recipe = {
     uri : "id",
     label : "title",
@@ -20,20 +11,13 @@ console.log(recipeData);
 
 
 $(document).ready(function() {
+    /*Set the top margin of the recipe results**/
     var header = $('#results-search-header').outerHeight();
     $('#reciperesults').css('margin-top', header + 10 + 55);
-});
 
-
-$(document).ready(function() {
-
-
-    $("body").on("click", ".external-link", function () {
-        //var recipeId = $(this).closest('.recipe').attr('id');
-    });
 
     /*Unsaving a Recipe*/
-    $("reciperesults").on("click", ".saved", function () {
+    $("body").on("click", ".saved", function () {
         var btn = $(this);
         var recipeId = btn.attr("data-recipe-id");
 
@@ -57,14 +41,14 @@ $(document).ready(function() {
     });*/
 
 
-    /*Clicking on a "save" button*/
+    /*Saving a recipe*/
     $("body").on("click", ".save:not(.saved)", function () {
         var btn = $(this);
 
         var recipeId = btn.attr('data-recipe-id');
         var recipe = $.grep(recipeData, function(e){ return e.recipe.uri == recipeId; })[0].recipe;
 
-        console.log(recipe);
+        //Save confirmation popup
         $('.bottom-popup').slideToggle({direction: "up"}, 200)
         $('.bottom-popup').delay(500).fadeOut(500);
 
@@ -92,6 +76,7 @@ $(document).ready(function() {
             }
         });
 
+        //Change button css to "saved"
         btn.addClass("saved");
         btn.text("saved");
 
@@ -130,10 +115,6 @@ $(document).ready(function() {
             $(".modal").css('display', 'none');
         }
     });*/
-
-
-
-
 });
 
 
