@@ -91,6 +91,14 @@ body {
     right: 8px;
 }
 
+.top-centre {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
 /*delete button*/
 .centered {
     position: absolute;

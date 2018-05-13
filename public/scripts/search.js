@@ -73,12 +73,31 @@ $(document).ready(function($) {
             const expiryDate = food.date;
             const daysLeft = Math.floor(((Date.parse(expiryDate)) - today) / (1000 * 60 * 60 * 24));
 
+            if (food.image == 'fruits') {
+                food.image = "https://www.fruitonly.com.au/Skin/RosesOnly/Images/Products/850,850/LargeClassicFruitHamper.jpg";
+            }
+            if (food.image == 'vegetables') {
+                food.image = "https://www.builtlean.com/wp-content/uploads/2012/06/eat-more-vegetables-1.jpg";
+            }
+            if (food.image == 'meats') {
+                food.image = "https://www.sixpackbags.com/wp/wp-content/uploads/2013/03/healthylunchmeats.jpeg";
+            }
+            if (food.image == 'dairy') {
+                food.image = "http://images.ritewayfoodservice.com.au/2010/10/dairy-300x270.jpg";
+            }
+            if (food.image == 'carbohydrates') {
+                food.image = "https://img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/94/180/149162559.jpg";
+            }
+            if (food.image == 'other') {
+                food.image = "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg";
+            }
+
             // if food item expiring in 0 to 2 days display it (display only first 2 items)
             if (daysLeft >=0 && daysLeft <= 2 && counter < 2) {
                 counter++;
                 const foodId = food._id;
                 const foodname = food.name;
-                const newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">' +'</div>'+'</div>');
+                const newLi = $('<div class="grid-item">'+'<div class="container1">'+'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">' + '<div class="top-centre"><p>' + foodname + '</p></div>' + '</div>'+'</div>');
                 // add whole input of item to website
                 $('.soon-grid-container').append(newLi);
             }

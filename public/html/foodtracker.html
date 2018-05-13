@@ -44,8 +44,21 @@
 
                 <form>
                     <div class="form-group">
-                        <label for="exampleInputFile"><b>Enter Food Image Link*</b></label>
-                        <input type="text" id="exampleInputFile">
+
+                        <!--<label for="exampleInputFile"><b>Enter Food Image Link*</b></label>-->
+                        <!--<input type="text" id="exampleInputFile">-->
+
+                        <label>Choose image or enter food image link*:
+                            <!--<input list="foods" name="myfood" type="text" id="exampleInputFile"/></label>-->
+                            <input list="foods" type="text" id="exampleInputFile"/></label>
+                        <datalist id="foods">
+                            <option value="fruits">
+                            <option value="vegetables">
+                            <option value="meats">
+                            <option value="dairy">
+                            <option value="carbohydrates">
+                            <option value="other">
+                        </datalist>
                     </div>
                     <div class="form-group">
                         <label for="inputfood"><b>Enter New Food Name*</b></label>
