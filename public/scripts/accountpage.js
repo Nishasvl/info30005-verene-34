@@ -32,4 +32,36 @@ $(document).ready(function()
             $("#email").text(user.email);
         }
     })
+
+    //Change password
+    $('#change-password-form').submit(function(e){
+        e.preventDefault();
+        if($('#confirm_password').val() === $('#new_password').val()){
+            $.ajax({
+                type: "POST",
+                url: "/user/password_update",
+                data: JSON.stringify({
+                password: $('#new_password').val(),
+            }),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                },
+                failure: function(err){
+                    console.log(err);
+                }
+            })
+        } else {
+            alert("Passwords Do Not Match");
+            return;
+        }
+
+        //Password Change Successful
+        alert("password changed")
+        $('#confirm_password').val("");
+        $('#new_password').val("");
+    })
+
+
+
 });

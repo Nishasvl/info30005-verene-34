@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user.js');
-var bCrypt = require('bcrypt-nodejs');
+var createHash = require('./passwordHash.js');
+
 //code from https://code.tutsplus.com/tutorials/authenticating-nodejs-applications-with-passport--cms-21619
 
 module.exports = function(passport){
@@ -52,10 +53,5 @@ module.exports = function(passport){
             process.nextTick(findOrCreateUser);
         })
     );
-
-    // Generates hash using bCrypt
-    var createHash = function(password){
-        return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
-    }
 
 }

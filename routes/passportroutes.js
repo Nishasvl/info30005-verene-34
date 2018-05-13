@@ -55,8 +55,8 @@ module.exports = function(passport){
     /* Handle Logout */
     router.get('/logout', passportController.logoutUser);
 
-
-
+    /* Change Password */
+    router.post('/user/password_update', passportController.updatePassword)
 
     /* Other General Pages */
 
