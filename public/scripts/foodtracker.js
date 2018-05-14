@@ -45,6 +45,26 @@ $(document).ready(function($) {
         const today = (new Date()).setHours(0,0,0,0);
         const daysleft = Math.floor(((Date.parse(expiryDate)) - today) / (1000 * 60 * 60 * 24));
 
+
+        if (food.image == 'fruits') {
+            food.image = "https://www.fruitonly.com.au/Skin/RosesOnly/Images/Products/850,850/LargeClassicFruitHamper.jpg";
+        }
+        if (food.image == 'vegetables') {
+            food.image = "https://www.builtlean.com/wp-content/uploads/2012/06/eat-more-vegetables-1.jpg";
+        }
+        if (food.image == 'meats') {
+            food.image = "https://www.sixpackbags.com/wp/wp-content/uploads/2013/03/healthylunchmeats.jpeg";
+        }
+        if (food.image == 'dairy') {
+            food.image = "http://images.ritewayfoodservice.com.au/2010/10/dairy-300x270.jpg";
+        }
+        if (food.image == 'carbohydrates') {
+            food.image = "https://img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/94/180/149162559.jpg";
+        }
+        if (food.image == 'other') {
+            food.image = "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg";
+        }
+
         // notification badge colour
         let colour = '';
         if (daysleft < 0) {
@@ -57,11 +77,13 @@ $(document).ready(function($) {
             colour = '<div class="top-right"><span class="w3-badge w3-xlarge w3-green">' + daysleft + '</span></div>';
         }
 
+
+
         // creating new food item
         const newLi = $('<div class="grid-item">'
             +'<div class="container1">'
             +'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">'
-            //+ '<p>' + foodname +'</p>'
+            + '<div class="top-centre"><p>' + foodname + '</p></div>'
             + colour + '<button data-mongo-id="' + foodId +'" class="delete-btn centered" >Delete</button>'
             +'</div>'
             +'</div>');
