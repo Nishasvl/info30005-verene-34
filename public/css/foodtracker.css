@@ -14,15 +14,24 @@ body {
 
 
 /*add button on body*/
-.add{
-    width: 100px;
-    height: 100px;
-    margin-left: 90%;
-    margin-top: 5%;
-
-    border-radius: 25px;
-
+.btn-content{
+    margin-top: 30%;
 }
+
+#add-btn {
+    padding: 0;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+}
+
+#add-btn p{
+    padding-top: 10px;
+}
+
 .center {
     margin-top:50px;
     margin-left: 87%;
@@ -64,11 +73,15 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
     padding: 10px;
+    grid-template-columns: repeat( auto-fit, minmax(200px, 250px) );
+    grid-gap: 10px;
+    grid-auto-rows: auto;
+    margin: 100px 30px 30px 30px !important;
+
 }
 .grid-item {
-    padding: 25px;
+    padding: 10px;
     font-size: 19px;
     text-align: center;
 }
@@ -79,6 +92,7 @@ body {
     border-radius: 50px;
     width: 200px;
     height: 200px;
+    margin: auto;
 }
 
 
