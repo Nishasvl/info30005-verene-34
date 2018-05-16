@@ -39,7 +39,13 @@ $(document).ready(function($) {
     // displaying food function
     const displayFood = food => {
         const foodId = food._id;
-        const foodname = food.name;
+        console.log(food.name);
+
+        var foodname = food.name;
+        if(foodname==""){
+            foodname = "Unnamed";
+        }
+
 
         const expiryDate = food.date;
         const today = (new Date()).setHours(0,0,0,0);
@@ -82,9 +88,10 @@ $(document).ready(function($) {
         // creating new food item
         const newLi = $('<div class="grid-item">'
             +'<div class="container1">'
+            + '<div class="top-centre"><p>' + foodname + '</p></div>' + colour
             +'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">'
-            + '<div class="top-centre"><p>' + foodname + '</p></div>'
-            + colour
+
+
 
             + '<div class="overlay">'
             + '<button data-mongo-id="' + foodId +'" class="delete-btn centered" >Delete</button>'
