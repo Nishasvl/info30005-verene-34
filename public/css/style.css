@@ -1,0 +1,9 @@
+/*This stylesheet is for all of the fonts and common elements*/
+
+h1, .page-heading{
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 400;
+    font-size:8em;
+    text-align: center;
+    padding-top: 30px
+}

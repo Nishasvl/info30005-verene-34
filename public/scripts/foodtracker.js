@@ -84,7 +84,12 @@ $(document).ready(function($) {
             +'<div class="container1">'
             +'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">'
             + '<div class="top-centre"><p>' + foodname + '</p></div>'
-            + colour + '<button data-mongo-id="' + foodId +'" class="delete-btn centered" >Delete</button>'
+            + colour
+
+            + '<div class="overlay">'
+            + '<button data-mongo-id="' + foodId +'" class="delete-btn centered" >Delete</button>'
+            + '<div>'
+
             +'</div>'
             +'</div>');
 
