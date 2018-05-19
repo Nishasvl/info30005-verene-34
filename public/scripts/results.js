@@ -12,8 +12,8 @@
 
 $(document).ready(function() {
     /*Set the top margin of the recipe results**/
-    var header = $('#results-search-header').outerHeight();
-    $('#reciperesults').css('margin-top', header + 10 + 55);
+    var header1= $('#results-search-header').outerHeight();
+    $('#recipe-grid').css('margin-top', header1 + 65);
 
 
     /*Unsaving a Recipe*/

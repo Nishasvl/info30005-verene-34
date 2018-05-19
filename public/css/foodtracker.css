@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
-@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
 
 
@@ -7,7 +6,6 @@ body {
     background: url('../images/fridgebackground.png');
     background-position: top;
     background-size:cover;
-    font-family: "Josefin Slab";
 }
 
 
@@ -78,7 +76,7 @@ body {
     grid-gap: 35px;
     grid-auto-rows: auto;
     width: auto;
-    margin: 50px 5% 40px 5% !important;
+    margin: 100px 5% 40px 5% !important;
 
 }
 .grid-item {
@@ -110,7 +108,7 @@ body {
 .container1:hover .overlay {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .5);
+    background: rgba(96, 96, 96, 0.87);
     position: absolute;
     top: 0;
     left: 0;
@@ -127,6 +125,7 @@ body {
     top: 0px;
     right: 0px;
     transform: translateX(20px) translateY(-20px);
+    z-index: 4;
 }
 
 .top-centre {
@@ -145,5 +144,16 @@ body {
     bottom: 0px;
     left: 50%;
     transform: translate(-50%);
+
 }
+
+.delete-btn{
+    color: #d7d7d7;
+}
+.delete-btn:hover{
+    color: #242424;
+    background-color: transparent;
+
+}
+
 

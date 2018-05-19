@@ -4,102 +4,183 @@
     box-sizing: border-box;
 }
 
-
 body{
-    background: url('../images/searchbackground.jpg');
-    background-size: cover;
-    width: 100%;
-    margin: 0;
-    font-family: "Josefin Slab";
 }
 
-
-
-/*search bar css*/
-.full-searchbar{
-    background-color: rgba(233, 233, 233, 0.95);
-    padding: 5px 0 15px 0;
-    margin: 4% 0% 0 12%;
-    text-align: center;
-    position: relative;
-    left: 0;
-    right: 0;
-    border-radius: 25px;
-    width: 550px;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
-}
-
-.soon-grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
-}
-
-
-
-
-.full-searchbar form{
-    margin: 0 auto 20px auto;
-    display: table;
-    text-align: justify;
-    padding-left: 30px;
-
-}
-
-.full-searchbar p{
-    margin-bottom: 0;
-    font-style: italic;
-    font-size: 15px;
-}
-
-
-#searchform-container{
-    width: 100%;
-}
-
-#search-abt-text{
+#expiring-container{
+    background-color: white;
     margin-top: 50px;
+}
+/*Search Bar*/
+#results-search-header {
+
     text-align: center;
+    background-color: #ffffff;
+    padding-top: 10px;
+
+    z-index: 4;
+    /*
+    border-bottom: 1px solid #cacaca;
+    */
 }
 
 
-
-
-#searchform label {
-    text-align: left;
-    font-size: 15px;
-    font-weight: bold;
-
-}
-
-#searchform input{
-    text-align: left;
-}
-
-#searchform span {
-    font-size: 15px;
-    font-weight: bold;
-}
-
-#searchform input[type=text] {
+#resultsform input[type=text], #searchform input[type=text] {
     padding: 10px 0 10px 10px;
     border: none;
-    border-bottom: 1px solid black ;
-    margin: 8px 2px 0 4px;
-    font-size: 17px;
-    background-color: rgba(204, 214, 196, 0.84);
-}
-
-#time-input{
+    border-bottom: 1px solid #cad6ce;
+    margin: 8px 16px 0 4px;
+    font-size: 15px;
+    background-color: #E8E8E8;
+    min-width: 100px;
     width: 20%;
 }
 
-#ingredient-input{
-    width: 49%;
+#resultsform label{
+    display: inline-block;
+    margin-bottom: 0;
 }
-#meal-input{
-    width: 53%;
+
+#resultsform{
+    margin-bottom: 5px;
+}
+
+.btn-menu{
+    padding-top: 5px;
+}
+
+.btn-menu ul{
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    display:inline-block;
+    padding: 0;
+    font-size: 15px;
+}
+
+.searchbtn{
+    display: inline;
+    position: relative;
+    /*border: 1px solid gray;*/
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 12px;
+    background-color: #DBE2D7;
+    color: black;
+}
+
+.searchbtn:hover{
+    background-color: #c1cabd;
+}
+
+#header{
+    background-image: url('../images/brooke-lark-182428-unsplash-cropped-scaled.jpg');
+    height: 250px;
+    line-height:70px;
+    background-position: center;
+    text-align: center;
+    background-repeat:no-repeat;
+    position: relative;
+
+
+}
+
+#header span{
+    font-weight: bolder;
+    vertical-align: center;
+    line-height: normal;
+    font-size: 30px;
+    color: whitesmoke;
+    text-shadow:2px 2px 3px #676767;
+}
+
+
+.large-grid-container {
+    /*display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 50px;
+    grid-template-rows: 40px auto;
+    */
+
+    /*background-color: white;*/
+    /*transform: translateY(-150px);*/
+    position: absolute;
+    top: 120px;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+
+}
+
+
+
+.grid-container {
+    display:grid;
+    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr) );
+    grid-gap: 30px;
+    grid-auto-rows: auto;
+    margin: 30px 5% 40px 5% !important;
+
+}
+
+.grid-item {
+    font-size: 16px;
+    text-align: center;
+}
+
+.container1 {
+    position: relative;
+    text-align: center;
+    color: black;
+    border-radius: 25px;
+    width: auto;
+    height: auto;
+    margin: auto;
+    display:inline-block;
+    border: #cacaca solid 1px;
+    padding: 9px 5px 5px 5px;
+}
+
+.container1 p{
+    width: auto;
+    margin: 0 0 5px 0;
+}
+.container1 img{
+    overflow: hidden;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 25px;
+}
+
+.overlay {
+    display:none;
+}
+
+/*badge notification*/
+.top-right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translateX(10px) translateY(-10px);
+}
+
+.top-centre {
+    /*position: absolute;*/
+    top: 0px;
+    left: 50%;
+    background-color: white;
+    display: block;
+    /*transform: translate(-50%);*/
+}
+
+
+/*delete button*/
+.centered{
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%);
 }

@@ -1,6 +1,6 @@
 
 <!--Search Banner-->
-<h1 style="font-family: 'Fredericka the Great'">Find a recipe</h1>
+<!--<h1 style="font-family: 'Fredericka the Great'">Find a recipe</h1>
 <p>Fill in at least one of the boxes</p>
 <div id = searchform-container>
     <form id = searchform action = '/results' method = "get">
@@ -12,19 +12,39 @@
             <label>I want to make</label>
             <input  id = meal-input type="text" name = "q2" placeholder="apple pie">
         </div>
-        <!--<div>
+        &lt;!&ndash;<div>
             <label>I want to cook for less than </label>
             <input id = time-input type="text" name = "time" placeholder="60">
             <span> minutes</span>
-        </div>-->
+        </div>&ndash;&gt;
         <div class = btn-menu>
             <ul><li><div id="btn-menu-placeholder"></div></li>
                 <li><button id = "mainsearchbtn" class = "searchbtn" value = "submit" form = "searchform"> Search </button></li></ul>
         </div>
     </form>
-</div>
+</div>-->
 
 <!--button do das-->
+
+<div id = results-search-header>
+    <h1 style="font-family: 'Fredericka the Great'" class="subheading">Find a recipe</h1>
+    <p style="font-style:italic">Fill in at least one of the boxes</p>
+    <form id = resultsform action = '/results' method = "get">
+        <label>Ingredients I have:</label>
+        <input name="q1" type="text" placeholder="apples, flour, sugar">
+
+        <label >I want to make:</label>
+        <input name="q2" id = "general-rs-form" type="text"  placeholder="apple pie">
+        <span>
+            <button id = "recipesearchbtn" class = "searchbtn" value = "submit" form = "resultsform" > Search </button>
+        </span>
+
+        <div id = btn-menu-placeholder></div>
+
+    </form>
+
+
+</div>
 
 
 <script>

@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <title>Verene - Favourites</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <link href="../css/generic.css" rel="stylesheet">
+    <link href="../css/results.css" rel="stylesheet">
     <link href="../css/favourites.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+
 
 
 </head>
@@ -20,14 +22,14 @@
     });
 </script>
 
-<body style='font-family: "Josefin Slab"'>
+<body class="body-text">
 
 <h1 style="font-family: 'Fredericka the Great', cursive;">
     My Saved Recipes
 </h1>
 
 <!--Recipe results Grid--------------------------------------------------------------------------------------------->
-<div id = "recipe-results" class = "recipe-grid">
+<div id = "recipe-results" style="margin-top:30px"class = "recipe-grid">
     <% for(let i =0; i<recipes.length; i++){ %>
     <%  var recipe = recipes[i] %>
 
@@ -36,7 +38,7 @@
         <img src = <%= recipe.image %>>
         <div class = recipe-titlebar>
             <p class = recipe-block-title> <%= recipe.label %> </p>
-            <p> <a class = "external-link" target="_blank" href=<%= recipe.url%>> <%= recipe.source%></a></p>
+            <p> <a class = "link" target="_blank" href=<%= recipe.url%>> <%= recipe.source%></a></p>
             <div class = "recipe-block-btns">
                 <button class = "info">info</button>
                 <button class = "remove">remove</button>

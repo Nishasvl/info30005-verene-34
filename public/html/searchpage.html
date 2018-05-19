@@ -4,36 +4,48 @@
     <meta charset="UTF-8">
     <title>Home Page</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="/scripts/displaytrackedfood.js"></script>
     <script src="/scripts/search.js"></script>
+    <script src="/scripts/home.js"></script>
 
-    <link href="/css/generic.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link href="/css/searchpage.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 
-<body style='font-family: "Josefin Slab"';>
+<body class="body-text">
 
 <!--nav bar-->
 <div id = nav-placeholder></div>
 
-<br>
-<h1 style=" font-family: 'Fredericka the Great', cursive; font-weight: 400; font-size:8em; text-align: center; padding-top: 30px">Home</h1>
+<br><br>
 
+<div id="header">
+<!--
+    <span>What will you make today?</span>
+-->
 
-<div class="grid-container">
+</div>
 
+<div class="large-grid-container">
     <!--search bar-->
-    <div id = search-placeholder class = "full-searchbar">
+    <div id = search-placeholder class = "full-searchbar grid-item">
     </div>
 
     <!--expiring soon-->
-    <div id = search-placeholder class = "full-searchbar">
-        <h1 style="font-family: 'Fredericka the Great' ">Expiring Soon</h1>
-        <br>
-        <div class="soon-grid-container"></div>
+    <div  id= expiring-container class=" grid-item">
+        <h1 style="font-family: 'Fredericka the Great' " class="subheading">Expiring Soon</h1>
+        <div class="grid-container"></div>
+        <div>  <a href = "/tracker" class="link">View all tracked items</a>  </div>
     </div>
-
 </div>
+
+
+
+
+
 
 
 

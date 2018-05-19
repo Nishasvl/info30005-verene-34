@@ -5,12 +5,14 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="/scripts/search.js"></script>
     <script src="https://developer.edamam.com/attribution/badge.js"></script> <!--edamam attribution-->
-    <link rel="stylesheet" href="/css/generic.css">
+    <link rel="stylesheet" href="/css/results.css">
+    <link rel="stylesheet" href="/css/style.css">
+
 
 </head>
 
 <html>
-<body background="/images/dust_scratches.png" style='font-family: "Josefin Slab"'>
+<body background="/images/dust_scratches.png" class="body-text">
 
 <div id = nav-placeholder></div>
 
@@ -55,7 +57,7 @@
             <div class = recipe-titlebar>
                 <p class = recipe-block-title> <%= recipe.label %> </p>
                 <p> <%= extraIngr%> extra ingredients</p>
-                <p class = "recipe-source"> <a class = external-link target="_blank" href=<%= recipe.url%> > <%= recipe.source%></a> </p>
+                <p class = "recipe-source"> <a class = link target="_blank" href=<%= recipe.url%> > <%= recipe.source%></a> </p>
                 <div class = "recipe-block-btns">
                     <button class = "info">info</button>
 
