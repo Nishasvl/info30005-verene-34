@@ -18,8 +18,8 @@ body {
 
 #add-btn {
     padding: 0;
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 240px;
     background-color: white;
     display: block;
     margin: auto;
@@ -79,27 +79,41 @@ body {
     margin: 100px 5% 40px 5% !important;
 
 }
+
 .grid-item {
-    font-size: 19px;
+    font-size: 16px;
     text-align: center;
 }
 
+
+
 .container1 {
+
     position: relative;
     text-align: center;
     color: black;
-    border-radius: 50px;
-    width: 200px;
+    border-radius: 25px;
+    width: auto;
     height: auto;
     margin: auto;
     display:inline-block;
+    border: #cacaca solid 1px;
+    padding: 9px 5px 5px 5px;
+    background-color: white;
 }
 
 .container1 img{
     overflow: hidden;
     max-width: 200px;
     max-height: 200px;
+    border-radius: 25px;
 }
+
+.container1 p{
+    width: auto;
+    margin: 0 0 5px 0;
+}
+
 
 .overlay {
     display:none;
@@ -116,6 +130,7 @@ body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    border-radius: 25px;
 }
 
 
@@ -124,8 +139,7 @@ body {
     position: absolute;
     top: 0px;
     right: 0px;
-    transform: translateX(20px) translateY(-20px);
-    z-index: 4;
+    transform: translateX(10px) translateY(-10px);
 }
 
 .top-centre {
@@ -153,6 +167,7 @@ body {
 .delete-btn:hover{
     color: #242424;
     background-color: transparent;
+    border-radius: 25px;
 
 }
 
