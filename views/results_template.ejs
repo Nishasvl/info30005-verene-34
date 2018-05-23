@@ -37,8 +37,11 @@
 
 <!--Results Section--------------------------------------------------------------------------------------------------->
 <div id = result-num>
-    <p> <%= locals.count%> results </p>
-    <p> Page of</p>
+    <% var results = locals.count%>
+    <%if(results > 100){%>
+    <% results = 100; %>
+    <% } %>
+    <p> <%= results%> results found. </p>
 </div>
 
 <div id = "reciperesults" class = "recipe-grid">
@@ -89,7 +92,10 @@
 
 <!--Footer ----------------------------------------------------------------------------------------------------------->
 <div id="pagin"></div>
-<div id="edamam-badge" data-color="white"></div>
+    <div id="footer">
+    <div id="edamam-badge" data-color="white"></div>
+    </div>
+
 </body>
 </html>
 

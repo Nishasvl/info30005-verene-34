@@ -2,6 +2,46 @@
     box-sizing: border-box;
 }
 
+#result-num{
+    margin-top: 165px;
+    margin-right: 6%;
+    text-align: right;
+    font-style: italic;
+    font-size: 13pt;
+}
+
+
+/** Footer and Pagination  **********************************************************************/
+#footer{
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    padding: 5px 0 5px 0;
+}
+
+#pagin{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+#pagin li:hover{
+    cursor: pointer;
+}
+
+#pagin li{
+    display: inline-block;
+    margin: 0 6px 0 6px;
+    color: #949494;
+    font-size: 12pt;
+}
+
+#current-page{
+    color: black !important;
+}
+
+
 /** bottom pop up **********************************************************************/
 .bottom-popup{
     background: #dddbda;
@@ -29,7 +69,7 @@
     grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
     grid-gap: 20px;
     grid-auto-rows: auto;
-    margin: 150px 30px 30px 30px;
+    margin: 20px 30px 30px 30px;
 }
 
 
@@ -209,6 +249,7 @@
 .searchbtn{
     display: inline;
     position: relative;
+    margin-top: 5px;
     border: 1px solid gray;
     padding: 10px 25px;
     font-size: 16px;
