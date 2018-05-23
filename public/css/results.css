@@ -220,10 +220,18 @@
 #resultsform input[type=text], #searchform input[type=text] {
     padding: 10px 0 10px 10px;
     border: none;
-    border-bottom: 1px solid black ;
+    border-bottom: 1px solid #cad6ce ;
     margin: 8px 16px 0 4px;
     font-size: 15px;
     background-color: #e9e9e9;
+    min-width: 150px;
+    width: 20%
+}
+
+#resultsform input[type=text]:focus{
+    outline: none;
+    /*background-color: #DAE1D6;*/
+    border-bottom: 1px solid black;
 }
 
 #resultsform label{
@@ -250,13 +258,17 @@
     display: inline;
     position: relative;
     margin-top: 5px;
-    border: 1px solid gray;
+    /*border: 1px solid gray;*/
     padding: 10px 25px;
     font-size: 16px;
     border-radius: 12px;
-    background-color: transparent;
+    background-color: #DBE2D7;
+    color: black;
 }
 
+.searchbtn:hover{
+    background-color: #c1cabd;
+}
 
 
 
