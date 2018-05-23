@@ -2,6 +2,46 @@
     box-sizing: border-box;
 }
 
+#result-num{
+    margin-top: 165px;
+    margin-right: 6%;
+    text-align: right;
+    font-style: italic;
+    font-size: 13pt;
+}
+
+
+/** Footer and Pagination  **********************************************************************/
+#footer{
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    padding: 5px 0 5px 0;
+}
+
+#pagin{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+#pagin li:hover{
+    cursor: pointer;
+}
+
+#pagin li{
+    display: inline-block;
+    margin: 0 6px 0 6px;
+    color: #949494;
+    font-size: 12pt;
+}
+
+#current-page{
+    color: black !important;
+}
+
+
 /** bottom pop up **********************************************************************/
 .bottom-popup{
     background: #dddbda;
@@ -29,7 +69,7 @@
     grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
     grid-gap: 20px;
     grid-auto-rows: auto;
-    margin: 150px 30px 30px 30px;
+    margin: 20px 30px 30px 30px;
 }
 
 
@@ -180,10 +220,18 @@
 #resultsform input[type=text], #searchform input[type=text] {
     padding: 10px 0 10px 10px;
     border: none;
-    border-bottom: 1px solid black ;
+    border-bottom: 1px solid #cad6ce ;
     margin: 8px 16px 0 4px;
     font-size: 15px;
     background-color: #e9e9e9;
+    min-width: 150px;
+    width: 20%
+}
+
+#resultsform input[type=text]:focus{
+    outline: none;
+    /*background-color: #DAE1D6;*/
+    border-bottom: 1px solid black;
 }
 
 #resultsform label{
@@ -209,13 +257,18 @@
 .searchbtn{
     display: inline;
     position: relative;
-    border: 1px solid gray;
+    margin-top: 5px;
+    /*border: 1px solid gray;*/
     padding: 10px 25px;
     font-size: 16px;
     border-radius: 12px;
-    background-color: transparent;
+    background-color: #DBE2D7;
+    color: black;
 }
 
+.searchbtn:hover{
+    background-color: #c1cabd;
+}
 
 
 

@@ -5,6 +5,15 @@
     box-sizing: border-box;
 }
 
+#navbar-brand{
+    font-family: 'Fredericka the Great', cursive;
+    font-weight:normal
+}
+
+nav.navbar-findcond a { color: #617133; font-family: 'Quicksand', sans-serif; font-weight: normal}
+
+
+
 .page-heading{
     font-family: 'Fredericka the Great', cursive;
     font-weight: 400;

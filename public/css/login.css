@@ -4,7 +4,7 @@
 
 /*nav bar css*/
 nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
-nav.navbar-findcond a { color: #617133; font-family: 'Fredericka the Great', cursive; }
+nav.navbar-findcond a { color: #617133; font-family: 'Quicksand', sans-serif; font-weight: normal}
 nav.navbar-findcond ul.navbar-nav a {border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
 nav.navbar-findcond ul.navbar-nav a:hover,
 nav.navbar-findcond ul.navbar-nav a:visited,
@@ -20,7 +20,6 @@ body {
     background: url('../images/loginbackground.jpg');
     background-position: center;
     background-size:cover;
-    font-family: Josefin Slab;
     padding-top: 130px;
 
 }
@@ -55,7 +54,6 @@ html,body{
     background-color: #fff;
     border-color: #fff;
     text-align:center;
-    font-family: Josefin Slab;
 }
 .panel-login>.panel-heading a{
     text-decoration: none;
@@ -65,12 +63,10 @@ html,body{
     -webkit-transition: all 0.1s linear;
     -moz-transition: all 0.1s linear;
     transition: all 0.1s linear;
-    font-family: Josefin Slab;
 }
 .panel-login>.panel-heading a.active{
     color: #617133;
     font-size: 18px;
-    font-family: Josefin Slab;
 }
 .panel-login>.panel-heading hr{
     margin-top: 10px;
@@ -90,7 +86,6 @@ html,body{
     -webkit-transition: all 0.1s linear;
     -moz-transition: all 0.1s linear;
     transition: all 0.1s linear;
-    font-family: Josefin Slab;
 }
 .panel-login input:hover,
 .panel-login input:focus {
@@ -109,7 +104,6 @@ html,body{
     padding: 14px 0;
     text-transform: uppercase;
     border-color: #59B2E6;
-    font-family: Josefin Slab;
 }
 .btn-login:hover,
 .btn-login:focus {
@@ -119,7 +113,6 @@ html,body{
 .forgot-password {
     text-decoration: underline;
     color: #888;
-    font-family: Josefin Slab;
 }
 .forgot-password:hover,
 .forgot-password:focus {
@@ -135,7 +128,6 @@ html,body{
     padding: 14px 0;
     text-transform: uppercase;
     border-color: #1CB94A;
-    font-family: Josefin Slab;
 }
 .btn-register:hover,
 .btn-register:focus {
@@ -144,5 +136,4 @@ html,body{
 }
 
 label {
-    font-family: Josefin Slab;
 }
