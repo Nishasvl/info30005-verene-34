@@ -15,9 +15,9 @@ nav.navbar-findcond li.divider { background: #ccc; }
 
 .icon-bar {
     width: 35px;
-    height: 5px;
+    height: 3px;
     background-color: #617133;
-    margin: 6px 0;
+    margin: 3px 0;
 }
 
 .navbar-toggle:hover{
