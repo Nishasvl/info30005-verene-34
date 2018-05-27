@@ -1,4 +1,18 @@
+const registerTab="register"
+const loginTab="login"
+
 $(function() {
+    $(function(){
+        var url_string = window.location.href;
+        var tab = url_string.split("#");
+        if(tab.includes(registerTab)){
+            $("#register-form").show();
+            $("#login-form").hide();
+
+            $('#login-form-link').removeClass('active');
+            $('#register-form-link').addClass('active');
+        }
+    });
 
     // passport log in function
     $('#login-form-link').click(function(e) {
@@ -17,5 +31,8 @@ $(function() {
         $(this).addClass('active');
         e.preventDefault();
     });
+
+
+
 
 });
