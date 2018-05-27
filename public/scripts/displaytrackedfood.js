@@ -43,10 +43,18 @@ const displayFood = food => {
     if (daysleft < 0) {
         colour = '<div class="top-right"><span class="w3-badge w3-xlarge red">' + daysleft + '</span></div>';
         daysdescription = '<p class="daysdescription">'+ (daysleft*-1) + ' days overdue</p>'
+
+        if(daysleft==-1){
+            daysdescription = '<p class="daysdescription">'+ (daysleft) + ' day left</p>'
+        }
     }
     else if (daysleft <= 2) {
         colour = '<div class="top-right"><span class="w3-badge w3-xlarge yellow">' + daysleft + '</span></div>';
         daysdescription = '<p class="daysdescription">'+ (daysleft) + ' days left</p>'
+
+        if(daysleft==1){
+            daysdescription = '<p class="daysdescription">'+ (daysleft) + ' day left</p>'
+        }
     }
     else {
         colour = '<div class="top-right"><span class="w3-badge w3-xlarge green">' + daysleft + '</span></div>';
