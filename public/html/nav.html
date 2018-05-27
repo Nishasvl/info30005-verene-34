@@ -28,10 +28,10 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="/home">Home<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="/tracker">Food Tracker<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="/favourites">Saved Recipes<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="/account">Account<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/home">Home<span class="sr-only home">(current)</span></a></li>
+                <li class="active"><a href="/tracker">Food Tracker<span class="sr-only tracker">(current)</span></a></li>
+                <li class="active"><a href="/favourites">Saved Recipes<span class="sr-only favourites">(current)</span></a></li>
+                <li class="active"><a href="/account">Account<span class="sr-only account">(current)</span></a></li>
             </ul>
         </div>
     </div>
@@ -40,3 +40,21 @@
 
 </body>
 </html>
+
+
+<script>
+    setActiveTab();
+
+    function setActiveTab(){
+        var path = window.location.pathname;
+        if(path.includes("home")){
+            $(".home").closest("a").attr("id", "active");
+        }else if (path.includes("tracker")){
+            $(".tracker").closest("a").attr("id", "active");
+        }else if (path.includes("favourites")){
+            $(".favourites").closest("a").attr("id", "active");
+        }else if (path.includes("account")) {
+            $(".account").closest("a").attr("id", "active");
+        }
+    }
+</script>

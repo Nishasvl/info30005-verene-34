@@ -9,9 +9,14 @@ nav.navbar-findcond ul.navbar-nav a {border-style: solid; border-width: 0 0 2px 
 nav.navbar-findcond ul.navbar-nav a:hover,
 nav.navbar-findcond ul.navbar-nav a:visited,
 nav.navbar-findcond ul.navbar-nav a:focus,
-nav.navbar-findcond ul.navbar-nav a:active { background: #fff; }
-nav.navbar-findcond ul.navbar-nav a:hover { border-color: #f14444; }
+nav.navbar-findcond ul.navbar-nav a:active { background: #ffffff; }
+nav.navbar-findcond ul.navbar-nav a:hover { border-color: #f14444 !important; }
 nav.navbar-findcond li.divider { background: #ccc; }
+
+#active{
+    background-color: #ece2db;
+    border-color: #ece2db;
+}
 
 .icon-bar {
     width: 35px;

@@ -118,7 +118,7 @@ body, .body-text{
 }
 
 .btncheck:checked + .label-text{
-    background-color: #ecd0bd;
+    background-color: #EBE1DA;
 }
 
 .btncheck {
