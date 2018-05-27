@@ -116,7 +116,25 @@
     });
 
     $(function () {
-        $("#btn-menu-placeholder").load("/html/filterbuttonmenu.html");
+        $("#btn-menu-placeholder").load("/html/filterbuttonmenu.html", function(){
+
+        //Fills in the previously inputed filter, time and max number of extra ingredients
+            if (paramData.time!="1+") {
+                time= paramData.time.split("-")[1];
+                $("body #t").prop("value", time);
+            }
+
+            if (maxIngr) {
+                $("#btn-menu-placeholder #m").prop("value", JSON.parse(maxIngr));
+            }
+
+            if (paramData.health) {
+                var tocheck = $("#btn-menu-placeholder").find('#' + paramData.health);
+                tocheck.prop("checked", true);
+                console.log(tocheck);
+            }
+        });
+
     });
 
 
@@ -132,12 +150,6 @@
         var paginationSize = 5; //At most 5 pages
         var pageMin = 1; // Start at page 1
         var pageMax = 5; // End at page 5
-
-        //Math.floor(paginationSize/2)
-        /*if(currPage > 3){
-            pageMin = currPage - Math.floor(paginationSize/2);
-            pageMax = currPage + Math.floor(paginationSize/2);
-        }*/
 
         /*Set maxpage same as pagecount if there are less than 5 pages left*/
         if(pageCount<pageMax){
@@ -159,24 +171,8 @@
 
     $(document).ready(function() {
 
-        //Fills in the previously inputed filter, time and max number of extra ingredients
-        /*$(function() {
-            if (paramData.time!="1+") {
-                /!*console.log(JSON.parse(paramData.time));*!/
-                $("body #t").css("background-color", "red");
 
-            }
 
-            if (maxIngr) {
-                $("#btn-menu-placeholder #m").prop("value", JSON.parse(maxIngr));
-            }
-
-            if (paramData.health) {
-                var tocheck = $("#btn-menu-placeholder").find('#' + paramData.health);
-                tocheck.prop("checked", true);
-                console.log(tocheck);
-            }
-        });*/
 
         //Change page
         $("#pagin").on("click", ".page-num", function () {
@@ -195,6 +191,5 @@
 </script>
 
 <script src="../scripts/createinfomodal.js"></script>
-
 <script src="../scripts/deleterecipefunction.js"></script>
 <script src="/scripts/results.js"></script>
