@@ -4,6 +4,10 @@ function setActiveTabWelcome() {
         $(".welcome").attr("id", "active");
     } else if (path.includes("login")) {
         $(".login").attr("id", "active");
+    } else if (path=="/"){
+        $(".welcome").attr("id", "active");
+
+
     }
 }
 

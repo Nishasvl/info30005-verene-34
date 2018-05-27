@@ -33,7 +33,8 @@ const displayFood = food => {
         food.image = "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg";
     }
     else if(food.image == "") {
-        food.image = ""
+        food.image = "/images/icons8-ingredients-128-padded.png";
+
     }
 
     // notification badge colour
@@ -54,7 +55,7 @@ const displayFood = food => {
     const newLi = $('<div class="grid-item">'
         +'<div class="container1">'
         + '<div class="top-centre"><p>' + foodname + '</p></div>' + colour
-        +'<img src="' + food.image + '" width = "200" height="200" id="' + foodname +'"' + 'alt="' + foodname +'">'
+        +'<div class = "img-container"><img src="' + food.image + '" id="' + foodname +'"' + 'alt="' + foodname +'"><div>'
 
 
 

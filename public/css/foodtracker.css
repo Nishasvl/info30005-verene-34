@@ -16,7 +16,6 @@ body {
 
 /*add button on body*/
 .btn-content{
-    margin-top: 35%;
 }
 
 #add-btn {
@@ -28,10 +27,17 @@ body {
     margin: auto;
     border-radius: 20px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #add-btn p{
     padding-top: 10px;
+}
+
+#add-btn:hover{
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2);
 }
 
 .center {
@@ -106,10 +112,22 @@ body {
 }
 
 .container1 img{
-    overflow: hidden;
     max-width: 200px;
     max-height: 200px;
+    width: 200px;
+    height: 200px;
     border-radius: 25px;
+
+}
+
+.img-container{
+    width :200px ;
+    height :200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+
 }
 
 .container1 p{

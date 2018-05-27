@@ -1,34 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
-/*nav bar css*/
-nav.navbar-findcond { background: #fff; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
-/*
-nav.navbar-findcond a { color: #617133; font-family: 'Fredericka the Great', cursive; }
-*/
-nav.navbar-findcond ul.navbar-nav a {border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
-nav.navbar-findcond ul.navbar-nav a:hover,
-nav.navbar-findcond ul.navbar-nav a:visited,
-nav.navbar-findcond ul.navbar-nav a:focus,
-nav.navbar-findcond ul.navbar-nav a:active { background: #fff; }
-nav.navbar-findcond ul.navbar-nav a:hover { border-color: #f14444 !important; }
-nav.navbar-findcond li.divider { background: #ccc; }
-
-#active{
-    background-color: #ece2db;
-    border-color: #ece2db;
-}
-
-.icon-bar {
-    width: 35px;
-    height: 3px;
-    background-color: #617133;
-    margin: 3px 0;
-}
-
-.navbar-toggle:hover{
-    background-color: transparent;
-}
 
 html {
     height: 100%;
