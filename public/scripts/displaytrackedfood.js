@@ -32,9 +32,9 @@ const displayFood = food => {
     else if (food.image == 'other') {
         food.image = "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg";
     }
-    /*else if(food.image == "") {
+    else if(food.image == "") {
         food.image = ""
-    }*/
+    }
 
     // notification badge colour
     let colour = '';

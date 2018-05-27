@@ -3,9 +3,12 @@
 
 
 body {
-    background: url('../images/fridgebackground.png');
-    background-position: top;
+    background: url('../images/fridgebackground.png') no-repeat center center fixed;
     background-size:cover;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
 
