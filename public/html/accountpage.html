@@ -12,7 +12,8 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
         <script src="../scripts/accountpage.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <link rel="stylesheet" type="text/css" href="../css/accountpage.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -128,12 +129,12 @@
                 </div>
                 <div class="panel-body">
                     Do you really want to logout ?  
-                    <a  href="#" class="label label-danger"
+                    <a  href="#" class="label label-danger red"
                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                         <span >   Yes   </span>
                     </a>    
-                    <a href="/account" class="label label-success"> <span >  No   </span></a>
+                    <a href="/account" class="label label-success green"> <span >  No   </span></a>
                 </div>
                 <!--<form id="logout-form" action="#" method="POST" style="display: none;">-->
                 <form id="logout-form" action="/logout" style="display: none;">

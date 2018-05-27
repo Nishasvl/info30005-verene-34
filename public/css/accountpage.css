@@ -1,0 +1,35 @@
+.panel-info{
+    border-color: #c1cabd !important;
+}
+
+.panel-info>.panel-heading {
+    color: #617133 !important;
+    background-color: #cad6ce !important;
+    border-color: #c1cabd !important;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #fff !important;
+    background-color: #617133 !important;
+}
+
+a {
+    color: #617133 !important;
+    text-decoration: none !important;
+}
+
+label{
+    font-weight: normal !important;
+}
+.label{
+    color: #ffffff !important;
+    font-weight: normal !important;
+}
+
+
+
+.btn-primary {
+    color: #fff !important;
+    background-color: #617133 !important;
+    border-color: transparent !important;
+}
