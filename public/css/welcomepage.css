@@ -58,7 +58,7 @@ h1,h2,h3,h4,h5,h6 {
     margin: 80px 4% 0 6px;
 }
 .grid-image{
-    padding-top: 10px;
+    padding-top: 10%;
     bottom: 0;
 
 }
@@ -81,3 +81,4 @@ h1,h2,h3,h4,h5,h6 {
     min-width: 300px;
     min-height: 168px;
 }
+
