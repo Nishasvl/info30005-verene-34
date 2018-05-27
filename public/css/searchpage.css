@@ -24,7 +24,8 @@ body{
     background-color: white;
     margin-top: 50px;
     border-radius: 25px;
-    padding: 3%;
+    padding-top: 10px;
+    padding-bottom: 7px;
     margin-bottom: 60px;
 
 }
@@ -33,9 +34,9 @@ body{
 
     text-align: center;
     background-color: #ffffff;
-    padding: 3%;
     border-radius: 25px;
 
+    padding-top: 10px;
     z-index: 4;
     /*
     border-bottom: 1px solid #cacaca;

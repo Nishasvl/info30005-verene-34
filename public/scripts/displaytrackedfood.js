@@ -39,14 +39,18 @@ const displayFood = food => {
 
     // notification badge colour
     let colour = '';
+    let daysdescription = '';
     if (daysleft < 0) {
         colour = '<div class="top-right"><span class="w3-badge w3-xlarge red">' + daysleft + '</span></div>';
+        daysdescription = '<p class="daysdescription">'+ (daysleft*-1) + ' days overdue</p>'
     }
     else if (daysleft <= 2) {
         colour = '<div class="top-right"><span class="w3-badge w3-xlarge yellow">' + daysleft + '</span></div>';
+        daysdescription = '<p class="daysdescription">'+ (daysleft) + ' days left</p>'
     }
     else {
         colour = '<div class="top-right"><span class="w3-badge w3-xlarge green">' + daysleft + '</span></div>';
+        daysdescription = '<p class="daysdescription">'+ (daysleft) + ' days left</p>'
     }
 
 
@@ -60,6 +64,7 @@ const displayFood = food => {
 
 
         + '<div class="overlay">'
+        + daysdescription
         + '<button data-mongo-id="' + foodId +'" class="delete-btn centered" >Delete</button>'
         + '<div>'
 

@@ -192,4 +192,12 @@ body {
 
 }
 
+.daysdescription {
+    position: absolute;
+    top: 40%;
+    font-size: large;
+    color: white;
+    left: 50%;
+    transform: translate(-50%);
+}
 
