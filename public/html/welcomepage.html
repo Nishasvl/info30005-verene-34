@@ -9,8 +9,11 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="../scripts/nav.js"></script>
+
 
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+
 
     <link rel="stylesheet" type="text/css" href="../css/welcomepage.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -47,10 +50,8 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="/html/welcomepage.html">Welcome<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="/login">Log In<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="/login#register">Sign Up<span class="sr-only">(current)</span></a></li>
-
+                <li class="active"><a href="/html/welcomepage.html" class="welcome">Welcome<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/login" class="login">Log In<span class="sr-only">(current)</span></a></li>
             </ul>
         </div>
     </div>
@@ -168,3 +169,12 @@
 
 </body>
 </html>
+
+
+<script>
+    $(document).ready(function(){
+        setActiveTabWelcome();
+
+    });
+
+</script>

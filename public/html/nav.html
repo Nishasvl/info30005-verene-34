@@ -5,6 +5,7 @@
 <head>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="../scripts/nav.js"></script>
 
 
     <link rel="stylesheet" type="text/css" href="../css/nav.css">
@@ -44,17 +45,4 @@
 
 <script>
     setActiveTab();
-
-    function setActiveTab(){
-        var path = window.location.pathname;
-        if(path.includes("home")){
-            $(".home").closest("a").attr("id", "active");
-        }else if (path.includes("tracker")){
-            $(".tracker").closest("a").attr("id", "active");
-        }else if (path.includes("favourites")){
-            $(".favourites").closest("a").attr("id", "active");
-        }else if (path.includes("account")) {
-            $(".account").closest("a").attr("id", "active");
-        }
-    }
 </script>

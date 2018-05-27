@@ -10,6 +10,8 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="../scripts/login.js"></script>
+    <script src="../scripts/nav.js"></script>
+
 
     <link rel="stylesheet" type="text/css" href="../css/style.css">
 
@@ -39,8 +41,7 @@
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="/html/welcomepage.html">Welcome<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="/login">Log In<span class="sr-only">(current)</span></a></li>
-                <li class="active"><a href="/login#register">Sign Up<span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="/login" class="login">Log In<span class="sr-only">(current)</span></a></li>
 
             </ul>
         </div>
@@ -144,3 +145,10 @@
 
 </body>
 </html>
+
+<script>
+    $(document).ready(function(){
+        setActiveTabWelcome();
+    });
+
+</script>

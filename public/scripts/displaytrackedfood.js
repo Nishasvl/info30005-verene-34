@@ -1,11 +1,12 @@
 const displayFood = food => {
     const foodId = food._id;
-    console.log(food.name);
 
     var foodname = food.name;
     if(foodname==""){
         foodname = "Unnamed";
     }
+
+
 
 
     const expiryDate = food.date;
@@ -16,21 +17,24 @@ const displayFood = food => {
     if (food.image == 'fruits') {
         food.image = "https://www.fruitonly.com.au/Skin/RosesOnly/Images/Products/850,850/LargeClassicFruitHamper.jpg";
     }
-    if (food.image == 'vegetables') {
+    else if (food.image == 'vegetables') {
         food.image = "https://www.builtlean.com/wp-content/uploads/2012/06/eat-more-vegetables-1.jpg";
     }
-    if (food.image == 'meats') {
+    else if (food.image == 'meats') {
         food.image = "https://www.sixpackbags.com/wp/wp-content/uploads/2013/03/healthylunchmeats.jpeg";
     }
-    if (food.image == 'dairy') {
+    else if (food.image == 'dairy') {
         food.image = "http://images.ritewayfoodservice.com.au/2010/10/dairy-300x270.jpg";
     }
-    if (food.image == 'carbohydrates') {
+    else if (food.image == 'carbohydrates') {
         food.image = "https://img.aws.livestrongcdn.com/ls-article-image-673/ds-photo/getty/article/94/180/149162559.jpg";
     }
-    if (food.image == 'other') {
+    else if (food.image == 'other') {
         food.image = "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fast_food_meal.jpg";
     }
+    /*else if(food.image == "") {
+        food.image = ""
+    }*/
 
     // notification badge colour
     let colour = '';
