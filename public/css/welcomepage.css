@@ -20,10 +20,16 @@ html {
     height: 100%;
 }
 
+* {
+    box-sizing: border-box;
+}
 body {
-    background: url('../images/welcomepagebackground.jpg');
+    background: url('../images/welcomepagebackground.jpg') no-repeat center center fixed;
     background-position: center;
     background-size:cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 
     padding-left: 40%;
     font-family: "Josefin Slab";
@@ -34,4 +40,44 @@ body {
 h1,h2,h3,h4,h5,h6 {
     font-family: "Playfair Display";
     letter-spacing: 5px;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 2fr) );
+    grid-gap: 20px;
+    grid-auto-rows: auto;
+
+    margin-bottom: 100px;
+}
+
+.move-right{
+    padding-left: 20px;
+}
+.content{
+    margin: 80px 4% 0 6px;
+}
+.grid-image{
+    padding-top: 10px;
+    bottom: 0;
+
+}
+
+
+.aspect-ratio {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56%; /* The height of the item will now be 56% of the width. */
+}
+
+/* Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent */
+.aspect-ratio iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    min-width: 300px;
+    min-height: 168px;
 }

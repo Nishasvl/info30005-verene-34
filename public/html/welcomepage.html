@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Log In</title>
+    <title>Welcome | Verene</title>
 
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -63,77 +63,67 @@
 
 
 <!-- Page content -->
-<div class="w3-content" style="max-width:1100px">
-    <br>
-    <h1 style="font-family: 'Fredericka the Great', cursive; font-weight: 400; font-size:8em;">Verene</h1>
-    <br>
 
-    <!-- recipe finder section -->
-    <div class="w3-row id="recipefinder">
-        <div class="w3-col m6 w3-padding-large">
-            <br>
+<h1 style="font-family: 'Fredericka the Great', cursive; font-weight: 400; font-size:8em;">Verene</h1>
+
+<div class="content" style="max-width:1100px">
+    <!-- Recipe Search -->
+    <div class="grid-container" >
+        <div class="grid-item " id="recipefinder">
             <h1 class="w3-center">Recipe Finder</h1><br>
-            <p class="w3-large">Recipe Finder allows you to find recipes based on the food in your fridge, making it easier to waste less food</p> <br>
-            <p class="w3-large w3-text-grey w3-hide-medium">Features include:</p>
+            <p class="w3-large move-right">Recipe Finder allows you to find recipes based on the food in your fridge, making it easier to waste less food</p> <br>
+            <p class="w3-large w3-text-grey move-right">Features include:</p>
             <ul>
                 <li>Filtering based on preferences such as food in fridge and allergens</li>
                 <li>Saving recipes on user account as collections</li>
                 <li>Sharing collections to friends</li>
             </ul>
-            <form action="/html/searchpage.html">
+            <!--<form action="/html/searchpage.html">
                 <input type="submit" value="Try Now" class="btn center-block">
-            </form>
+            </form>-->
         </div>
-        <div class="w3-col m6 w3-padding-large w3-hide-small">
-            <!--<a href="/html/foodtracker.html">-->
-            <br>
-            <br>
-            <br>
-            <br>
-            <img src="../images/recipesearch.png" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750" style="border-radius: 25px;">
-            <!--</a>-->
+
+        <div class="grid-item m6 grid-image">
+                <img src="../images/recipesearch.png" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750" style="border-radius: 25px;">
         </div>
     </div>
 
+    <br>
+    <br>
+    <br>
 
     <!-- food tracker section -->
-    <div class="w3-content" style="max-width:1100px">
-        <br><br><br><br><br>
-        <br><br><br><br><br>
+    <div class="grid-container" style="max-width:1100px">
+        <div class="grid-item m6 grid-image">
+            <img src="../images/foodtracker.png" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750" style="border-radius: 25px;">
+        </div>
 
-        <div class="w3-row w3-padding-64" id="foodtracker">
-            <div class="w3-col m6 w3-padding-large w3-hide-small">
-                <!--<a href="/html/foodtracker.html">-->
-                <br>
-                <br>
-                <br>
-                <br>
-                <img src="../images/foodtracker.png" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750" style="border-radius: 25px;">
-                <!--</a>-->
-            </div>
-            <div class="w3-col m6 w3-padding-large">
-                <h1 class="w3-center">Fridge Tracker</h1><br>
-                <p class="w3-large">Fridge Tracker allows you to easily keep track of food in your fridge so you don't forget items that will expire soon</p> <br>
-                <p class="w3-large w3-text-grey w3-hide-medium">Features include:</p>
-                <ul>
-                    <li>Displayed like the inside of your fridge with food items displayed visually</li>
-                    <li>Allows you to add any easily perishable food items</li>
-                    <li>Has badge notifications of number of days left till expiry date and warns you based on traffic light colours</li>
-                    <li>Can delete food item once finished or thrown out</li>
-                </ul>
-                <form action="/html/foodtracker.html">
-                    <input type="submit" value="Try Now" class="btn center-block">
-                </form>
-            </div>
+
+        <div class="grid-item m6">
+            <h1 class="w3-center">Fridge Tracker</h1><br>
+            <p class=" move-right w3-large">Fridge Tracker allows you to easily keep track of food in your fridge so you don't forget items that will expire soon</p> <br>
+            <p class="move-right w3-large w3-text-grey">Features include:</p>
+            <ul>
+                <li>Displayed like the inside of your fridge with food items displayed visually</li>
+                <li>Allows you to add any easily perishable food items</li>
+                <li>Has badge notifications of number of days left till expiry date and warns you based on traffic light colours</li>
+                <li>Can delete food item once finished or thrown out</li>
+            </ul>
+            <!--<form action="/html/foodtracker.html">
+                <input type="submit" value="Try Now" class="btn center-block">
+            </form>-->
         </div>
     </div>
-
 
     <!-- Contact Section -->
     <div class="w3-container" id="contact">
         <h1>About Us</h1><br>
         <p>The idea came from two university friends who wanted to reduce the impact of food wastage. Their goal was to reduce the food wasted at home by making it easier to use up leftover food. They believed that everyone can play a part in protecting the earth and it can start easily from home. Hence why the origin of the name Verene meaning protector in German.</p>
-        <br><br><iframe width="100%" height="400" src="https://www.youtube.com/embed/Z4fxxtCCLBM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <br><br>
+        <div class="aspect-ratio">
+            <iframe src="https://www.youtube.com/embed/Z4fxxtCCLBM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+            </iframe>
+        </div>
     </div>
     <br>
     <br>
