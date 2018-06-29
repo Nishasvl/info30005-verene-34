@@ -3,7 +3,7 @@
 
 
 body {
-    background: url('../images/fridgebackground.png') no-repeat center center fixed;
+    background: url('../images/fridgebackground-compressed.jpg') no-repeat center center fixed;
     background-size:cover;
     background-position: center;
     -webkit-background-size: cover;

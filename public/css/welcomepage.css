@@ -10,7 +10,7 @@ html {
     box-sizing: border-box;
 }
 body {
-    background: url('../images/welcomepagebackground.jpg') no-repeat center center fixed;
+    background: url('../images/welcomepagebackground-compressed.jpg') no-repeat center center fixed;
     background-position: center;
     background-size:cover;
     -webkit-background-size: cover;
