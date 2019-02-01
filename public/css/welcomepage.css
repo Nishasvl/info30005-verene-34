@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
 
+@media only screen and (max-width: 768px){
+    body {
+        background-position: 20% 0%;
+
+    }
+}
 
 html {
     height: 100%;
@@ -9,6 +15,7 @@ html {
 * {
     box-sizing: border-box;
 }
+
 body {
     background: url('../images/welcomepagebackground-compressed.jpg') no-repeat center center fixed;
     background-position: center;
