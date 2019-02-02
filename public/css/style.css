@@ -14,6 +14,7 @@ nav.navbar-findcond ul.navbar-nav a:active { background: #ffffff; }
 nav.navbar-findcond ul.navbar-nav a:hover { border-color: #f14444 !important; }
 nav.navbar-findcond li.divider { background: #ccc; }
 
+
 #active{
     background-color: #ece2db;
     border-color: #ece2db;
@@ -74,9 +75,6 @@ body, .body-text{
     color: #292929
 
 }
-
-
-
 
 /* The Close Button */
 .close {

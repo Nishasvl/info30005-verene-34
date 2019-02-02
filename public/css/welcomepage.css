@@ -3,8 +3,19 @@
 
 @media only screen and (max-width: 768px){
     body {
-        background-position: 20% 0%;
+        padding: 2%;
 
+    }
+    .heading {
+        margin: auto;
+    }
+
+    .grid-container{
+        margin-bottom: 50px;
+    }
+
+    .content{
+        margin: 50px 4% 0 6px;
     }
 }
 
@@ -16,18 +27,29 @@ html {
     box-sizing: border-box;
 }
 
-body {
-    background: url('../images/welcomepagebackground-compressed.jpg') no-repeat center center fixed;
-    background-position: center;
-    background-size:cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+@media only screen and (min-width: 768px){
+    body {
+        background: url('../images/welcomepagebackground-compressed.jpg') no-repeat center center fixed;
+        background-size:cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
 
-    padding-left: 40%;
-    font-family: "Josefin Slab";
+        padding-left: 40%;
+        font-family: "Josefin Slab";
+
+    }
+
+    .grid-container{
+        margin-bottom: 100px;
+    }
+
+    .content {
+        margin: 80px 4% 0 6px;
+    }
 
 }
+
 
 
 h1,h2,h3,h4,h5,h6 {
@@ -41,15 +63,13 @@ h1,h2,h3,h4,h5,h6 {
     grid-gap: 20px;
     grid-auto-rows: auto;
 
-    margin-bottom: 100px;
+
 }
 
 .move-right{
     padding-left: 20px;
 }
-.content{
-    margin: 80px 4% 0 6px;
-}
+
 .grid-image{
     padding-top: 10%;
     bottom: 0;
@@ -75,6 +95,10 @@ h1,h2,h3,h4,h5,h6 {
     min-height: 168px;
 }
 
+form{
+    text-align: center;
+}
+
 .btn:focus{
     outline: none !important;
 }
@@ -94,10 +118,8 @@ h1,h2,h3,h4,h5,h6 {
 .heading{
     text-align: center;
     display: block;
-    margin-left: 10%;
     max-width: 400px;
-    width: 80%;
 }
 .heading-text{
-    width: 400px;
+    font-size: 7em;
 }
