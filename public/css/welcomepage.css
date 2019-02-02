@@ -4,6 +4,7 @@
 @media only screen and (max-width: 768px){
     body {
         padding: 2%;
+        background: #F5F5F5;
 
     }
     .heading {
